@@ -1,0 +1,51 @@
+/* ============================================================
+   回到頂端按鈕（全站共用）
+   ============================================================ */
+
+.back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 28px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #1e3a5f;
+    color: #ffffff;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(30, 58, 95, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, background 0.2s;
+    z-index: 9998;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #2b4b73;
+    transform: translateY(-3px);
+}
+
+.back-to-top:active { transform: translateY(0); }
+
+@media (max-width: 480px) {
+    .back-to-top {
+        right: 16px;
+        bottom: 20px;
+        width: 42px;
+        height: 42px;
+        font-size: 1.2rem;
+    }
+}

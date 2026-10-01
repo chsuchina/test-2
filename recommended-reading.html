@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>推薦閱覽 · 巴勒斯坦問題</title>
+
+    <link rel="stylesheet" href="site-menu.css">
+    <link rel="stylesheet" href="back-to-top.css">
+
+    <style>
+        :root {
+            --page-bg: #c0c0c0;
+            --card-bg: #d1d1d1;
+            --panel-bg: #ebebeb;
+            --border-soft: #dcdcdc;
+            --text-main: #2c3e50;
+            --text-soft: #5b6f82;
+            --brand: #1e3a5f;
+            --brand-hover: #2b4b73;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background: var(--page-bg);
+            color: var(--text-main);
+            line-height: 1.9;
+            padding: 0 16px 40px;
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            padding: 28px 24px 36px;
+            margin-top: 24px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: var(--brand);
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .sub {
+            text-align: center;
+            color: var(--text-soft);
+            font-size: 0.9rem;
+            margin-bottom: 26px;
+            border-bottom: 1px solid var(--border-soft);
+            padding-bottom: 16px;
+        }
+
+        .intro {
+            background: var(--panel-bg);
+            border-left: 5px solid var(--brand);
+            border-radius: 12px;
+            padding: 14px 20px;
+            margin-bottom: 28px;
+            font-size: 0.95rem;
+            color: #3a4a5a;
+        }
+
+        /* 每個推薦項目 */
+        .item {
+            margin-bottom: 22px;
+            background: var(--panel-bg);
+            border: 1px solid var(--border-soft);
+            border-radius: 14px;
+            padding: 16px 20px;
+            transition: box-shadow 0.15s, border-color 0.15s, transform 0.15s;
+        }
+
+        .item:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+            border-color: var(--brand);
+            transform: translateY(-2px);
+        }
+
+        .item-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--brand);
+            margin-bottom: 6px;
+            line-height: 1.7;
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+            color: #3a4a5a;
+            margin-bottom: 6px;
+            line-height: 1.9;
+        }
+
+        .item-ref {
+            font-size: 0.88rem;
+            color: var(--text-soft);
+            margin-top: 4px;
+        }
+
+        /* 連結樣式 */
+        .item a,
+        .section a,
+        .quote a {
+            color: var(--brand);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.15s;
+            font-weight: 500;
+        }
+
+        .item a:hover,
+        .section a:hover,
+        .quote a:hover {
+            color: var(--brand-hover);
+            text-decoration-thickness: 2px;
+        }
+
+        /* 引言框（長篇引用） */
+        .quote {
+            background: var(--panel-bg);
+            border-left: 5px solid var(--brand);
+            padding: 18px 22px;
+            border-radius: 12px;
+            font-size: 1rem;
+            color: #3a4a5a;
+            margin: 16px 0;
+            line-height: 2;
+            font-weight: 500;
+        }
+
+        .quote p { margin-bottom: 10px; }
+        .quote p:last-child { margin-bottom: 0; }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 0.82rem;
+            color: #8a9aa8;
+            border-top: 1px solid var(--border-soft);
+            padding-top: 18px;
+        }
+
+        @media (max-width: 600px) {
+            .wrap { padding: 18px 14px 28px; border-radius: 18px; }
+            h1 { font-size: 1.4rem; }
+            .item { padding: 14px 16px; }
+            .item-title { font-size: 0.95rem; }
+            .item-desc { font-size: 0.9rem; }
+            .quote { font-size: 0.95rem; padding: 14px 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>推薦閱覽</h1>
+        <div class="sub">巴勒斯坦問題 · 精選影片、文章與演講</div>
+
+        <div class="intro">
+            以下為與巴勒斯坦問題相關的精選閱覽資源，包含影片、演講、文章與紀錄片，供進一步理解以巴衝突的多元視角。
+        </div>
+
+        <!-- 項目 1 -->
+        <div class="item">
+            <div class="item-title">所謂「以色列存在的權利」</div>
+            <div class="item-desc">探討「以色列存在的權利」這一論述的深層意涵。</div>
+            <div class="item-ref">參閱：<a href="https://x.com/i/status/1883606527053009008" target="_blank" rel="noopener">https://x.com/i/status/1883606527053009008</a></div>
+        </div>
+
+        <!-- 項目 2 -->
+        <div class="item">
+            <div class="item-title">以色列的軍事少年拘留系統</div>
+            <div class="item-desc">關於以色列軍事少年拘留系統的報導與討論。</div>
+            <div class="item-ref">參閱：<a href="https://www.youtube.com/watch?v=euGtCT1IBDw" target="_blank" rel="noopener">https://x.com/i/status/1881267757796438349</a></div>
+        </div>
+
+        <!-- 項目 3 -->
+        <div class="item">
+            <div class="item-title">美國資深記者 Chris Hedges 演講</div>
+            <div class="item-desc">美國資深記者 Chris Hedges 代表巴勒斯坦人民在獨立媒體避難所發表了一場意義深遠的演講，值得從頭到尾聆聽。</div>
+            <div class="item-ref">參閱：<a href="https://fb.watch/xmXCW2RbWS/" target="_blank" rel="noopener">https://fb.watch/xmXCW2RbWS/</a></div>
+        </div>
+
+        <!-- 項目 4 -->
+        <div class="item">
+            <div class="item-title">納粹大屠殺期間挽救猶太人的生命者，退還以色列獎章</div>
+            <div class="item-desc">納粹大屠殺期間挽救猶太人的生命者，退還以色列獎章的相關報導。</div>
+            <div class="item-ref">參閱：<a href="https://x.com/i/status/1717620736901156948" target="_blank" rel="noopener">https://x.com/i/status/1717620736901156948</a></div>
+        </div>
+
+        <!-- 項目 5 -->
+        <div class="item">
+            <div class="item-title">反猶太復國主義不是反猶主義</div>
+            <div class="item-desc">探討反猶太復國主義與反猶主義的區別。</div>
+            <div class="item-ref">
+                參閱 1：<a href="https://youtu.be/OsEzZdR69vg" target="_blank" rel="noopener">https://youtu.be/OsEzZdR69vg</a><br>
+                參閱 2：<a href="https://x.com/voiceofrabbis/status/1883528946769113467" target="_blank" rel="noopener">https://x.com/voiceofrabbis/status/1883528946769113467</a>
+            </div>
+        </div>
+
+        <!-- 引言：猶太教與猶太復國主義 -->
+        <div class="quote">
+            <p>「猶太教從來不是猶太復國主義。猶太教是一種宗教，而猶太復國主義是一種與猶太教無關的政治意識形態。反對猶太復國主義怎麼能算是反對猶太人或猶太教呢？猶太復國主義是一個世紀前由甚至不信仰猶太教的猶太復國主義領導人所創造的政治意識形態。受猶太復國主義者控制的主流媒體不斷對你說謊，好像所有猶太人都站在以色列這邊，但這是一個彌天大謊。世界上數以千計的猶太律法主義者反對以色列和猶太復國主義。一個世紀前最偉大的拉比之一哈伊姆·布里斯克 Rabbi Chaim Brisker 曾說：『猶太歷史上出現過許多異端團體，但猶太復國主義是最糟糕的。』反對猶太復國主義絕不是反猶主義。批評以色列絕非反猶主義。猶太復國主義不是猶太教。以色列不是一個猶太國家。世界上有成千上萬的反猶太復國主義、反以色列的猶太人，而現在你們聲稱猶太人是猶太教的敵人！」</p>
+        </div>
+
+        <!-- 項目 6 -->
+        <div class="item">
+            <div class="item-title">以色列的惡夢 TikTok</div>
+            <div class="item-desc">關於以色列的惡夢 TikTok 相關討論。</div>
+            <div class="item-ref">參閱：<a href="https://x.com/i/status/1794165683733037109" target="_blank" rel="noopener">https://x.com/i/status/1794165683733037109</a></div>
+        </div>
+
+        <!-- 項目 7 -->
+        <div class="item">
+            <div class="item-title">2024年11月28日 巴勒斯坦作家 Susan Abulhawa 在牛津大學辯論社</div>
+            <div class="item-desc">2024年11月28日巴勒斯坦作家 Susan Abulhawa 在英國牛津大學辯論社的辯論（可以說是控訴），辯論後，278比59票，決議是「以色列是種族隔離國家，須對種族滅絕負責。Israel as an apartheid state responsible for genocide.」</div>
+            <div class="item-ref">
+                參閱：<a href="https://www.youtube.com/watch?v=2ZCWCGebAuU&amp;ab_channel=OxfordUnion" target="_blank" rel="noopener">https://www.youtube.com/watch?v=2ZCWCGebAuU</a><br>
+                中英譯文：<a href="you-will-not-erase-us.html" target="_blank" rel="noopener">你們不會抹去我們</a>
+            </div>
+        </div>
+
+        <!-- 項目 8 -->
+        <div class="item">
+            <div class="item-title">英國演員演講</div>
+            <div class="item-desc">英國演員關於巴勒斯坦問題的演講。</div>
+            <div class="item-ref">參閱：<a href="https://x.com/i/status/1863718174379655499" target="_blank" rel="noopener">https://x.com/i/status/1863718174379655499</a></div>
+        </div>
+
+        <!-- 項目 9 -->
+        <div class="item">
+            <div class="item-title">真實的以色列</div>
+            <div class="item-desc">關於真實的以色列的討論。</div>
+            <div class="item-ref">參閱：<a href="https://x.com/i/status/1859231531170152755" target="_blank" rel="noopener">https://x.com/i/status/1859231531170152755</a></div>
+        </div>
+
+        <!-- 項目 10 -->
+        <div class="item">
+            <div class="item-title">「美國以色列公共事務委員會 AIPAC」前會員的自述</div>
+            <div class="item-desc">「美國以色列公共事務委員會 AIPAC」前會員的自述。</div>
+            <div class="item-ref">參閱：<a href="https://youtu.be/nVxIYPQC2K8" target="_blank" rel="noopener">https://youtu.be/nVxIYPQC2K8</a></div>
+        </div>
+
+        <!-- 項目 11 -->
+        <div class="item">
+            <div class="item-title">半島電視台紀錄片 Israelism: The awakening of young American Jews</div>
+            <div class="item-desc">半島電視台製作 Israelism: The awakening of young American Jews｜Featured Documentary 紀錄片（可以用中文字幕）。</div>
+            <div class="item-ref">參閱：<a href="https://www.youtube.com/watch?v=Iq6J7Q6L0yw&amp;ab_channel=AlJazeeraEnglish" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Iq6J7Q6L0yw</a></div>
+        </div>
+
+        <!-- 項目 12 -->
+        <div class="item">
+            <div class="item-title">土耳其廣播電視公司紀錄片 Palestine Talks: How Israel's education system brainwashes children</div>
+            <div class="item-desc">土耳其廣播電視公司製作 Palestine Talks: How Israel's education system brainwashes children 紀錄片，以色列婦女述說 Zionism 的教育（標題是洗腦）。</div>
+            <div class="item-ref">
+                參閱 1：<a href="https://www.youtube.com/watch?v=SRbAKrLfXZw&amp;ab_channel=TRTWorld" target="_blank" rel="noopener">https://www.youtube.com/watch?v=SRbAKrLfXZw</a><br>
+                參閱 2：<a href="https://www.youtube.com/watch?v=EBAdpeJrN_Q&amp;ab_channel=TRTWorld" target="_blank" rel="noopener">https://www.youtube.com/watch?v=EBAdpeJrN_Q</a>
+            </div>
+        </div>
+
+        <!-- 項目 13 -->
+        <div class="item">
+            <div class="item-title">The Settlers（inside the Jewish settlements）</div>
+            <div class="item-desc">由 Best Documentary 製作的紀錄片，可以藉此了解以色列如何蠶食巴勒斯坦的約旦河西岸領土，實際上西岸地區完全是如同當年南非的<a href="https://zh.wikipedia.org/zh-tw/%E7%8F%AD%E5%9B%BE%E6%96%AF%E5%9D%A6" target="_blank" rel="noopener">班圖斯坦</a>，以色列實施種族隔離的明證！</div>
+            <div class="item-ref">參閱：<a href="https://www.youtube.com/watch?v=prqtXMSdeUw&amp;ab_channel=BestDocumentary" target="_blank" rel="noopener">https://www.youtube.com/watch?v=prqtXMSdeUw</a></div>
+        </div>
+
+        <div class="footer-note">
+           Copyright 版權所有©2026 CHSU 巴勒斯坦問題資訊站 · 推薦閱覽
+        </div>
+    </div>
+
+    <script src="site-menu.js"></script>
+    <script src="back-to-top.js"></script>
+</body>
+</html>

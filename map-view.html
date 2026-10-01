@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>地圖檢視 · 巴勒斯坦問題</title>
+
+    <link rel="stylesheet" href="site-menu.css">
+    <link rel="stylesheet" href="back-to-top.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background: var(--page-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0 16px 40px;
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            padding: 24px 20px 32px;
+            margin-top: 24px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            color: var(--brand);
+            margin-bottom: 6px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .sub {
+            text-align: center;
+            color: var(--text-soft);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-soft);
+            padding-bottom: 14px;
+        }
+
+        .img-box {
+            text-align: center;
+            background: var(--panel-bg);
+            border-radius: 18px;
+            padding: 12px;
+            border: 1px solid var(--border-soft);
+            margin-bottom: 18px;
+        }
+
+        .img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .source-box {
+            background: var(--panel-bg);
+            border-left: 5px solid var(--brand);
+            padding: 14px 18px;
+            border-radius: 12px;
+            font-size: 0.92rem;
+            color: #3a4a5a;
+            word-break: break-all;
+        }
+
+        .source-box strong {
+            color: var(--brand);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .source-box a { color: var(--brand); text-decoration: underline; }
+        .source-box a:hover { color: var(--brand-hover); }
+
+        .footer-note {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #8a9aa8;
+            border-top: 1px solid var(--border-soft);
+            padding-top: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .wrap { padding: 16px 12px 24px; border-radius: 18px; }
+            h1 { font-size: 1.3rem; }
+            .source-box { font-size: 0.85rem; padding: 12px 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1 id="pageTitle">地圖</h1>
+        <div class="sub">巴勒斯坦問題 · 相關地圖</div>
+
+        <div class="img-box">
+            <img id="mapImage" src="" alt="地圖">
+        </div>
+
+        <div class="source-box" id="sourceBox">
+            <strong>📌 圖片來源</strong>
+            <span id="sourceText"></span>
+        </div>
+
+        <div class="footer-note">Copyright 版權所有©2026 CHSU 巴勒斯坦問題資訊站 · 繁體中文</div>
+    </div>
+
+    <script>
+        function getQueryParam(name) {
+            var params = new URLSearchParams(window.location.search);
+            return params.get(name) || '';
+        }
+
+        var imgPath = getQueryParam('img');
+        var srcUrl = getQueryParam('src');
+        var title = getQueryParam('title');
+
+        if (title) {
+            document.getElementById('pageTitle').textContent = title;
+            document.title = title + ' · 巴勒斯坦問題';
+        }
+
+        if (imgPath) {
+            document.getElementById('mapImage').src = imgPath;
+        }
+
+        if (srcUrl) {
+            document.getElementById('sourceText').innerHTML =
+                '<a href="' + srcUrl + '" target="_blank" rel="noopener">' + srcUrl + '</a>';
+        } else {
+            document.getElementById('sourceBox').style.display = 'none';
+        }
+    </script>
+
+    <script src="site-menu.js"></script>
+    <script src="back-to-top.js"></script>
+</body>
+</html>

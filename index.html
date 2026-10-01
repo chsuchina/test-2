@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>巴勒斯坦問題</title>
+
+    <link rel="stylesheet" href="back-to-top.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background-color: #f0f0f0;
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 0 16px 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f7f7f7;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 28px;
+            padding: 24px 20px 40px;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        header h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .menu-section { margin: 12px 0 28px; }
+
+        .dropdown-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .dropdown-card {
+            background: #f7f7f7;
+            border-radius: 18px;
+            border: 1px solid #dcdcdc;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s, border-color 0.2s;
+            position: relative;
+        }
+
+        .dropdown-card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+            border-color: #c9c2b6;
+            z-index: 20;
+        }
+
+        .dropdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 18px;
+            background: #ebebeb;
+            cursor: pointer;
+            user-select: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #1e3a5f;
+            transition: background 0.15s;
+            border-bottom: 1px solid transparent;
+            white-space: nowrap;
+        }
+
+        .dropdown-header:hover { background: #e0e0e0; }
+
+        .dropdown-header .arrow {
+            font-size: 1rem;
+            transition: transform 0.25s;
+            color: #5b6f82;
+        }
+
+        .dropdown-card.open .dropdown-header .arrow { transform: rotate(180deg); }
+        .dropdown-card.open .dropdown-header { border-bottom-color: #d6d0c6; }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 100%;
+            width: max-content;
+            max-width: 320px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.2s ease;
+            background: #f7f7f7;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            border: 1px solid #dcdcdc;
+            border-top: none;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 30;
+        }
+
+        .dropdown-card:hover .dropdown-content {
+            max-height: 600px;
+            opacity: 1;
+            pointer-events: auto;
+            padding: 10px 12px;
+        }
+
+        .dropdown-card.open .dropdown-content {
+            max-height: 600px;
+            opacity: 1;
+            pointer-events: auto;
+            padding: 10px 12px;
+        }
+
+        .dropdown-card:hover .dropdown-header .arrow,
+        .dropdown-card.open .dropdown-header .arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-card:hover .dropdown-header,
+        .dropdown-card.open .dropdown-header {
+            border-bottom-color: #d6d0c6;
+        }
+
+        .dropdown-content ul { list-style: none; }
+
+        .dropdown-content li {
+            margin-bottom: 6px;
+            border-bottom: 1px dashed #e5e5e5;
+            padding-bottom: 4px;
+        }
+
+        .dropdown-content li:last-child { border-bottom: none; margin-bottom: 0; }
+
+        .dropdown-content a {
+            text-decoration: none;
+            color: #2c3e50;
+            display: block;
+            padding: 8px 10px;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            transition: background 0.12s, color 0.12s;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .dropdown-content a:hover {
+            background: #ebebeb;
+            color: #1e3a5f;
+            padding-left: 16px;
+        }
+
+        .home-card {
+            background: #1e3a5f;
+            border-radius: 18px;
+            border: 1px solid #1e3a5f;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: background 0.2s, transform 0.1s;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-card:hover { background: #2b4b73; transform: scale(1.02); }
+
+        .home-card .home-header {
+            padding: 14px 18px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .map-links {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .map-links a {
+            background: #ebebeb;
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: #1e3a5f;
+            border: 1px solid #dcdcdc;
+            transition: all 0.15s;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .map-links a:hover {
+            background: #1e3a5f;
+            color: white;
+            border-color: #1e3a5f;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 32px 0 12px;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            letter-spacing: 4px;
+            margin-bottom: 14px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .hero-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #1e3a5f;
+            border-radius: 3px;
+            margin: 10px auto 0;
+        }
+
+        .hero-text {
+            max-width: 820px;
+            font-size: 1.02rem;
+            color: #3a4a5a;
+            line-height: 1.9;
+            text-align: justify;
+            background: #ebebeb;
+            padding: 20px 26px;
+            border-radius: 18px;
+            border-left: 5px solid #1e3a5f;
+            margin-bottom: 24px;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            border: 1px solid #dcdcdc;
+            display: block;
+            background: #ebebeb;
+        }
+
+        @media (max-width: 700px) {
+            header h1 { font-size: 1.6rem; }
+            .container { padding: 16px 14px 30px; border-radius: 20px; }
+
+            .hero-title { font-size: 1.6rem; letter-spacing: 2px; }
+            .hero-text { font-size: 0.95rem; padding: 16px 18px; line-height: 1.8; }
+
+            .dropdown-header, .home-card .home-header { padding: 12px 14px; font-size: 0.95rem; }
+        }
+
+        @media (max-width: 480px) {
+            header h1 { font-size: 1.4rem; }
+            body { padding: 0 10px 30px; }
+            .container { margin-top: 10px; margin-bottom: 10px; }
+
+            .hero-title { font-size: 1.4rem; letter-spacing: 1px; }
+            .hero-text { font-size: 0.9rem; padding: 14px 16px; border-radius: 14px; }
+
+            .dropdown-grid { gap: 8px; }
+            .dropdown-header, .home-card .home-header { padding: 10px 12px; font-size: 0.88rem; }
+            .dropdown-content { max-width: 260px; }
+            .dropdown-content a { font-size: 0.85rem; white-space: normal; }
+        }
+
+        .note {
+            font-size: 0.85rem;
+            color: #6b7b8b;
+            text-align: center;
+            margin-top: 28px;
+            border-top: 1px solid #dcdcdc;
+            padding-top: 18px;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(30, 58, 95, 0.6);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal-box {
+            background: #f7f7f7;
+            border-radius: 24px;
+            max-width: 1000px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: modalFadeIn 0.25s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 22px;
+            background: #1e3a5f;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .modal-header h2 { font-size: 1.2rem; font-weight: 600; }
+
+        .modal-close {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #fff;
+            font-size: 1.4rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            line-height: 1;
+        }
+
+        .modal-close:hover { background: rgba(255,255,255,0.3); }
+
+        .modal-body { overflow-y: auto; padding: 0; flex: 1; }
+
+        .modal-body table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            min-width: 400px;
+        }
+
+        .modal-body th {
+            background: #ebebeb;
+            color: #1e3a5f;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            border-bottom: 2px solid #d6d0c6;
+        }
+
+        .modal-body td {
+            padding: 9px 12px;
+            border-bottom: 1px solid #e5e5e5;
+            vertical-align: top;
+            word-break: break-word;
+        }
+
+        .modal-body tr:last-child td { border-bottom: none; }
+        .modal-body tr:nth-child(even) td { background: #ebebeb; }
+        .modal-body tr:hover td { background: #e0e0e0; }
+
+        .modal-body td.date-col {
+            text-align: center;
+            white-space: nowrap;
+            color: #5b6f82;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .modal-body th.date-col { text-align: center; }
+
+        .modal-footer {
+            padding: 12px 22px;
+            background: #ebebeb;
+            font-size: 0.8rem;
+            color: #6b7b8b;
+            text-align: center;
+            flex-shrink: 0;
+            border-top: 1px solid #dcdcdc;
+        }
+
+        @media (max-width: 600px) {
+            .modal-overlay { padding: 8px; }
+            .modal-box { max-height: 94vh; border-radius: 18px; }
+            .modal-header { padding: 12px 16px; }
+            .modal-header h2 { font-size: 1rem; }
+            .modal-body table { font-size: 0.78rem; min-width: 300px; }
+            .modal-body th, .modal-body td { padding: 7px 8px; }
+            .modal-body td.date-col { font-size: 0.75rem; }
+            .modal-close { width: 32px; height: 32px; font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>巴勒斯坦問題</h1>
+        </header>
+
+        <div class="menu-section">
+            <div class="dropdown-grid">
+                <div class="home-card" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+                    <div class="home-header"><span>🏠 首頁</span></div>
+                </div>
+
+                <!-- 始末 -->
+                <div class="dropdown-card" id="dropdown-1">
+                    <div class="dropdown-header" onclick="toggleDropdown('dropdown-1')">
+                        <span>始末</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a href="key-concepts.html" target="_blank" rel="noopener" style="font-weight:600; color:#1e3a5f;">關鍵概念</a></li>
+                            <li><a href="modern-history.html" target="_blank" rel="noopener" style="font-weight:600; color:#1e3a5f;">近代史</a></li>
+                            <li><a href="#" onclick="alert('近代中國與巴勒斯坦問題：中國對中東問題的立場與外交。'); return false;">近代中國與巴勒斯坦問題</a></li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="openTimelineModal()" style="font-weight:600; color:#1e3a5f;">📋 大事紀（Excel 表格）</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 美國的影響 -->
+                <div class="dropdown-card" id="dropdown-2">
+                    <div class="dropdown-header" onclick="toggleDropdown('dropdown-2')">
+                        <span>美國的影響</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a href="#" onclick="alert('美國對以色列的軍事與外交支持'); return false;">軍事與外交支持</a></li>
+                            <li><a href="#" onclick="alert('美國國內猶太遊說團體的影響力'); return false;">國內遊說與政治</a></li>
+                            <li><a href="#" onclick="alert('美國在中東和平進程中的角色'); return false;">中東和平進程</a></li>
+                            <li><a href="#" onclick="alert('歷屆美國政府政策比較'); return false;">歷屆政策比較</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 參考資料 -->
+                <div class="dropdown-card" id="dropdown-3">
+                    <div class="dropdown-header" onclick="toggleDropdown('dropdown-3')">
+                        <span>參考資料</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a href="#" onclick="alert('書籍：《巴勒斯坦百年戰爭》、《中東史》'); return false;">推薦書籍</a></li>
+                            <li><a href="#" onclick="alert('學術論文與期刊資料庫'); return false;">學術論文</a></li>
+                            <li><a href="#" onclick="alert('聯合國決議文與官方檔案'); return false;">聯合國文件</a></li>
+                            <li><a href="#" onclick="alert('新聞媒體與國際組織報告'); return false;">新聞與報告</a></li>
+                            <li><a href="websites.html" target="_blank" rel="noopener" style="font-weight:600; color:#1e3a5f;">🌐 網站</a></li>
+                            <li><a href="recommended-reading.html" target="_blank" rel="noopener" style="font-weight:600; color:#1e3a5f;">📖 推薦閱覽</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 相關地圖 -->
+                <div class="dropdown-card" id="dropdown-4">
+                    <div class="dropdown-header" onclick="toggleDropdown('dropdown-4')">
+                        <span>相關地圖</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <div class="map-links">
+                            <a href="images/Palestine Before Israel - Maps.mp4" target="_blank" rel="noopener">1948年之前的巴勒斯坦</a>
+                            <a href="map-view.html?img=images/palestine-1947-.jpg&amp;src=https://www.nationsonline.org/oneworld/map/palestine_map.htm&amp;title=巴勒斯坦" target="_blank" rel="noopener">巴勒斯坦</a>
+                            <a href="map-view.html?img=images/lebanon-map.jpg&amp;src=https://www.nationsonline.org/oneworld/map/lebanon_map.htm&amp;title=黎巴嫩" target="_blank" rel="noopener">黎巴嫩</a>
+                            <a href="map-view.html?img=images/israel_map.jpg&amp;src=https://www.nationsonline.org/oneworld/map/israel_map.htm&amp;title=以色列" target="_blank" rel="noopener">以色列</a>
+                            <a href="map-view.html?img=images/syria-map.jpg&amp;src=https://www.nationsonline.org/oneworld/map/syria_map.htm&amp;title=敘利亞" target="_blank" rel="noopener">敘利亞</a>
+                            <a href="map-view.html?img=images/jordan-map.jpg&amp;src=https://www.nationsonline.org/oneworld/map/jordan_map.htm&amp;title=約旦" target="_blank" rel="noopener">約旦</a>
+                            <a href="map-view.html?img=images/egypt_map.jpg&amp;src=https://www.nationsonline.org/oneworld/map/egypt_map.htm&amp;title=埃及" target="_blank" rel="noopener">埃及</a>
+                            <a href="dispossession.html" target="_blank" rel="noopener">巴勒斯坦遭以色列侵奪演變</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 留言板 -->
+                <div class="dropdown-card" id="dropdown-5">
+                    <div class="dropdown-header" onclick="toggleDropdown('dropdown-5')">
+                        <span>留言板</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li>
+                                <a href="guestbook.html" target="_blank" rel="noopener" style="font-weight:600; color:#1e3a5f;">📝 前往留言板</a>
+                            </li>
+                            <li style="border-bottom:none;">
+                                <span style="display:block; padding:8px 10px; font-size:0.82rem; color:#8a9aa8; line-height:1.6; white-space:normal;">
+                                    ※ 站長有權刪、改留言內容。
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="hero-section">
+            <h2 class="hero-title">願望</h2>
+            <div class="hero-text">
+                西亞（歐美列強所謂的中東）各國是近代強權殖民主義的產物，從地圖可見除伊朗外所有國界皆人為劃定。1948年5月14日以色列獨立建國，自此「巴勒斯坦」也成中東問題所在；直至今日仍在以色列宰制之下，巴勒斯坦人持續爭取民族自決與獨立建國，本站希望提供瀏覽者此問題的的來龍去脈，甚盼公平與正義能早日實踐於巴勒斯坦。（內容持續更新，請指教。）
+            </div>
+            <div class="hero-image">
+                <img src="images/mideast01.jpg" alt="中東地區地圖">
+            </div>
+        </section>
+
+        <div class="note">
+           
+            <p style="margin-top: 6px;">Copyright 版權所有©2026 CHSU 巴勒斯坦問題資訊站</p>
+        </div>
+    </div>
+
+    <!-- ===== 大事紀模態框 ===== -->
+    <div class="modal-overlay" id="timelineModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>📋 大事紀 · 巴勒斯坦問題</h2>
+                <button class="modal-close" onclick="closeTimelineModal()" aria-label="關閉">✕</button>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:16%;">時間</th>
+                            <th class="date-col" style="width:10%;">日期</th>
+                            <th>摘要</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 為節省篇幅，此處以「（請貼上您原本的大事紀內容）」示意；實際使用時請保留完整資料 -->
+                        <tr><td>c. B.C.2000</td><td class="date-col"></td><td>(龍山文化)猶太人始祖亞伯拉罕 立約 選民 允諾之地 由吾珥遷迦南</td></tr>
+                        <tr><td>c. B.C.1225</td><td class="date-col"></td><td>(商) 摩西 出埃及 十誡 回迦南</td></tr>
+                        <tr><td>c. B.C.1040</td><td class="date-col"></td><td>(周) 掃羅建國</td></tr>
+                        <tr><td>c. B.C.1012</td><td class="date-col"></td><td>(周) 大衛統一 建都耶路撒冷</td></tr>
+                        <tr><td>c. B.C. 960</td><td class="date-col"></td><td>(周) 所羅門 建聖殿（一）﹕民族與精神中心</td></tr>
+                        <tr><td>c. B.C. 935</td><td class="date-col"></td><td>(周) 分裂為猶太及以色列兩國</td></tr>
+                        <tr><td>c. B.C. 722-20</td><td class="date-col"></td><td>(春秋) 亞述滅北朝以色列</td></tr>
+                        <tr><td>c. B.C. 586</td><td class="date-col"></td><td>(春秋) 巴比倫滅南朝猶大毀聖殿，猶太人流放巴比倫</td></tr>
+                        <tr><td>c. B.C. 539</td><td class="date-col"></td><td>(春秋) 波斯滅巴比倫</td></tr>
+                        <tr><td>c. B.C. 540</td><td class="date-col"></td><td>(春秋) 大流士准猶太人返鄉 重建聖殿（二） 538-515</td></tr>
+                        <tr><td>B.C.332</td><td class="date-col"></td><td>亞歷山大大帝征服耶路薩冷</td></tr>
+                        <tr><td>B.C. 63</td><td class="date-col"></td><td>(西漢) 羅馬大將龐貝(Pompey)佔巴勒斯坦</td></tr>
+                        <tr><td>A.D. 66</td><td class="date-col"></td><td>(東漢) 猶太人反 羅馬平亂</td></tr>
+                        <tr><td>70</td><td class="date-col"></td><td>羅馬再毀聖殿殺60萬人，餘流徙(Diaspora)</td></tr>
+                        <tr><td>73</td><td class="date-col"></td><td>猶太人最後據點馬薩達(Masada)陷落</td></tr>
+                        <tr><td>132-5</td><td class="date-col"></td><td>(東漢) 猶太人再反 58萬人死 羅馬只准猶太人一年一次回耶路撒冷 哭牆</td></tr>
+                        <tr><td>313</td><td class="date-col"></td><td>基督教成為羅馬帝國國教</td></tr>
+                        <tr><td>395-636</td><td class="date-col"></td><td>拜占廷統治巴勒斯坦</td></tr>
+                        <tr><td>636</td><td class="date-col"></td><td>阿拉伯統治開始</td></tr>
+                        <tr><td>1072</td><td class="date-col"></td><td>塞爾柱土耳其征服巴勒斯坦</td></tr>
+                        <tr><td>1099</td><td class="date-col"></td><td>第一次十字軍佔領耶路撒冷，屠殺猶太人</td></tr>
+                        <tr><td>1187</td><td class="date-col"></td><td>撒拉丁從十字軍多回耶路撒冷</td></tr>
+                        <tr><td>1215</td><td class="date-col"></td><td>第四次拉特朗公會議，排斥猶太人--必須配戴標記。</td></tr>
+                        <tr><td>1290</td><td class="date-col"></td><td>猶太人被逐出英國</td></tr>
+                        <tr><td>1291</td><td class="date-col"></td><td>馬穆魯克王朝攻陷阿卡，逐出巴勒斯坦基督教勢力。</td></tr>
+                        <tr><td>1394</td><td class="date-col"></td><td>猶太人在法國被驅逐出境</td></tr>
+                        <tr><td>1492</td><td class="date-col"></td><td>猶太人被逐出西班牙</td></tr>
+                        <tr><td>1516</td><td class="date-col"></td><td>鄂圖曼土耳其征服巴勒斯坦</td></tr>
+                        <tr><td>1517</td><td class="date-col"></td><td>馬丁路德宗教改革開始</td></tr>
+                        <tr><td>1655</td><td class="date-col"></td><td>英國允許猶太人重返</td></tr>
+                        <tr><td>1700～</td><td class="date-col"></td><td>巴勒斯坦的猶太人口僅約 5,000 人，佔當時總人口的 2%</td></tr>
+                        <tr><td>1791</td><td class="date-col"></td><td>法國立法予猶太人公民權，但拿破崙下台後被取消。</td></tr>
+                        <tr><td>1799</td><td class="date-col"></td><td>拿破侖爭埃及，攻巴勒斯坦阿卡（Acre）未成。</td></tr>
+                        <tr><td>1854</td><td class="date-col"></td><td>李西蒲(de Lesseps)獲准修築蘇伊士運河</td></tr>
+                        <tr><td>1862</td><td class="date-col"></td><td>摩西．赫斯出版《羅馬與耶路撒冷：最後的民族問題》。提出在約旦河兩岸建國主張。</td></tr>
+                        <tr><td>1869</td><td class="date-col"></td><td>蘇伊士運河啟用</td></tr>
+                        <tr><td>1870</td><td class="date-col"></td><td>猶太全民聯盟在雅法東南方創辦了著名的農業學校「以色列的希望」（Mikveh Israel）</td></tr>
+                        <tr><td>1876</td><td class="date-col"></td><td>英國買下蘇伊士運河</td></tr>
+                        <tr><td>1878</td><td class="date-col"></td><td>猶太農業定居點「希望之門」（Petakh Tikvah）創立（隨後不久即宣告失敗）</td></tr>
+                        <tr><td>1880</td><td class="date-col"></td><td>巴勒斯坦的猶太人口在約 47 萬總人口中增加至 25,000 人</td></tr>
+                        <tr><td>1881</td><td class="date-col"></td><td>沙皇亞歷山大二世於1881年3月13日被刺殺，0427開始反猶迫害，直至1884年。促使流散猶太人建立跨國合作與移民潮</td></tr>
+                        <tr><td>1882</td><td class="date-col"></td><td>英佔埃及 第一批猶太復國主義者Zionist自俄羅斯來巴勒斯坦定居 首次回鄉(Aliya)開始。萊昂·平斯克出版《自我解放》。</td></tr>
+                        <tr><td>1894</td><td class="date-col"></td><td>法國猶太裔軍官德雷福斯被判叛國，1898年一月作家左拉投書〈我控訴〉。</td></tr>
+                        <tr><td>1896</td><td class="date-col"></td><td>赫茨爾(Theodor Herzl)出版《猶太國》</td></tr>
+                        <tr><td>1897</td><td class="date-col"></td><td>第一屆猶太復國主義大會由赫宙在瑞士巴賽爾召開 預言50年建國 「猶太勞工總聯盟」（Bund）在立陶宛維爾紐斯成立</td></tr>
+                        <tr><td>1901</td><td class="date-col"></td><td>猶太民族基金成立。</td></tr>
+                        <tr><td>1904</td><td class="date-col"></td><td>赫茨爾去世</td></tr>
+                        <tr><td>1905</td><td class="date-col"></td><td>第七屆猶太復國主義大會否決英國提供的烏干達為復國所在地</td></tr>
+                        <tr><td>1908</td><td class="date-col"></td><td>巴勒斯坦辦事處（The Palestine Office）成立，1929年，此機構轉型為猶太總署〔The Jewish Agency〕</td></tr>
+                        <tr><td>1909</td><td class="date-col"></td><td>第一個集體農莊(kibbutz)成立，第一個全猶太人現代都市特拉維夫在雅法郊區建立；青年衛士團(Hashomer)成立，童軍組織。</td></tr>
+                        <tr><td>1914</td><td class="date-col"></td><td>第一次世界大戰。魏茲曼於12月會見英國外交大臣貝爾福</td></tr>
+                        <tr><td>1915</td><td class="date-col">1024</td><td>英國承諾阿拉伯人（Hussein-McMahon Correspondence），若反抗鄂圖曼土耳其統治，戰後協助統一獨立。</td></tr>
+                        <tr><td>1916</td><td class="date-col"></td><td>英 法（賽克斯─皮科協定）劃分中東勢力範圍。阿拉伯人起義。</td></tr>
+                        <tr><td>1917</td><td class="date-col">1102</td><td>貝爾福(Balfour)宣言。英國結束土耳其在巴勒斯坦的統治。</td></tr>
+                        <tr><td></td><td class="date-col">1107</td><td>俄國爆發革命，猶太人正式獲得解放。</td></tr>
+                        <tr><td>1920</td><td class="date-col">0425</td><td>英國獲委任統治巴勒斯坦</td></tr>
+                        <tr><td></td><td class="date-col"></td><td>猶太人55,000在巴勒斯坦，猶太勞工聯盟成立，哈加納(Haganah)猶太人防禦組織成立﹔猶太人成立民族會議National Council(Vaad Leumi)處理猶太人事務</td></tr>
+                        <tr><td>1922</td><td class="date-col">0722</td><td>「國際聯盟」正式將巴勒斯坦交給英國，阿拉伯人與猶太人65:8.4萬</td></tr>
+                        <tr><td></td><td class="date-col"></td><td>成立「猶太總署」(Jewish Agency)代表猶太人團體。 阿拉伯人暴動</td></tr>
+                        <tr><td>1923</td><td class="date-col"></td><td>英白皮書。國際聯盟首先正式授權英國託管巴勒斯坦和外約旦。</td></tr>
+                        <tr><td>1925</td><td class="date-col"></td><td>希伯來(Hebrew)大學在耶路撒冷成立  英國Peel Commission 建議分治</td></tr>
+                        <tr><td>1929</td><td class="date-col"></td><td>巴勒斯坦「八月暴動」，133名猶太人遇害（此事件促使巴勒斯坦猶太人凝聚成單一的共同體）</td></tr>
+                        <tr><td>1930</td><td class="date-col"></td><td>英《帕斯菲爾德白皮書》限制猶太移民與購地</td></tr>
+                        <tr><td>1931</td><td class="date-col"></td><td>Etzel（伊爾貢Irgun）猶太地下恐怖組織成立。</td></tr>
+                        <tr><td>1933</td><td class="date-col"></td><td>希特勒上台</td></tr>
+                        <tr><td>1935</td><td class="date-col"></td><td>本-古里昂控制猶太總署執委會</td></tr>
+                        <tr><td>1936</td><td class="date-col"></td><td>「阿拉伯大起義」，持續至1939年。</td></tr>
+                        <tr><td>1937</td><td class="date-col"></td><td>英分治計畫(Peel Commission)，此時猶太人45萬佔30%。</td></tr>
+                        <tr><td>1939</td><td class="date-col"></td><td>英白皮書限制猶太移民  人口 土地 定十年內建巴勒斯坦國</td></tr>
+                        <tr><td></td><td class="date-col"></td><td>二次世界大戰 開始-1945  歐洲猶太人遭大屠殺(Holocaust)</td></tr>
+                        <tr><td>1940</td><td class="date-col"></td><td>「萊希組織」（Lehi，亦稱斯特恩幫派〔Stern Gang〕自伊爾貢脫離。</td></tr>
+                        <tr><td></td><td class="date-col"></td><td>村里檔案計畫（The Village Files Project，哈加納主導的情報計畫，為因應作戰需要，其文件詳細記載了巴勒斯坦英國託管地的所有阿拉伯村莊資訊）開始實施。</td></tr>
+                        <tr><td>1942</td><td class="date-col"></td><td>紐約召開緊急錫安主義會議，通過《比爾特莫綱領》，正式要求在整個巴勒斯坦建立主權猶太國家</td></tr>
+                        <tr><td>1944</td><td class="date-col"></td><td>英國軍隊成立猶太人旅。比金（Menachem Begin）接任地下武裝組織「伊爾貢」（Irgun）的領袖</td></tr>
+                        <tr><td>1945</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0322</td><td>「阿拉伯聯盟(Arab League)」在開羅成立。成員﹕埃及﹑伊拉克﹑黎巴嫩﹑敘利亞﹑沙烏地阿拉伯及外約旦。</td></tr>
+                        <tr><td></td><td class="date-col">0816</td><td>美國總統杜魯門贊成十萬猶太移民進入巴勒斯坦</td></tr>
+                        <tr><td></td><td class="date-col">1103</td><td>杜魯門在華府﹑英國外相貝文(Ernest Bevin)在倫敦宣布同意成立委員會檢討歐洲猶太人問題及巴勒斯坦﹔貝文稱巴勒斯坦將成為聯合國的託管地，最終則成為自治政府。</td></tr>
+                        <tr><td></td><td class="date-col">1122</td><td>巴勒斯坦阿拉人領袖組成十二人「高級委員會」(Higher Committee)，在「阿拉伯聯盟」中表達他們的意見。</td></tr>
+                        <tr><td></td><td class="date-col">1212</td><td>美國參議院外交委員會通過決議，敦促美國政府協助使巴勒斯坦對猶太人開放以及建立一「民主的共同體(democratic commonwealth)」，參院於1217眾院於1219分別通過。</td></tr>
+                        <tr><td>1946</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0107</td><td>「英美調查委員會(Anglo-American Committee of Inquiry)」在華府展開工作</td></tr>
+                        <tr><td></td><td class="date-col">0130</td><td>英國宣布在委員會調查期間允許每月一千五百名猶太人進入巴勒斯坦（這是1939年英國白皮書所允許的七萬五千人之外的數額）。</td></tr>
+                        <tr><td></td><td class="date-col">0202</td><td>巴勒斯坦阿拉伯人罷工，阿拉伯「高級委員會」抗議英國決定讓額外的猶太人進入。</td></tr>
+                        <tr><td></td><td class="date-col">0302</td><td>「阿拉伯聯盟」發言人告訴「英美委員會」，聯盟反對在巴勒斯坦成立猶太人國家，要求成立阿拉伯人國家。</td></tr>
+                        <tr><td></td><td class="date-col">0322</td><td>英國與外約旦簽約結束託管。</td></tr>
+                        <tr><td></td><td class="date-col">0430</td><td>「英美委員會」發表報告，建議立即允許十萬猶太人進入巴勒斯坦，以及在聯合國成立託管之前繼續由英國託管。</td></tr>
+                        <tr><td></td><td class="date-col">0502</td><td>「阿拉伯聯盟」抗議前述報告，「阿拉伯高級委員會」警告英國，若採納前述建議則「民族鬥爭」將再起。</td></tr>
+                        <tr><td></td><td class="date-col">0725</td><td>「英美委員會」在倫敦建議，三分巴勒斯坦﹕猶太﹑阿拉伯﹑英國。</td></tr>
+                        <tr><td></td><td class="date-col">0807</td><td>英國宣布計劃防止超額（每月一千五百名）的猶太人進入巴勒斯坦，並將此種移民船轉至塞浦路斯(Cyprus)。</td></tr>
+                        <tr><td></td><td class="date-col">0910</td><td>針對巴勒斯坦的會議在倫敦開幕，阿拉伯人參加猶太人杯葛。</td></tr>
+                        <tr><td></td><td class="date-col">0920</td><td>成立委員會研究阿拉伯人對巴勒斯坦的建議，猶太人同議停止杯葛倫敦會議。</td></tr>
+                        <tr><td></td><td class="date-col">1004</td><td>杜魯門公開呼籲英國，「立即」允許「大量移民」，並表示支持猶太復國主義者的計劃，在巴勒斯坦部分地區成立「可生存的猶太人國家」﹔英國政府表示遺憾，因該呼籲可能危害一項解決方案。</td></tr>
+                        <tr><td>1947</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0127</td><td>倫敦會議再度展開，有阿拉伯代表及猶太復國主義者觀察員。</td></tr>
+                        <tr><td></td><td class="date-col">0214</td><td>倫敦會議未達成協議，英國提議巴勒斯坦問題交給聯合國。</td></tr>
+                        <tr><td></td><td class="date-col">0428</td><td>聯合國大會針對巴勒斯坦問題召開特別會議。大會的「政治與安全委員會」於0513投票成立調查委員會。</td></tr>
+                        <tr><td></td><td class="date-col">0514</td><td>蘇聯駐聯合國代表葛羅米科(Andrei A. Gromyko)建議，若阿拉伯人和猶太人不同意成立一個國家(Arab-Jewish state)，那就將巴勒斯坦分成兩個獨立國家。</td></tr>
+                        <tr><td></td><td class="date-col">0616</td><td>「聯合國針對巴勒斯坦特別委員會(U.N. Special Committee On Palestine:U.N.S.C.O.P.)展開調查聽證。</td></tr>
+                        <tr><td></td><td class="date-col">0831</td><td>U.N.S.C.O.P. 提出多數之建議，於1949,0901,在巴勒斯坦成立個別的阿拉伯及猶太國家，耶路撒冷與其鄰近區域則由聯合國永久託管﹔少數之建議是，在三年內成立聯邦的阿拉伯猶太國。</td></tr>
+                        <tr><td></td><td class="date-col">0901</td><td>猶太復國主義者領袖同意U.N.S.C.O.P.的多數意見，「阿拉伯高級委員會」拒絕並威脅軍事行動。</td></tr>
+                        <tr><td></td><td class="date-col">0920</td><td>英國內閣宣布接受U.N.S.C.O.P.多數意見。</td></tr>
+                        <tr><td></td><td class="date-col">1009</td><td>「阿拉伯聯盟」議會建議會員國軍隊部署巴勒斯坦邊境，準備英軍撤退時行動。</td></tr>
+                        <tr><td></td><td class="date-col">1011</td><td>美國駐聯合國代表贊成巴勒斯坦分治，1013蘇聯贊成。</td></tr>
+                        <tr><td></td><td class="date-col">1129</td><td>聯合國大會33:13﹑10票棄權，通過分治計劃於1948,1001生效。阿拉伯會員抨擊後退席。</td></tr>
+                        <tr><td></td><td class="date-col">1205</td><td>美國對於因聯合國決議引起之暴動，對中東實施武器禁運。</td></tr>
+                        <tr><td></td><td class="date-col">1208</td><td>「阿拉伯聯盟」號召協助巴勒斯坦阿拉伯人，反抗任何分治巴勒斯坦的行動。</td></tr>
+                        <tr><td>1948</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0319</td><td>美國建議「安理會」暫停分治計劃，並敦促聯合國大會召開特別會議重新研究該問題。</td></tr>
+                        <tr><td></td><td class="date-col">0325</td><td>杜魯門呼籲猶太人與阿拉伯人停火。</td></tr>
+                        <tr><td></td><td class="date-col">0401</td><td>「安理會」採納美國意見及停火要求。</td></tr>
+                        <tr><td></td><td class="date-col">0513</td><td>「阿拉伯聯盟」宣稱，會員國與巴勒斯坦猶太人之間處於戰爭狀態。</td></tr>
+                        <tr><td></td><td class="date-col">0514 1606</td><td>以色列國公佈，午夜時成立。英國於午夜撤出。</td></tr>
+                        <tr><td></td><td class="date-col">0515 0011</td><td>華府時間05141811，杜魯門在該國成立十一分鐘後承認以色列﹔五個「阿拉伯聯盟」國家﹕外約旦﹑埃及﹑伊拉克﹑敘利亞﹑黎巴嫩入侵以色列。埃及飛機轟炸特拉維夫(Tel Aviv)。</td></tr>
+                        <tr><td></td><td class="date-col">0517</td><td>蘇聯承認以色列。</td></tr>
+                        <tr><td></td><td class="date-col">0525</td><td>以色列總統魏玆曼(Chaim Weizmann)訪問杜魯門，呼籲九千萬至一億元貸款，武裝以色列及協助移民。</td></tr>
+                        <tr><td></td><td class="date-col">0527</td><td>杜魯門稱貸款應向世界銀行及美國進出口銀行申請。</td></tr>
+                        <tr><td></td><td class="date-col">0611</td><td>為期四週的阿拉伯以色列停火生效。</td></tr>
+                        <tr><td></td><td class="date-col">0630</td><td>英軍完全撤出巴勒斯坦。</td></tr>
+                        <tr><td></td><td class="date-col">0708</td><td>聯合國調停代表伯那多德伯爵(Count Folke Bernadotte)報告，稱阿拉伯人拒絕延展停火。</td></tr>
+                        <tr><td></td><td class="date-col">0718</td><td>恢復停火。</td></tr>
+                        <tr><td></td><td class="date-col">0917</td><td>伯那多德遭暗殺，據稱係猶太恐怖分子所為﹔邦曲博士(Dr. Ralph J. Bunche)獲提名繼任。</td></tr>
+                        <tr><td></td><td class="date-col">0920</td><td>伯那多德對巴勒斯坦的最後建議公佈，包括承認以色列﹔埃及於迦薩成立「全巴勒斯坦阿拉伯人民政府」，外約旦及伊拉克反對，因為那等於承認分治。</td></tr>
+                        <tr><td></td><td class="date-col">1022</td><td>以色列與埃及同意再次停火，服從聯合國安理會1019的命令。</td></tr>
+                        <tr><td></td><td class="date-col">1116</td><td>「安理會」通過決議，要求停戰。</td></tr>
+                        <tr><td></td><td class="date-col">1201</td><td>外約旦併吞「西岸」。</td></tr>
+                        <tr><td></td><td class="date-col">1211</td><td>聯合國大會成立新的「巴勒斯坦調解委員會(Palestine Conciliation Commission)」。大會通過194號決議︰允許難民返鄉。</td></tr>
+                        <tr><td></td><td class="date-col">1230</td><td>英國警告以色列撤出埃及領土，否則將依據英埃條約協助埃及。</td></tr>
+                        <tr><td>1949</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0106</td><td>以色列與埃及宣布，於0107開始全面停火，0110以軍撤出埃及。</td></tr>
+                        <tr><td></td><td class="date-col">0113</td><td>聯合國調停代表邦曲與以﹑埃代表會談，談判停戰。</td></tr>
+                        <tr><td></td><td class="date-col">0124</td><td>埃及與以色列無限期延展停火。</td></tr>
+                        <tr><td></td><td class="date-col">0125</td><td>以色列首次選舉，總理本古里昂的政黨贏得國會(Knesset)最多數席次。</td></tr>
+                        <tr><td></td><td class="date-col">0131</td><td>美國對以色列及外約旦擴展完全的外交承認，法國於0124英國於0129分別承認以色列。</td></tr>
+                        <tr><td></td><td class="date-col">0201</td><td>以色列結束對耶路撒冷的軍事統治，正式將該城併入為其一部。</td></tr>
+                        <tr><td></td><td class="date-col">0224</td><td>以埃達成停戰協定</td></tr>
+                        <tr><td></td><td class="date-col">0307</td><td>埃及與英屬「蘇伊士運河公司」在蘇伊士城簽訂協議，要求該公司的工作80-90%由埃及人擔任，以及埃及要獲利的7%。</td></tr>
+                        <tr><td></td><td class="date-col">0311</td><td>外約旦與以色列簽訂「完全且持久」的停火協定。</td></tr>
+                        <tr><td></td><td class="date-col">0321</td><td>「巴勒斯坦調解委員會」在黎巴嫩貝魯特首次集會，以解決阿拉伯難民問題。</td></tr>
+                        <tr><td></td><td class="date-col">0405</td><td>以色列與敘利亞停戰談判觸礁，因以色列拒絕與敘利亞新軍政府代表談判，該政府於0330政變後成立。</td></tr>
+                        <tr><td></td><td class="date-col">0420</td><td>以色列雖同意將耶路撒冷的聖地(Holy Places)國際化，但再次拒絕該城整個國際化。</td></tr>
+                        <tr><td></td><td class="date-col">0426</td><td>外約旦宣布，該國正式名稱為約旦，或哈須麥約旦王國(Hashemite Jordan Kingdom)。</td></tr>
+                        <tr><td></td><td class="date-col">0426</td><td>敘利亞回應約旦0407將發展「大」約旦的聲明，關閉與約旦的邊界，並警告反對併吞其領土的企圖。</td></tr>
+                        <tr><td></td><td class="date-col">0427</td><td>洛桑會議</td></tr>
+                        <tr><td></td><td class="date-col">0428</td><td>以色列反對阿拉伯難民回鄉的建議。</td></tr>
+                        <tr><td></td><td class="date-col">0511</td><td>以色列獲准加入聯合國，投票時，英國棄權，結果是，37:12。</td></tr>
+                        <tr><td></td><td class="date-col">0720</td><td>敘利亞與以色列簽訂停戰協定，在爭議地區成立非武裝區。</td></tr>
+                        <tr><td></td><td class="date-col">0727</td><td>聯合國中東調停代表邦曲博士報告，巴勒斯坦衝突的軍事階段結束。</td></tr>
+                        <tr><td></td><td class="date-col">0913</td><td>「巴勒斯坦調解委員會」提議﹕耶路撒冷由聯合國控制，以色列或阿拉伯國家皆不得在該城設置政府機構，除了各該國民所住區的地方行政，也不得控制該城，聖地則由國際永久監管。以色列於1115拒絕此議。</td></tr>
+                        <tr><td></td><td class="date-col">1028</td><td>以色列威脅退出「巴勒斯坦調解委員會」，除非阿拉伯國家同意直接談判</td></tr>
+                        <tr><td></td><td class="date-col">1209</td><td>聯合國大會通過決議，將耶路撒冷交由「託管委員會」管理。英﹑美﹑以三國反對。</td></tr>
+                        <tr><td></td><td class="date-col">1216</td><td>本古里昂總理宣布，耶路撒冷將於1950,0101,成為該國首都。</td></tr>
+                        <tr><td>1950</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0115</td><td>美國國務卿艾奇遜(Dean Acheson)為英國武器輸往伊拉克﹑約旦﹑埃及辯護，因為西方必須與阿拉伯國家友善。</td></tr>
+                        <tr><td></td><td class="date-col">0309</td><td>土耳其（第一個回教國家）承認以色列。</td></tr>
+                        <tr><td></td><td class="date-col">0315</td><td>伊朗承認以色列。</td></tr>
+                        <tr><td></td><td class="date-col">0324</td><td>約旦退出與以色列的反侵略條約談判。</td></tr>
+                        <tr><td></td><td class="date-col">0401</td><td>「阿拉伯聯盟」會議決議，驅逐任何與以色列個別談和的會員。</td></tr>
+                        <tr><td></td><td class="date-col">0404</td><td>聯合國「託管委員會」通過耶路撒冷國際化。</td></tr>
+                        <tr><td></td><td class="date-col">0413</td><td>以色列拒絕「阿拉伯聯盟」和平談判條件，其中包括回復1947年聯合國分治的邊界。</td></tr>
+                        <tr><td></td><td class="date-col">0420</td><td>「阿拉伯聯盟」祕書譴責英美的中東政策，並鼓勵阿拉伯國家轉向蘇聯。</td></tr>
+                        <tr><td></td><td class="date-col">0424</td><td>約旦正式併吞西岸地區，包括耶路撒冷舊城。</td></tr>
+                        <tr><td></td><td class="date-col">0427</td><td>英國承認約旦所為，對以色列也由事實承認轉為完全的外交承認。</td></tr>
+                        <tr><td></td><td class="date-col">0525</td><td>杜魯門透露與英法達成協議，對中東的軍售應該對等，購買者若承諾不恢復巴勒斯坦的戰爭。</td></tr>
+                        <tr><td></td><td class="date-col">0602</td><td>以色列與約旦正式通知聯合國，拒絕「託管委員會」將耶路撒冷國際化的計畫。</td></tr>
+                        <tr><td></td><td class="date-col">0614</td><td>「託管委員會」承認五個月來的企圖失敗。</td></tr>
+                        <tr><td></td><td class="date-col">0617</td><td>「阿拉伯聯盟」五個成員﹕埃及﹑沙烏地阿拉伯﹑敘利亞﹑黎巴嫩﹑葉門，簽訂集體安全條約。</td></tr>
+                        <tr><td></td><td class="date-col">0621</td><td>「阿拉伯聯盟」保証不使用外購軍火侵略他國。</td></tr>
+                        <tr><td></td><td class="date-col">1121</td><td>為回應埃及要求英國立即撤出蘇伊士運河區和英埃屬地蘇丹，英國外相貝文在國會答覆時稱﹕英軍將留下，直到1936年英埃條約經「雙方同意」更動之後。</td></tr>
+                        <tr><td>1951</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0720</td><td>約旦國王阿布都拉遇刺。</td></tr>
+                        <tr><td></td><td class="date-col">0901</td><td>聯合國安理會要求埃及終止三年來禁止以色列貨船通行蘇伊士運河，埃及於0902拒絕，直到以色列遵守聯合國先前的決議。</td></tr>
+                        <tr><td></td><td class="date-col">0913</td><td>聯合國「巴勒斯坦調解會議」在巴黎召開，以色列與阿拉伯代表參加。</td></tr>
+                        <tr><td></td><td class="date-col">0921</td><td>以色列聲稱﹕願意與四個阿拉柏鄰國簽訂互不侵犯條約，但警告阿拉伯人若不與以色列代表面對面，則停止談判﹔以色列願意補償阿拉伯難民，並協助他們在阿拉伯國家定居，但不願意難民回到以色列。</td></tr>
+                        <tr><td></td><td class="date-col">1008</td><td>埃及宣布計劃驅逐駐紮在蘇伊士運河區的英軍，並完全掌控蘇丹。</td></tr>
+                        <tr><td></td><td class="date-col">1009</td><td>英國宣布不會退出。</td></tr>
+                        <tr><td></td><td class="date-col">1016</td><td>蘇伊士運河區緊張，埃及宣布緊急狀況三天，國會通過法魯克國王(Farouk) 頭銜改為﹕埃及與蘇丹國王，埃及憲法適用於蘇丹。</td></tr>
+                        <tr><td></td><td class="date-col">1027</td><td>埃及正式通知英國，1936年同盟條約與1889年共管蘇丹協定皆失效。蘇丹國會拒絕受埃及王室的統治。</td></tr>
+                        <tr><td></td><td class="date-col">1102</td><td>英國繼續增強駐防蘇伊士運河區之英軍。</td></tr>
+                        <tr><td></td><td class="date-col">1105</td><td>英軍撤出前，埃及拒絕討論蘇伊士運河爭議。</td></tr>
+                        <tr><td></td><td class="date-col">1115</td><td>英國建議，蘇丹自治一兩年後，再由選民決定是否與埃及合併。</td></tr>
+                        <tr><td></td><td class="date-col">1118</td><td>英埃衝突。</td></tr>
+                        <tr><td></td><td class="date-col">1121</td><td>聯合國終止調停。</td></tr>
+                        <tr><td></td><td class="date-col">1213</td><td>埃及召回駐英大使，以抗議英國「侵略」。</td></tr>
+                        <tr><td>1952</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0118</td><td>英埃衝突。</td></tr>
+                        <tr><td></td><td class="date-col">0126</td><td>埃及實施戒嚴。</td></tr>
+                        <tr><td></td><td class="date-col">0726</td><td>埃及法魯克國王退位。</td></tr>
+                        <tr><td></td><td class="date-col">0907</td><td>納奎布(Mohammed Naguib)將軍成為埃及領袖。</td></tr>
+                        <tr><td>1954</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0417</td><td>納瑟上校取代納奎布成為埃及總理。</td></tr>
+                        <tr><td></td><td class="date-col">0611</td><td>埃及宣布與沙烏地阿拉伯結為軍事同盟。</td></tr>
+                        <tr><td></td><td class="date-col">0727</td><td>埃及與英國簽約結束蘇伊士運河爭議，英軍在二十個月內撤出。</td></tr>
+                        <tr><td></td><td class="date-col">1102</td><td>約旦請英法美阻止以色列將約旦河改道。</td></tr>
+                        <tr><td>1955</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0224</td><td>伊拉克加入巴格達公約。</td></tr>
+                        <tr><td></td><td class="date-col">0927</td><td>埃及捷克軍火交易宣佈</td></tr>
+                        <tr><td></td><td class="date-col">0928</td><td>美國助理國務卿艾倫(Allen)赴開羅與納瑟討論埃及將以棉花交換蘇聯軍火</td></tr>
+                        <tr><td></td><td class="date-col">1012</td><td>美國與以色列消息透露，蘇聯願意出售軍火給以﹑埃。1011以色列要求美國平衡蘇聯對埃及的軍火輸出。</td></tr>
+                        <tr><td></td><td class="date-col">1020</td><td>埃及與敘利亞簽訂共同防禦條約，以色列因此要求與美國簽訂安全條約。以色列並引證埃及近來自捷克採購的軍火。</td></tr>
+                        <tr><td></td><td class="date-col">1031</td><td>以色列呼籲蘇聯勿出售軍火給阿拉伯國家，以免促成中東新的戰爭。</td></tr>
+                        <tr><td></td><td class="date-col">1114</td><td>約旦政府辭職抗議英國加入「巴格達公約」的壓力，胡笙(Hussein)國王解散國會1120，因抗議暴動繼起。</td></tr>
+                        <tr><td></td><td class="date-col">1226</td><td>埃及﹑沙烏地阿拉伯﹑敘利亞聯合軍力，由埃及戰爭部長統一指揮。</td></tr>
+                        <tr><td>1956</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0113</td><td>黎巴嫩與敘利亞簽訂雙邊防禦條約。</td></tr>
+                        <tr><td></td><td class="date-col">0119</td><td>蘇丹加入「阿拉伯聯盟」，其他成員為埃及﹑伊拉克﹑約旦﹑黎巴嫩﹑沙烏地阿拉伯﹑利比亞﹑敘利亞及葉門。</td></tr>
+                        <tr><td></td><td class="date-col">0130</td><td>以色列敦促美﹑英允許購買軍火。</td></tr>
+                        <tr><td></td><td class="date-col">0206</td><td>美國國務卿杜勒斯(Dulles)不排除「出售軍火給以色列的可能」，建議以色列寄望聯合國與1950年「英﹑美﹑法三強協定」。</td></tr>
+                        <tr><td></td><td class="date-col">0214</td><td>以色列同意暫停「約旦河谷計劃」工作，讓美國爭取阿拉伯國家合作加入該計畫。</td></tr>
+                        <tr><td></td><td class="date-col">0216</td><td>以色列對美國派遣戰車至沙烏地阿拉伯表示「遺憾」。</td></tr>
+                        <tr><td></td><td class="date-col">0303</td><td>約旦同意英國在該國可擁有基地。</td></tr>
+                        <tr><td></td><td class="date-col">0310</td><td>約旦突擊以色列，結束兩年來邊界的安寧。</td></tr>
+                        <tr><td></td><td class="date-col">0312</td><td>埃及﹑沙烏地阿拉伯﹑敘利亞同意共同防禦以色列。</td></tr>
+                        <tr><td></td><td class="date-col">0410</td><td>葉門加入。</td></tr>
+                        <tr><td></td><td class="date-col">0421</td><td>埃及﹑沙烏地阿拉伯﹑葉門建立五年期聯合軍事司令部，由埃及領導。</td></tr>
+                        <tr><td></td><td class="date-col">0506</td><td>約旦﹑埃及宣布計劃統一軍隊。</td></tr>
+                        <tr><td></td><td class="date-col">0509</td><td>美國國務卿杜勒斯聲明，美國為避免中東的對抗將克制對以色列的軍售。</td></tr>
+                        <tr><td></td><td class="date-col">0512</td><td>美國證實對沙烏地阿拉伯的軍售，十二架噴射機由法國運抵以色列，美國默許。</td></tr>
+                        <tr><td></td><td class="date-col">0516</td><td>英國宣布六個蘇伊士運河基地由埃及控制。</td></tr>
+                        <tr><td></td><td class="date-col">0521</td><td>黎巴嫩與約旦同意協同軍事計劃。</td></tr>
+                        <tr><td></td><td class="date-col">0531</td><td>約旦與敘利亞簽訂軍事協定。</td></tr>
+                        <tr><td></td><td class="date-col">0613</td><td>英國將蘇伊士運河防禦責任交給埃及﹔0618宣布結束對運河七十四年的佔領。</td></tr>
+                        <tr><td></td><td class="date-col">0624</td><td>納瑟當選埃及第一任總統。</td></tr>
+                        <tr><td></td><td class="date-col">0720</td><td>美國拒絕貸款埃及建設阿斯旺水壩(Aswan Dam)，英國跟進。</td></tr>
+                        <tr><td></td><td class="date-col">0727</td><td>納瑟將蘇伊士運河國有化，以運河收入建設水壩。</td></tr>
+                        <tr><td></td><td class="date-col">0728</td><td>英國凍結埃及與蘇伊士運河公司在英財產。</td></tr>
+                        <tr><td></td><td class="date-col">0816</td><td>二十二國在倫敦討論蘇伊士運河危機。</td></tr>
+                        <tr><td></td><td class="date-col">0911</td><td>初步協商失敗，英﹑法同意以經濟壓力迫埃及接受運河由國際管理﹔美國反對。</td></tr>
+                        <tr><td></td><td class="date-col">0914</td><td>埃及完全控制運河。</td></tr>
+                        <tr><td></td><td class="date-col">0930</td><td>黎巴嫩呼籲，敘利亞﹑埃及﹑約旦與黎巴嫩協商動員部隊報復以色列的襲擊。</td></tr>
+                        <tr><td></td><td class="date-col">1008</td><td>埃及與蘇聯反對由國際監管運河的意見。</td></tr>
+                        <tr><td></td><td class="date-col">1012</td><td>英國警告以色列，以色列與約旦的衝突中，英國將履行1948年與約旦的共同防禦條約。</td></tr>
+                        <tr><td></td><td class="date-col">1025</td><td>埃及﹑敘利亞和約旦簽約 ，由埃及將領統一指揮它們的部隊。</td></tr>
+                        <tr><td></td><td class="date-col">1029 1700</td><td>以軍空降西奈半島的米特拉隘道。</td></tr>
+                        <tr><td></td><td class="date-col">1030</td><td>以﹑埃爆發空戰，英﹑法致以﹑埃最後通牒，要求雙方部隊撤出運河兩岸十英哩，納瑟拒絕接受，英﹑法開始轟炸埃及。</td></tr>
+                        <tr><td></td><td class="date-col">1031</td><td>以色列稱，若埃及接受通牒即願意接受。英﹑法部隊集結於塞浦路斯。</td></tr>
+                        <tr><td></td><td class="date-col">1101</td><td>埃及與英﹑法斷交，並沒收其財產﹔約旦也與法國斷交，並通知英國，不再允許英國使用地面基地以攻擊埃及。</td></tr>
+                        <tr><td></td><td class="date-col">1102</td><td>迦薩走廊被以軍佔領。</td></tr>
+                        <tr><td></td><td class="date-col">1103</td><td>英﹑法拒絕聯合國1101的停火呼籲。</td></tr>
+                        <tr><td></td><td class="date-col">1105</td><td>蘇聯警告準備動武「包括使用飛彈」，以恢復中東和平，並呼籲美國共同行動對付「侵略者」，美國拒絕。</td></tr>
+                        <tr><td></td><td class="date-col">1106</td><td>以色列結束西奈作戰，準備停火﹔同時英﹑法空降奪取埃及的塞德港</td></tr>
+                        <tr><td></td><td class="date-col">1107</td><td>聯合國大會要求英﹑法﹑以撤出埃及。艾森豪總統以私函致以色列總理本古里昂，對以色列拒絕撤出表示「關切」，那將「有損兩國友好合作」。</td></tr>
+                        <tr><td></td><td class="date-col">1110</td><td>蘇聯要求英﹑法﹑以撤出埃及，否則將允許自願軍加入埃及部隊﹔1114美國稱反對蘇聯的干預。</td></tr>
+                        <tr><td></td><td class="date-col">1121</td><td>英﹑法﹑以開始撤軍，據報導艾森豪以私函敦促英﹑法完全撤出。</td></tr>
+                        <tr><td></td><td class="date-col">1130</td><td>美國開始緊急供應歐洲石油。</td></tr>
+                        <tr><td></td><td class="date-col">1222</td><td>英﹑法完全撤出埃及。</td></tr>
+                        <tr><td></td><td class="date-col">1224</td><td>埃及對英﹑法﹑以要求賠償。</td></tr>
+                        <tr><td>1957</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0104</td><td>蘇伊士運河對中型船隻開放。</td></tr>
+                        <tr><td></td><td class="date-col">0123</td><td>以色列提撤軍先決條件﹕埃及保証迦薩走廊和夏姆西克不得用於敵對行動</td></tr>
+                        <tr><td></td><td class="date-col">0301</td><td>以色列同意撤軍，條件為﹕聯合國緊急部隊管理迦薩，並維持阿卡巴灣自由通行。</td></tr>
+                        <tr><td></td><td class="date-col">0305</td><td>以軍完全撤出埃及。</td></tr>
+                        <tr><td></td><td class="date-col">0313</td><td>約旦與英國終止1948年同盟條約，英軍在六個月內撤出。</td></tr>
+                        <tr><td>1958</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0201</td><td>埃及與敘利亞合併為「阿拉伯聯合共和國」(United Arab Republic)。</td></tr>
+                        <tr><td>1960</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0201</td><td>以敘邊界空戰。</td></tr>
+                        <tr><td></td><td class="date-col">0202</td><td>聯合國要求阿聯部隊撤出以敘邊界非軍事區。</td></tr>
+                        <tr><td></td><td class="date-col">0211</td><td>約旦外長稱﹕若以色列企圖將約旦河改到至奈格夫沙漠，阿拉伯國家會一致對以宣戰。</td></tr>
+                        <tr><td>1961</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0928</td><td>敘利亞政變</td></tr>
+                        <tr><td></td><td class="date-col">0929</td><td>敘利亞文人政府成立，脫離阿聯。</td></tr>
+                        <tr><td></td><td class="date-col">1001</td><td>納瑟宣布與約旦﹑土耳其斷交，因它們承認敘利亞新政府。</td></tr>
+                        <tr><td></td><td class="date-col">1226</td><td>納瑟解除與葉門之聯盟，阿聯僅剩埃及一國。</td></tr>
+                        <tr><td>1963</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0320</td><td>以色列國會支持政府聲明，敦促西德禁止科學家協助阿聯發展防禦飛彈及國際法禁止的武器。</td></tr>
+                        <tr><td></td><td class="date-col">0821</td><td>阿拉伯聯盟集會考慮支持敘利亞在加利利海對抗以色列</td></tr>
+                        <tr><td></td><td class="date-col">0823</td><td>聯合國秘書長宇譚(U Thant)宣布以敘接受停火。</td></tr>
+                        <tr><td></td><td class="date-col">0825</td><td>以﹑約在耶路撒冷衝突。</td></tr>
+                        <tr><td>1964</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0117</td><td>阿拉伯聯盟高峰會決議成立巴勒斯坦解放組織(Palestine Liberation Organization，簡稱PLO、巴解)。</td></tr>
+                        <tr><td></td><td class="date-col">0414</td><td>約旦國王胡笙在華府與詹森總統談話，反對以色列計劃將約旦河改道。</td></tr>
+                        <tr><td></td><td class="date-col">0528</td><td>巴解在耶路撒冷正式成立，擬定憲章，翌年再予修訂，確立武裝鬥爭為解放巴勒斯坦人的唯一路線。</td></tr>
+                        <tr><td>1965</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0122</td><td>黎巴嫩國會批准建立抽水站，與約旦河改道有關。</td></tr>
+                        <tr><td></td><td class="date-col">0715</td><td>以色列參謀長稱﹕以突擊敘利亞是為嚇阻約旦河改道。</td></tr>
+                        <tr><td>1966</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0519</td><td>據報導美國同意出售數架戰術噴射轟炸機給以色列，此為首次公開。</td></tr>
+                        <tr><td></td><td class="date-col">0725</td><td>聯合國安理會十八年來第兩百一十四次討論以敘邊界衝突。</td></tr>
+                        <tr><td></td><td class="date-col">1010</td><td>胡笙國望稱﹕若以敘發生戰爭，該國將攻擊以色列。</td></tr>
+                        <tr><td></td><td class="date-col">1104</td><td>敘利亞與阿聯簽訂共同防禦條約。</td></tr>
+                        <tr><td>1967</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0407</td><td>以敘衝突，敘利亞六架戰機遭擊落。</td></tr>
+                        <tr><td></td><td class="date-col">0515</td><td>阿聯提升警戒，與以色列緊張昇高﹔敘利亞一同。</td></tr>
+                        <tr><td></td><td class="date-col">0518</td><td>納瑟要求聯合國緊急部隊撤出埃及。</td></tr>
+                        <tr><td></td><td class="date-col">0519</td><td>聯合國緊急部隊自中東撤出，結束十年的維持和平任務。</td></tr>
+                        <tr><td></td><td class="date-col">0520</td><td>阿聯宣布迦薩走廊緊急狀態。</td></tr>
+                        <tr><td></td><td class="date-col">0522</td><td>阿聯封鎖狄倫海峽。</td></tr>
+                        <tr><td></td><td class="date-col">0523</td><td>美國與以色列對阿卡巴灣的封鎖提出強烈警告。美第六艦隊前往東地中海，蘇聯警告將對抗任何對中東的侵略。</td></tr>
+                        <tr><td></td><td class="date-col">0526</td><td>以色列外長依班(Abba Eban)在華府與詹森會談，回程時赴倫敦及巴黎尋求恢復中東秩序。</td></tr>
+                        <tr><td></td><td class="date-col">0529</td><td>以埃在迦薩開火。</td></tr>
+                        <tr><td></td><td class="date-col">0530</td><td>約旦與阿聯簽訂共同防禦條約。</td></tr>
+                        <tr><td></td><td class="date-col">0603</td><td>以色列呼籲蘇聯協助中東和平。</td></tr>
+                        <tr><td></td><td class="date-col">0605</td><td>以色列開戰。</td></tr>
+                        <tr><td></td><td class="date-col">0606</td><td>科威特與伊拉克中斷對英美的石油供應。阿聯封閉蘇伊士運河，指控英美飛機協助以色列。</td></tr>
+                        <tr><td></td><td class="date-col">0607</td><td>安理會通過決議要求中東立即停火，0607約旦﹑0608阿聯﹑0609-10敘利亞接受停火。</td></tr>
+                        <tr><td></td><td class="date-col">0608</td><td>以色列軍機攻擊美國「自由號」情報船，三十四員亡。</td></tr>
+                        <tr><td></td><td class="date-col">0610</td><td>蘇聯與以色列斷交。</td></tr>
+                        <tr><td></td><td class="date-col">0611</td><td>以敘簽訂停火協定。</td></tr>
+                        <tr><td></td><td class="date-col">0612</td><td>以色列宣稱﹕不會退回1949停火界線，並要求與阿拉伯國家直接談判。</td></tr>
+                        <tr><td></td><td class="date-col">0628</td><td>以色列公佈耶路撒冷統一由其統治。</td></tr>
+                        <tr><td></td><td class="date-col">0704</td><td>宇譚要求以色列及阿聯接受聯合國觀察蘇伊士運河區的停火﹔0710阿聯0711以色列分別同意。</td></tr>
+                        <tr><td></td><td class="date-col">0829-0901</td><td>阿拉伯高峰會議於蘇丹首都喀土木舉行，決議對以色列「三不」政策</td></tr>
+                        <tr><td></td><td class="date-col">1122</td><td>安理會一致通過第242號決議案，承認以色列的生存權。巴解不予接受。</td></tr>
+                        <tr><td>1968</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0528</td><td>以色列賠償美國「自由號」家屬三百萬美元。</td></tr>
+                        <tr><td>1969</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0307</td><td>梅爾夫人繼任以色列總理。</td></tr>
+                        <tr><td></td><td class="date-col">0308</td><td>納瑟正式宣布對以色列展開「消耗戰」。</td></tr>
+                        <tr><td>1970</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0808</td><td>以埃「消耗戰」停火。</td></tr>
+                        <tr><td></td><td class="date-col">0902</td><td>約旦國王胡笙險遭暗殺，約旦與境內「巴解」爆發戰爭（黑色九月）。</td></tr>
+                        <tr><td></td><td class="date-col">0928</td><td>納瑟心臟病突發逝世。</td></tr>
+                        <tr><td></td><td class="date-col">1017</td><td>沙達特繼任埃及總統。</td></tr>
+                        <tr><td></td><td class="date-col">1019</td><td>阿塞德在敘利亞當權。</td></tr>
+                        <tr><td></td><td class="date-col">1104</td><td>聯合國大會表決通過中東停火延長九十天，以阿無條件恢復和平談判。</td></tr>
+                        <tr><td></td><td class="date-col">1113</td><td>敘利亞﹑阿聯﹑利比亞﹑蘇丹聯盟共同對付以色列。</td></tr>
+                        <tr><td>1971</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0204</td><td>沙達特提出和平意見，若以色列撤出蘇伊士運河區，即可和平談判。</td></tr>
+                        <tr><td></td><td class="date-col">0313</td><td>阿塞德擔任敘利亞總統。</td></tr>
+                        <tr><td></td><td class="date-col">0527</td><td>埃及與蘇聯簽訂十五年友好合作條約。</td></tr>
+                        <tr><td></td><td class="date-col">0726</td><td>阿拉伯社會主義聯盟(Arab Socialist Union)授權阿聯總統沙達特，採取任何必要行動收復阿拉伯領土。</td></tr>
+                        <tr><td></td><td class="date-col">0902</td><td>埃及﹑利比亞﹑敘利亞組「阿拉伯共和國聯邦」(Federation of Arab Republics)，組成堅強陣線對付以色列。</td></tr>
+                        <tr><td></td><td class="date-col">1004</td><td>沙達特當選「聯邦」第一任總統。</td></tr>
+                        <tr><td>1972</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0718</td><td>沙達特命令蘇聯軍事顧問及專家出境，接管埃及境內蘇聯基地和裝備。</td></tr>
+                        <tr><td></td><td class="date-col">0905</td><td>慕尼黑奧運，「黑色九月」組織劫持以色列運動員，血腥結局。</td></tr>
+                        <tr><td></td><td class="date-col">1026</td><td>沙達特撤換作戰部長（兼三軍司令）與參謀長，準備發動戰爭。</td></tr>
+                        <tr><td>1973</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0131</td><td>埃敘部隊統一指揮。</td></tr>
+                        <tr><td></td><td class="date-col">0328</td><td>埃及實施戒嚴。</td></tr>
+                        <tr><td></td><td class="date-col">0500</td><td>「非洲團結組織」(Organization of African Unity)多數成員國家與以色列斷交。</td></tr>
+                        <tr><td></td><td class="date-col">0515</td><td>阿拉伯產油國一致停止一小時產油，紀念巴勒斯坦遭竊佔二十五週年。</td></tr>
+                        <tr><td></td><td class="date-col">0604</td><td>以色列副總裡艾隆稱﹕埃及完全沒有軍事選擇。</td></tr>
+                        <tr><td></td><td class="date-col">0730</td><td>以色列國防部長戴陽稱﹕巴勒斯坦已結束。</td></tr>
+                        <tr><td></td><td class="date-col">0903</td><td>敘利亞戰機三架遭以色列戰機擊落。</td></tr>
+                        <tr><td></td><td class="date-col">0905-0909</td><td>第四屆不結盟國家會議在阿爾及爾集會，通過強烈譴責以色列的決議。</td></tr>
+                        <tr><td></td><td class="date-col">0926</td><td>埃敘宣布集結部隊從事例行演習。戴陽視察北部防務，同意調派一個戰車營至戈蘭高地。</td></tr>
+                        <tr><td></td><td class="date-col">1004-1005</td><td>蘇聯駐埃敘人員撤出。</td></tr>
+                        <tr><td></td><td class="date-col">10061400</td><td>埃及與敘利亞發動奇襲。</td></tr>
+                        <tr><td></td><td class="date-col">1010</td><td>以色列放棄巴勒夫防線(Bar-Lev line)，埃及深入蘇伊士運河東岸十六公里，敘利亞被擊退至1967年停火線。</td></tr>
+                        <tr><td></td><td class="date-col">1012</td><td>以軍前進至大馬士革外三十公里。</td></tr>
+                        <tr><td></td><td class="date-col">1013</td><td>約旦宣布將加入埃敘對以色列作戰，以色列稱消滅在敘境內一師伊拉克部隊。沙烏地阿拉伯部隊在沙達特敦促下參戰。</td></tr>
+                        <tr><td></td><td class="date-col">1015</td><td>美國宣布再補給以色列軍事裝備，以平衡蘇聯對埃及的大量空運。</td></tr>
+                        <tr><td></td><td class="date-col">1017</td><td>阿拉伯產油國宣布，輸往美國和其他支持以色列國家的石油減產百分之五。沙達特總統以公開信致尼克森總統，建議以色列退回1967年之前疆界即立刻停火。</td></tr>
+                        <tr><td></td><td class="date-col">1018</td><td>利比亞終止所有油運至美國，沙烏地阿拉伯石油減產百分之十，並稱若美國繼續支持以色列即終止所有對美之油運。</td></tr>
+                        <tr><td></td><td class="date-col">1019</td><td>尼克森要求國會撥款二十二億美元，緊急軍事援助以色列。利比亞終止所有對美出口，並提高油價每桶自4.9至8.92美元。</td></tr>
+                        <tr><td></td><td class="date-col">1020</td><td>沙烏地阿拉伯停止對美石油出口。美國國務卿季辛吉抵達莫斯科，與布里玆涅夫(Leonid I. Brezhnev)會談恢復中東和平。</td></tr>
+                        <tr><td></td><td class="date-col">1021</td><td>科威特﹑卡達(Qatar)﹑巴林(Bahrain)﹑杜拜(Dubai)宣布暫停所有對美石油輸出，理論上所有阿拉伯國家均以終止對美石油出口。</td></tr>
+                        <tr><td></td><td class="date-col">1021</td><td>美國與蘇聯共同提議安理會決議，中東停火並要求以色列撤出1967年戰爭所佔領土地。1022安理會通過此一第338號決議案。</td></tr>
+                        <tr><td></td><td class="date-col">1022</td><td>聯合國安理會通過第338號決議案，要求第四次中東戰爭有關各方在12小時內在現有陣地上立即停火，並在停火後開始執行聯合國安理會242號決議，舉行和平談判。以埃第一次停火，但是仍有戰鬥。約旦接受停火，伊拉克﹑巴解拒絕。</td></tr>
+                        <tr><td></td><td class="date-col">1023</td><td>安理會要求以埃回到前日的停火線，並要求聯合國觀察員進駐。埃以互控違反停火，運河西岸以軍南進包圍蘇伊士城和東岸埃軍第三軍團。</td></tr>
+                        <tr><td></td><td class="date-col">1024</td><td>以埃第二次停火，沙達特呼籲美蘇派軍監督停火﹔白宮宣布不會派軍。</td></tr>
+                        <tr><td></td><td class="date-col">1025</td><td>尼克森總統命令全球美軍提升警戒，以防蘇聯介入中東危機。安理會提議成立緊急監督部隊監督停火，該部隊排除常任理事國的部隊，尤其是美蘇，以免對抗。</td></tr>
+                        <tr><td></td><td class="date-col">1027</td><td>美國宣布以埃同意直接談判實現停火。</td></tr>
+                        <tr><td></td><td class="date-col">1028</td><td>以色列同意埃及補給第三軍糧食飲水醫藥。據報導，以色列在美國警告蘇聯威脅要解救該部隊後才同意。以色列消息承認，1023以軍前往阿達比亞(Adabiya)港孤立該軍。</td></tr>
+                        <tr><td></td><td class="date-col">1031</td><td>以色列總理梅爾抵達華府，與尼克森會談以國對美國壓力讓步的關切。沙達特總統警告，若以色列不退回1973,1022停火線將再戰。</td></tr>
+                        <tr><td></td><td class="date-col">1104</td><td>阿拉伯石油輸出國家組織(Organization of Arab Petroleum Exporting Countries)報告，九月以來已降低百分之二十五石油出口，並計劃該年再降百分之五。</td></tr>
+                        <tr><td></td><td class="date-col">1107</td><td>沙達特與季辛吉談判後，美埃宣布將恢復外交關係﹔1974,0228恢復。</td></tr>
+                        <tr><td></td><td class="date-col">1111</td><td>以埃簽訂停火協定，該協定為沙達特與季辛吉起草。此為1949年停火以來，雙方代表首次面對面簽訂的重要文件。</td></tr>
+                        <tr><td></td><td class="date-col">1221</td><td>以阿首次和平會議在日內瓦開幕，以﹑埃﹑約﹑美﹑蘇及聯合國參加，敘利亞杯葛。</td></tr>
+                        <tr><td>1974</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0118</td><td>以埃簽訂正式停戰協定。</td></tr>
+                        <tr><td></td><td class="date-col">0304</td><td>以色列完全撤出蘇伊士，埃及恢復1967年以來首次對運河兩岸的控制。</td></tr>
+                        <tr><td></td><td class="date-col">0410</td><td>梅爾在1973年戰爭責任爭議下辭職。</td></tr>
+                        <tr><td></td><td class="date-col">0423</td><td>拉賓繼任以色列總理。</td></tr>
+                        <tr><td></td><td class="date-col">0531</td><td>以敘簽訂正式停戰協定。</td></tr>
+                        <tr><td></td><td class="date-col">0921</td><td>埃及與敘利亞在開羅承認巴解為巴勒斯坦人的唯一代表。</td></tr>
+                        <tr><td></td><td class="date-col">1014</td><td>聯合國大會通過決議邀請巴解參與巴勒斯坦問題的討論。</td></tr>
+                        <tr><td></td><td class="date-col">1028</td><td>「阿拉伯聯盟」二十國領袖在摩洛哥一致承認，「在任何解放的巴勒斯坦領土，巴解是巴勒斯坦人民唯一合法代表。」</td></tr>
+                        <tr><td></td><td class="date-col">1109</td><td>以色列貨幣貶值百分之四十三，以應付1973年戰爭造成的經濟困境。</td></tr>
+                        <tr><td></td><td class="date-col">1113</td><td>阿拉法特於聯合國演講︰我左手握著自由戰士的槍，右手拿著橄欖枝，請千萬不要讓橄欖枝從我手中滑落！</td></tr>
+                        <tr><td></td><td class="date-col">1122</td><td>聯合國大會通過決議，承認巴勒斯坦人民獨立及主權的權利，並給巴解觀察員資格。</td></tr>
+                        <tr><td>1975</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0605</td><td>蘇伊士運河八年來首度開放通行。</td></tr>
+                        <tr><td></td><td class="date-col">1110</td><td>聯合國通過3379號決議︰猶太複國主義’（Zionism）是一種種族主義和種族歧視形式</td></tr>
+                        <tr><td>1976</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0531</td><td>敘利亞部隊進入黎巴嫩。</td></tr>
+                        <tr><td></td><td class="date-col">0704</td><td>以色列突襲烏干達恩德比機場，營救人質。</td></tr>
+                        <tr><td>1977</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0517</td><td>以色列大選，比金出任總理。</td></tr>
+                        <tr><td></td><td class="date-col">1119</td><td>埃及總統沙達特訪問以色列。</td></tr>
+                        <tr><td>1978</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col"></td><td>加薩伊斯蘭大學成立。為Mujama' al-Islami （「伊斯蘭中心」---哈瑪斯）支持；以色列允許。</td></tr>
+                        <tr><td>1979</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0425</td><td>以埃和約正式生效。</td></tr>
+                        <tr><td>1981</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0607</td><td>以色列空襲伊拉克核子反應爐。</td></tr>
+                        <tr><td></td><td class="date-col">1006</td><td>埃及總統沙達特遇刺。</td></tr>
+                        <tr><td></td><td class="date-col">1013</td><td>穆巴拉克(Hosni Mubarak)繼任埃及總統。</td></tr>
+                        <tr><td>1982</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0425</td><td>以色列完全撤出西奈半島，歸還埃及。</td></tr>
+                        <tr><td></td><td class="date-col">0603</td><td>以色列駐英國大使在倫敦遇刺重傷，以報復攻擊黎巴嫩境內巴解，傷150死45﹔巴解炮擊以北部屯墾區。</td></tr>
+                        <tr><td></td><td class="date-col">0606</td><td>以軍越界侵入黎巴嫩，0609已接近貝魯特，聯合國安理會要求以立即退出</td></tr>
+                        <tr><td></td><td class="date-col">0607</td><td>美國特使哈比比(Philip C. Habib)赴以討論停止交戰。</td></tr>
+                        <tr><td></td><td class="date-col">0609</td><td>以空軍攻擊貝卡山谷敘利亞部隊 哈比比抵達大馬士革調停</td></tr>
+                        <tr><td></td><td class="date-col">0611</td><td>以敘同意停火。</td></tr>
+                        <tr><td></td><td class="date-col">0614</td><td>以軍封鎖貝魯特，追緝巴解領袖。哈比比抵達貝魯特。</td></tr>
+                        <tr><td></td><td class="date-col">0615</td><td>敘利亞部隊拒絕以方要求退出貝魯特。</td></tr>
+                        <tr><td></td><td class="date-col">0616</td><td>美國官員稱以色列保證以軍不會奪取貝魯特﹔美國要求以方停火兩天，讓黎巴嫩部隊重新控制巴解部隊。</td></tr>
+                        <tr><td></td><td class="date-col">0620</td><td>黎巴嫩要求敘軍撤出遭拒絕。</td></tr>
+                        <tr><td></td><td class="date-col">0620-22</td><td>比京在華府與雷根政府會談，同意所有外國部隊應撤出黎巴嫩。</td></tr>
+                        <tr><td></td><td class="date-col">0622</td><td>以回應美方0616之要求同意停火，0623停火破裂。</td></tr>
+                        <tr><td></td><td class="date-col">0624</td><td>美國關閉駐黎大使館並撤僑。</td></tr>
+                        <tr><td></td><td class="date-col">0625</td><td>以軍開始猛烈轟炸貝魯特。</td></tr>
+                        <tr><td></td><td class="date-col">0627</td><td>以色列宣佈和平計畫，要求黎軍進入西貝魯特，並保證巴勒斯坦人放下武器後可安全離開該國。美國警告以色列不可再攻貝魯特。</td></tr>
+                        <tr><td></td><td class="date-col">0706</td><td>雷根同意派遣小部隊加入貝魯特多國和平維持部隊。</td></tr>
+                        <tr><td></td><td class="date-col">0801</td><td>以色列對貝魯特發動入侵以來最大規模轟炸，停火破裂。</td></tr>
+                        <tr><td></td><td class="date-col">0804</td><td>在猛烈砲火掩護下，以軍裝甲部隊進入西貝魯特。聯合國安理會通國決議要求立即停火，以軍退回0801位置。</td></tr>
+                        <tr><td></td><td class="date-col">0806</td><td>巴解同意美國所提撤出計畫</td></tr>
+                        <tr><td></td><td class="date-col">0810-11</td><td>以軍大規模轟炸及砲擊貝魯特</td></tr>
+                        <tr><td></td><td class="date-col">0813</td><td>巴解確認9,500員撤出</td></tr>
+                        <tr><td></td><td class="date-col">0819</td><td>以色列政府同意巴解撤出計畫</td></tr>
+                        <tr><td></td><td class="date-col">0821</td><td>巴解開使撤出</td></tr>
+                        <tr><td></td><td class="date-col">0830</td><td>阿拉法特撤出貝魯特。巴解總部遷往突尼斯。</td></tr>
+                        <tr><td></td><td class="date-col">0914</td><td>黎巴嫩總統賈梅耶(Bashir Gemayel,長槍黨)遭暗殺</td></tr>
+                        <tr><td></td><td class="date-col">0915-16</td><td>以軍佔領西貝魯特</td></tr>
+                        <tr><td></td><td class="date-col">0916-18</td><td>長槍黨進入巴勒斯坦人兩難民營(Shatila,Sabra)大屠殺</td></tr>
+                        <tr><td>1983</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0517</td><td>以色列與黎巴嫩簽訂和平條約</td></tr>
+                        <tr><td></td><td class="date-col">0720</td><td>以色列內閣決定駐黎部隊撤至阿瓦利河</td></tr>
+                        <tr><td>1985</td><td class="date-col"></td><td></td></tr>
+                        <tr><td></td><td class="date-col">0100</td><td>以軍宣布撤出黎巴嫩</td></tr>
+                        <tr><td></td><td class="date-col">0606</td><td>以軍撤退完畢</td></tr>
+                        <tr><td></td><td class="date-col">1001</td><td>以色列空軍空襲巴解總部（Wooden Leg）。</td></tr>
+                        <tr><td>1987</td><td class="date-col">1208</td><td>約旦河西岸及加薩走廊的巴勒斯坦人展開反對以色列占領的暴亂活動。第一次巴勒斯坦大起義Intifada</td></tr>
+                        <tr><td></td><td class="date-col">1210</td><td>伊斯蘭抵抗運動---哈瑪斯，正式成立。</td></tr>
+                        <tr><td>1988</td><td class="date-col">1115</td><td>巴勒斯坦民族議會在阿爾及爾宣布巴勒斯坦獨立建國，並接受聯合國第242號、338號決議案，間接承認以國生存權。</td></tr>
+                        <tr><td></td><td class="date-col">1214</td><td>阿拉法特接受美國條件（如上）並放棄恐怖主義，參與雙邊談判。</td></tr>
+                        <tr><td>1990</td><td class="date-col">0802</td><td>第一次波斯灣戰爭，至19910228。</td></tr>
+                        <tr><td>1991</td><td class="date-col">1030</td><td>西班牙主持美國、蘇聯支持在馬德里，試圖談判解決以色列、巴勒斯坦的和平進程。</td></tr>
+                        <tr><td>1992</td><td class="date-col">1200</td><td>以色列議會解禁與巴解組織代表接觸。</td></tr>
+                        <tr><td>1993</td><td class="date-col">0100</td><td>以色列、巴勒斯坦代表於挪為開始祕密會議。</td></tr>
+                        <tr><td></td><td class="date-col">0819</td><td>以國宣布與巴解原則達成加薩與耶律戈地區先行自治的協議。</td></tr>
+                        <tr><td></td><td class="date-col">0913</td><td>以、巴正式簽署奧斯陸和平協議，以色列正式承認巴解為巴勒斯坦人民的代表，而巴解也承認以色列人的生存權。</td></tr>
+                        <tr><td>1994</td><td class="date-col">0225</td><td>易卜拉欣大慘案</td></tr>
+                        <tr><td></td><td class="date-col">0700</td><td>阿拉法特返回巴勒斯坦，在加薩建立總部。</td></tr>
+                        <tr><td></td><td class="date-col">1000</td><td>以色列政府開始建設「隔離牆」。</td></tr>
+                        <tr><td></td><td class="date-col">1026</td><td>以色列、約旦簽訂和約。</td></tr>
+                        <tr><td>1995</td><td class="date-col">0504</td><td>以色列總理拉賓(Yitzhak Rabin)和巴勒斯坦領袖阿拉法特(Yasser Arafat)在開羅簽署自治協定。</td></tr>
+                        <tr><td></td><td class="date-col">0924</td><td>在埃及塔巴簽署奧斯陸II協議。</td></tr>
+                        <tr><td></td><td class="date-col">0928</td><td>在美國華盛頓由美、俄、歐盟、約、埃、挪見證，正式簽署奧斯陸II協議。</td></tr>
+                        <tr><td></td><td class="date-col">1104</td><td>以色列總理拉賓遇刺身亡。</td></tr>
+                        <tr><td>1996</td><td class="date-col">0100</td><td>巴勒斯坦立法委員會首次選舉。</td></tr>
+                        <tr><td></td><td class="date-col">0619</td><td>內塔雅胡當選以色列總理。</td></tr>
+                        <tr><td>1997</td><td class="date-col">0925</td><td>以色列特務在約旦下毒謀刺哈瑪斯領袖馬沙爾Khaled Mashal，兩名特務被捕，約旦迫使以色列交出解藥。</td></tr>
+                        <tr><td>1999</td><td class="date-col">0500</td><td>巴拉克出任以色列總理。</td></tr>
+                        <tr><td>2000</td><td class="date-col">0500</td><td>以色列開始自黎巴嫩撤軍。</td></tr>
+                        <tr><td></td><td class="date-col">0711</td><td>美國總統柯林頓召集大衛營峰會，因難民回歸問題破裂。</td></tr>
+                        <tr><td></td><td class="date-col">0929</td><td>由於中東和平談判代表未能解決最具爭議的耶路撒冷和聖地最後地位問題，猶太教與回教皆視為聖地的耶路撒冷東城「神殿山」成為流血戰場，和平進程推遲。第二次巴勒斯坦大起義Intifada，至2007年平息。</td></tr>
+                        <tr><td>2001</td><td class="date-col">0200</td><td>夏隆當選以色列總理。</td></tr>
+                        <tr><td></td><td class="date-col">0911</td><td>美國遭恐攻，911事件。</td></tr>
+                        <tr><td>2002</td><td class="date-col">0401</td><td>以色列發動防禦盾牌行動Operation Defensive Shield ，大規模入侵西岸。</td></tr>
+                        <tr><td></td><td class="date-col">0403</td><td>西岸地區巴勒斯坦傑寧難民營遭以軍屠殺。</td></tr>
+                        <tr><td></td><td class="date-col">0409</td><td>以色列攻擊西岸哲寧難民營，50多名巴勒斯坦人和23名以色列士兵喪生。</td></tr>
+                        <tr><td></td><td class="date-col">0624</td><td>美國總統小布希提出「和平路線圖」。</td></tr>
+                        <tr><td></td><td class="date-col">0900</td><td>以色列圍困阿拉法特</td></tr>
+                        <tr><td>2003</td><td class="date-col">0320</td><td>美國入侵伊拉克。阿巴斯就任巴勒斯坦自治政府總理。</td></tr>
+                        <tr><td></td><td class="date-col">0604</td><td>美國總統小布希(George W. Bush)、以色列總理夏隆(Ariel Sharon)以及巴勒斯坦總理阿巴斯(Mahmud Abbas)在埃及開羅舉行高峰會，推出和平路線圖，將協助巴勒斯坦在2005年前建國。</td></tr>
+                        <tr><td>2004</td><td class="date-col">0417</td><td>哈瑪斯領導人蘭提西（Abdul Aziz al-Rantissi）遭到暗殺。</td></tr>
+                        <tr><td></td><td class="date-col">1026</td><td>以色列國會通過總理夏隆所擬撤廢加薩走廊全部屯墾區和約旦河西岸4個屯墾區的方案。這是以國國會有史以來首次批准撤廢猶太屯墾區，將使以色列撤出巴勒斯坦領土，結束1967年中東戰爭中占領的部分土地。</td></tr>
+                        <tr><td></td><td class="date-col">1111</td><td>阿拉法特亡，死因有爭議。</td></tr>
+                        <tr><td>2005</td><td class="date-col">0109</td><td>阿巴斯擔任巴勒斯坦自治政府總統。</td></tr>
+                        <tr><td></td><td class="date-col">0208</td><td>在中東高峰會上，以色列總理夏隆和巴勒斯坦自治政府主席阿巴斯宣布雙方停止暴力相向，結束以巴4年多來的流血衝突，使停滯4年的中東和談重回正軌。</td></tr>
+                        <tr><td></td><td class="date-col">0709</td><td>Boycott, Divestment and Sanctions，縮寫為BDS︰抵制、撤資、制裁，運動興起。</td></tr>
+                        <tr><td></td><td class="date-col">0815</td><td>以色列開始自加薩走廊撤出屯墾戶和軍隊。</td></tr>
+                        <tr><td></td><td class="date-col">0900</td><td>中旬以色列完成撤出加薩，但仍控制加薩邊界及領空、領海，仍然是佔領。</td></tr>
+                        <tr><td>2006</td><td class="date-col">0125</td><td>巴勒斯坦立法選舉，哈馬斯獲得44.45%的選票，贏得了巴勒斯坦立法委員會132個議席中的74個議席，而法塔赫獲得41.43%的選票，贏得45個議席。</td></tr>
+                        <tr><td></td><td class="date-col">0628</td><td>以色列為了報復一名以國士兵在加薩走廊遭巴勒斯坦戰鬥分子綁架，大規模攻擊加薩走廊。這是以方2005年撤出加薩走廊與約旦河西岸屯墾區以來，首度陸空兩路夾擊加薩地區。</td></tr>
+                        <tr><td></td><td class="date-col">0700</td><td>中旬，黎巴嫩真主黨配合哈瑪斯對以色列北部發動攻擊，八月結束。</td></tr>
+                        <tr><td></td><td class="date-col">1125</td><td>巴勒斯坦與以色列達成停火共識(26日生效)，但巴勒斯坦民兵團體拒絕接受。</td></tr>
+                        <tr><td>2007</td><td class="date-col">0424</td><td>加薩走廊的巴勒斯坦武裝份子對以色列發射了數十發火箭和迫擊砲，哈瑪斯隨後承認攻擊，這項行動等於是破壞了2006.11.26以色列與巴勒斯坦在加薩走廊停火的決定，此後雙方武裝攻擊不斷。</td></tr>
+                        <tr><td></td><td class="date-col">0617</td><td>巴勒斯坦內訌，由法塔掌控約旦河西岸，哈瑪斯掌控加薩走廊。以色列保證加強支持溫和派的巴勒斯坦自治政府主席阿巴斯，並考慮出兵加薩鎮壓哈瑪斯。</td></tr>
+                        <tr><td></td><td class="date-col">0718</td><td>法國與巴勒斯坦當局簽署了一項預算經援協定，法國將提撥1,500萬歐元資助巴勒斯坦。</td></tr>
+                        <tr><td></td><td class="date-col">0720</td><td>為了展示對巴勒斯坦自治政府主席阿巴斯的支持，以色列釋放255名巴勒斯坦囚犯，是2年來釋放人數最多的一次。</td></tr>
+                        <tr><td></td><td class="date-col">0919</td><td>以色列宣布，將巴勒斯坦激進組織哈瑪斯掌控的加薩走廊列為「敵對實體」，將減少對加薩走廊的燃油、電力供應，並限制基本民生物資輸往當地，以報復巴勒斯坦民兵利用火箭攻擊以色列領土。</td></tr>
+                        <tr><td></td><td class="date-col">1010</td><td>巴勒斯坦民族權力機構主席阿巴斯首次提出巴方希望未來建立的獨立國家的具體面積，他說，巴勒斯坦人希望在約旦河西岸和加薩地帶共計6,205平方公里的領土上建立一個獨立國家。</td></tr>
+                        <tr><td></td><td class="date-col">1127</td><td>美國召集的中東和平會議在華府近郊的安納波里斯市舉行，以色列與巴勒斯坦代表達成共識並發表聯合聲明，目標是2008年底之前達成和平方案。但長久以來阻礙雙方和平進程的關鍵問題，包括約旦河西岸屯墾區、巴勒斯坦建國疆界等，都沒有實質進展。</td></tr>
+                        <tr><td></td><td class="date-col">1203</td><td>繼在美國安納波里斯舉行的和會重啟中東和平進程後，以色列釋放429名巴勒斯坦囚犯。這是自哈瑪斯組織6月中旬佔領加薩走廊後，以色列第三次釋放巴勒斯坦囚犯，目的在拉抬與哈瑪斯對峙的阿巴斯的聲勢。以色列政府曾於2007年7月和10月相繼釋放255名和87名被關押的巴勒斯坦人。</td></tr>
+                        <tr><td>2008</td><td class="date-col">0109-11</td><td>布希訪以色列，訪問期間，分別會晤了以色列總理歐梅特、巴勒斯坦自治政府主席阿巴斯，並要求以巴雙方盡量在和平談判上努力。但在他離開不久，以色列就對加薩走廊展開陸空攻擊，一週內至少殺死了30名巴勒斯坦人。</td></tr>
+                        <tr><td></td><td class="date-col">0301-02</td><td>以色列部隊1日與2日在加薩走廊實施陸、空攻擊，掃蕩巴勒斯坦武裝分子，總計造成116名巴勒斯坦人喪生。巴勒斯坦自治政府主席阿巴斯暫時中止與以國之間的和談及各種接觸。</td></tr>
+                        <tr><td></td><td class="date-col">0305</td><td>美國國務卿賴斯表示，儘管以色列和巴勒斯坦對以軍持續在加薩的軍事攻擊有歧見，她已獲以巴雙方承諾將恢復和平談判。</td></tr>
+                        <tr><td></td><td class="date-col">0416</td><td>3名以色列士兵在巡邏加薩走廊邊界時，懷疑巴勒斯坦武裝成員準備入侵邊境制止時，遭巴勒斯坦武裝份子伏擊，2名以色列士兵當場被擊斃，1人送醫後不治死亡，以色列隨後反擊，至少有12名巴勒斯坦人死亡。</td></tr>
+                        <tr><td></td><td class="date-col">0617</td><td>以色列與加薩的巴勒斯坦強硬派團體同意，雙方從19日起實施第一階段停火。這次停火是在埃及協調下達成。哈瑪斯領導人說，加薩地帶停火將持續6個月。</td></tr>
+                        <tr><td></td><td class="date-col">0916</td><td></td></tr>
+                        <tr><td></td><td class="date-col">1219</td><td>埃及居間斡旋並於6月促成的以巴停火協議19日期滿後，以色列加強對140萬名巴勒斯坦人居住的加薩圍城，僅偶爾開放人道補給物資進入加薩。</td></tr>
+                        <tr><td></td><td class="date-col">1227</td><td>以色列因邊城頻遭來自加薩走廊的火箭攻擊，27日出重手還擊，瞄準哈瑪斯組織安全機構在加薩的數十個建築與基地，展開空襲，24小時內造成近300名巴勒斯坦人罹難，逾700人受傷，28日並揚言對加薩走廊發動後續地面攻勢。哈瑪斯則以火箭攻擊以國南部地區。巴勒斯坦宣布停止和談。</td></tr>
+                        <tr><td>2009</td><td class="date-col">0108</td><td>聯合國安理會8日以14票贊成、美國棄權的表決結果通過決議案，呼籲以色列與哈瑪斯立即停火。以國表示，以軍將持續以實際行動保護國民的安全。哈瑪斯表示對停火「不感興趣」，因為哈瑪斯未獲諮詢。次日清晨，雙方戰火卻依然猛烈。</td></tr>
+                        <tr><td></td><td class="date-col">0118</td><td>以國18日宣布片面停火後，哈瑪斯跟進並宣布停火一星期。</td></tr>
+                        <tr><td>2010</td><td class="date-col">0531</td><td>自由艦隊上9名土耳其人被以色列殺害。</td></tr>
+                        <tr><td></td><td class="date-col">1200</td><td>突尼斯阿拉伯之春爆發，影響整個中東。</td></tr>
+                        <tr><td>2012</td><td class="date-col">1129</td><td>聯合國升級巴勒斯坦為「具有觀察員地位之非成員國」。</td></tr>
+                        <tr><td>2014</td><td class="date-col">0708</td><td>以色列Operation Protective Edge對哈瑪斯軍事入侵，釀成巴勒斯坦平民死傷慘重。</td></tr>
+                        <tr><td></td><td class="date-col">0827</td><td>以色列與哈瑪斯達成停火協議。</td></tr>
+                        <tr><td>2015</td><td class="date-col">1011</td><td>以色列對加薩走廊邊界參與示威遊行的巴勒斯坦人爆發一連串衝突，造成6人死亡和50多人受傷。</td></tr>
+                        <tr><td>2016</td><td class="date-col">1223</td><td>聯合國安理會通過2334號決議（14比0），譴責以色列的定居活動「公然違反」國際法，並且沒有法律效力。決議要求以色列馬上停止這種活動並履行日內瓦第四公約中規定的占領國所負義務。</td></tr>
+                        <tr><td>2018</td><td class="date-col">0514</td><td>美國駐以色列耶路撒冷大使館開幕，加薩走廊爆發新一輪示威反對美國和以色列，以色列警方開槍鎮壓示威，超過50人死亡、至少2,000人受傷。巴勒斯坦人稱之為「大屠殺」。</td></tr>
+                        <tr><td></td><td class="date-col">1201</td><td>以色列軍人進入拉姆安拉打傷27名巴勒斯坦人。</td></tr>
+                        <tr><td>2019</td><td class="date-col">0503</td><td>加薩-以色列邊境的每周抗議活動使衝突再起，至0506停火協議生效。</td></tr>
+                        <tr><td>2021</td><td class="date-col">0507</td><td>以色列最高法院準備審理驅逐東耶路撒冷謝赫傑拉區巴勒斯坦人出住處一案，以色列警方以防疫為理由，限制巴勒斯坦民衆齋月期間前往聖殿山祈禱，以色列部隊衝入阿克薩清真寺導致衝突升級。</td></tr>
+                        <tr><td>2022</td><td class="date-col">0805</td><td>以色列對加薩走廊的武裝分子和基礎設施空襲。</td></tr>
+                        <tr><td>2023</td><td class="date-col">0126</td><td>以色列軍方在傑寧市與巴勒斯坦武裝分子發生衝突，導致至少9名巴勒斯坦人死亡、20人受傷，9名死者中包括1名年長婦女和8名男性。</td></tr>
+                        <tr><td></td><td class="date-col">0222</td><td>以色列對納布盧斯發動突襲，造成11人死亡。</td></tr>
+                        <tr><td></td><td class="date-col">0307</td><td>以軍進入約旦河西岸傑寧難民營搜捕，期間與巴勒斯坦人發生衝突，導致6名巴勒斯坦人被以軍擊斃，0309有3名巴勒斯坦人在傑寧被以色列軍人打死。0406以色列軍隊對加薩走廊發動空襲。</td></tr>
+                        <tr><td></td><td class="date-col">0509</td><td>以色列空襲對加薩走廊</td></tr>
+                        <tr><td></td><td class="date-col">1007</td><td>巴勒斯坦武裝組織哈瑪斯由加薩走廊發動代號「阿克薩洪水」的軍事行動，</td></tr><!-- （請接續您原本完整的資料） -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                資料來源：大事紀2024.xlsx · 時間 / 日期 / 摘要 三欄對應
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown(id) {
+            var card = document.getElementById(id);
+            if (!card) return;
+            card.classList.toggle('open');
+        }
+
+        function openTimelineModal() {
+            var modal = document.getElementById('timelineModal');
+            if (modal) modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTimelineModal() {
+            var modal = document.getElementById('timelineModal');
+            if (modal) modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('timelineModal').addEventListener('click', function(e) {
+            if (e.target === this) closeTimelineModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeTimelineModal();
+        });
+
+        document.addEventListener('click', function(event) {
+            var isDropdownHeader = event.target.closest('.dropdown-header');
+            var isInsideDropdownContent = event.target.closest('.dropdown-content');
+            if (isDropdownHeader || isInsideDropdownContent) return;
+            var openCards = document.querySelectorAll('.dropdown-card.open');
+            for (var i = 0; i < openCards.length; i++) {
+                openCards[i].classList.remove('open');
+            }
+        });
+    </script>
+
+    <script src="back-to-top.js"></script>
+</body>
+</html>

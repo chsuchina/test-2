@@ -1,0 +1,4 @@
+更新大事紀：直接編輯 <tbody> 內的 <tr> 列，每列格式為：
+
+<tr><td>年份</td><td class="date-col">日期代碼</td><td>摘要文字</td></tr>
+

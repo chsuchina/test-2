@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>猶太復國主義：部落主義還是自由主義？ · 巴勒斯坦問題</title>
+
+    <link rel="stylesheet" href="site-menu.css">
+    <link rel="stylesheet" href="back-to-top.css">
+
+    <style>
+        :root {
+            --page-bg: #c0c0c0;
+            --card-bg: #d1d1d1;
+            --panel-bg: #ebebeb;
+            --border-soft: #dcdcdc;
+            --text-main: #2c3e50;
+            --text-soft: #5b6f82;
+            --brand: #1e3a5f;
+            --brand-hover: #2b4b73;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background: var(--page-bg);
+            color: var(--text-main);
+            line-height: 1.95;
+            padding: 0 16px 40px;
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            padding: 32px 28px 40px;
+            margin-top: 24px;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            color: var(--brand);
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .sub {
+            text-align: center;
+            color: var(--text-soft);
+            font-size: 0.9rem;
+            margin-bottom: 28px;
+            border-bottom: 1px solid var(--border-soft);
+            padding-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .content p {
+            font-size: 0.98rem;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            text-align: justify;
+            line-height: 1.95;
+        }
+
+        .content p:last-child { margin-bottom: 0; }
+
+        /* 引言框 */
+        .quote {
+            background: var(--panel-bg);
+            border-left: 5px solid var(--brand);
+            padding: 16px 22px;
+            border-radius: 12px;
+            font-size: 1rem;
+            color: #3a4a5a;
+            margin: 20px 0;
+            line-height: 1.9;
+            font-style: italic;
+        }
+
+        /* 強調 */
+        .content strong { font-weight: 700; color: var(--brand); }
+        .content em { font-style: italic; }
+
+        /* 連結樣式 */
+        .content a {
+            color: var(--brand);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.15s;
+            font-weight: 500;
+        }
+
+        .content a:hover {
+            color: var(--brand-hover);
+            text-decoration-thickness: 2px;
+        }
+
+        /* 小標題 */
+        .content h2 {
+            font-size: 1.15rem;
+            color: var(--brand);
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 14px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--border-soft);
+            line-height: 1.5;
+        }
+
+        /* 分隔線 */
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border-soft);
+            margin: 32px 0;
+        }
+
+        /* 作者署名 */
+        .author {
+            text-align: right;
+            font-weight: 700;
+            color: var(--brand);
+            font-size: 1rem;
+            margin-top: 24px;
+            letter-spacing: 1px;
+        }
+
+        /* 詩作區 */
+        .poem {
+            background: var(--panel-bg);
+            border-left: 5px solid var(--brand);
+            border-radius: 12px;
+            padding: 18px 24px;
+            margin: 20px 0;
+            font-size: 1rem;
+            color: #3a4a5a;
+            line-height: 2;
+        }
+
+        .poem h3 {
+            font-size: 1rem;
+            color: var(--brand);
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .poem p {
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: 0.98rem;
+        }
+
+        .poem p:last-child { margin-bottom: 0; }
+
+        .poem .poem-author {
+            text-align: right;
+            font-style: italic;
+            color: var(--text-soft);
+            font-size: 0.9rem;
+            margin-top: 12px;
+        }
+
+        /* 出處 */
+        .source-line {
+            margin-top: 30px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border-soft);
+            font-size: 0.88rem;
+            color: var(--text-soft);
+            line-height: 1.8;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 0.82rem;
+            color: #8a9aa8;
+            border-top: 1px solid var(--border-soft);
+            padding-top: 18px;
+        }
+
+        @media (max-width: 600px) {
+            .wrap { padding: 20px 16px 28px; border-radius: 18px; }
+            h1 { font-size: 1.25rem; letter-spacing: 0; }
+            .content p { font-size: 0.93rem; }
+            .quote { font-size: 0.95rem; padding: 14px 16px; }
+            .content h2 { font-size: 1.05rem; }
+            .poem { padding: 14px 16px; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>猶太復國主義：部落主義還是自由主義？</h1>
+        <div class="sub">
+            這篇文章題為《猶太復國主義：部落主義還是自由主義？》（Zionism: Tribalism or Liberalism?），<br>
+            由莫里斯·科恩（Morris R. Cohen）撰寫，發表於 1919 年 3 月 8 日的《新共和》（The New Republic）雜誌。
+        </div>
+
+        <div class="content">
+
+            <p>在涉及種族和宗教的問題上，科學知識顯得極其貧乏，而人們的信念卻格外強烈，這甚至超過了政治領域。但關於猶太復國主義的討論還面臨一個額外的困難：人們難以進行清晰且誠實的思考，因為真正的直言不諱幾乎是不可能的。一段漫長的掙扎與苦難史在以色列（猶太民族）的身體上留下了許多脆弱且敏感的傷口，以至於思想開明的非猶太人覺得必須保持極度的謹慎，以免觸碰到這些痛處。而猶太人，無論多麼開明，也無法完全克服傳統態度所帶來的影響，這種傳統將群體忠誠置於對簡單真理的追求之上，並認為在世仇面前說真話是最大的罪孽。自尊的猶太人也無法不對某些言論保持警惕，以免被誤認作是那些為了生計利益而背棄猶太群體、卑躬屈膝的小人。因此，對猶太復國主義的討論在很大程度上留給了那些對自身正義事業的熱情遠勝於對論證嚴謹性追求的人。在正常時期，人類依靠其深沉的慣性和任何狂熱團體遲早會引發的強烈抵制，從而免受這些狂熱愛好者的喧囂所擾；因此，那些關心公正真理的人通常可以滿懷信心地等待一個合適的時機，讓理性的微弱聲音能夠被聽見。但在這些非正常的日子裡，當少數但極其高調的團體被誤認為是廣大群眾，並造成不可彌補的傷害時，人們無法等待緩慢的時間帶來令人沮喪的反駁。</p>
+
+            <p>在數百萬猶太人正處於飢餓、失去恢復人類生活機會的時刻，如果有人反對為無家可歸的猶太人——無論是在巴勒斯坦還是其他任何地方——建立一個受法律保護的家園，那將是極其冷酷無情的。但猶太復國主義不僅僅是一場幫助無家可歸者的慈善運動。它聲稱是猶太人問題的解決方案；它對巴勒斯坦的強調基於一種民族主義哲學，這對所有仍然相信自由主義的人構成了直接挑戰。</p>
+
+            <p>像所有實際的人類運動一樣，猶太復國主義植根於各種複雜的動機，從理想主義和宗教信仰到挫折感帶來的個人和社會野心。因此，它像其他運動一樣，受到多樣化且往往相互矛盾的論點的支持。有人說，讓我們回到巴勒斯坦，否則猶太教將會消失；而阿哈德·哈姆（Ahad Ha'am）的一些追隨者則說，讓我們回到巴勒斯坦，因為唯有在那裡，我們才能成為不可知論者，而不必向非猶太人道歉。還有人爭辯說，猶太人是一個具有特殊天賦的東方民族，只有在巴勒斯坦才能發展他們獨特的天賦。相反，其他人則熱情地否認這種特殊性，斷言正是因為猶太人與其他人一樣，他們應該像其他人一樣擁有自己的土地。然而，在所有相互衝突的觀點和論點背後，將所有猶太復國主義者團結在一起的是一種共同的反感，即反對同化政策。該政策主張猶太人和非猶太人的救贖取決於被稱為啟蒙運動的緩慢進程的發展。</p>
+
+            <p>斯賓諾莎（Spinoza）明確闡述了同化政策，他指出，猶太人與其他群體一樣，被共同苦難的紐帶聯繫在一起；隨著各國變得開明並取消對猶太人的限制，猶太人將採用西方文明的習慣，問題從而得到解決。由於直到十八世紀末才開始取消針對猶太人的傳統限制，直到十九世紀，大量猶太人才開始採用西方文明的習慣，並信奉作為其智力基礎的理性自由主義信仰。但是，由於針對猶太人的限制在任何地方都未被完全消除——例如在我們大學俱樂部中形成的、被視為開明的公民對猶太人的社會限制——這使得知識分子猶太人特別容易受到神秘和浪漫民族主義的影響。這種民族主義始於德國，是對法國大革命自由主義的反應，也是對推翻中世紀主義的、對世界主義理性與啟蒙力量的舊信仰的反應。在一個我們大多數人經常遭受拒絕羞辱的世界裡，猶太人（他們無疑比其他人遭受了更多）從他們遭拒絕不是因為個人失敗，而是因為他們的血統這一信念中尋求安慰，這有什麼比這更自然的呢？這種對種族意識的持續強調，因近年來暴力引發的日益嚴重的迫害而悲劇性地加劇，從而導致新解放的猶太人採用了非常流行的種族歷史哲學，例如在條頓一方，張伯倫（Chamberlain）的《十九世紀的基礎》（Foundations of the Nineteenth Century）；或者在俄羅斯一方，像卡特科夫（Katkoff）這樣的斯拉夫主義者。猶太復國主義者從根本上接受了這些反猶主義者的種族意識形態，但得出了不同的結論。與其說是條頓人，不如說是猶太人是純潔和優秀的種族。各種美德，對家庭的愛，理想主義等，都是其精神的特徵。只有在巴勒斯坦，這種精神才能紮根，只有在希伯來語中才能得到充分表達。</p>
+
+            <p>如果我們不是在處理這種具有悲劇強度的廣泛信仰，以及一種人類心靈無法否認其同情的事業，那麼所有支持這一點的民族學、歷史和語言學證據的科學充分性將是不值一提的。然而，這些信仰是根本錯誤的，並且對自由或人文主義文明具有深刻的敵意。歷史，尤其是猶太歷史表明，任何文明民族對種族純潔性的要求都是完全虛構的。它通常由祭司和其他剝削群體提出，並且當被廣泛追隨時，總是導致狹隘，有時甚至是墮落。沒有一個偉大的文明不是通過一個在宗教、語言、法律和禮儀上自由借鑒他人的混合民族所實現的。當猶太人創作了大部分聖經文學時，他們就是這樣一個民族；當他們離開巴勒斯坦並與其他民族融合時，他們無疑增加了對文明的貢獻，正如斐洛（Philo）、斯賓諾莎、海涅（Heine）、卡爾·馬克思（Karl Marx）、埃爾利希博士（Dr. Ehrlich）、安蒂科爾斯基（Antikolski）、柏格森（Bergson）和弗萊克斯納（Flexner）的名字所表明的那樣。法國人是否因為放棄了本土的凱爾特語而改用羅馬征服者的語言就阻礙了他們的文明發展？只有像吉爾克（Gierke）那樣的德國學究才會建議一個現代歐洲民族放棄羅馬法，因為那是從外部強加的且並非源於民族精神。</p>
+
+            <p>儘管美國大多數猶太復國主義領袖真誠而深刻地堅信猶太復國主義與美國主義的兼容性，但他們無疑是深刻地錯誤了。民族主義的猶太復國主義要求的不是猶太人的完全個人自由，而是群體自治。在實踐中，這意味著什麼可以從最近《猶太紀事報》（Jewish Chronicle）的一篇社論中看出，該社論否認阿德勒教授（Professor Adler）或任何出生為猶太人的人遵循良知並放棄猶太教的權利。事實上，一個猶太巴勒斯坦若允許完全的宗教自由、跨種族通婚和自由的非猶太移民，而不會很快失去其存在理由？一個民族性的猶太巴勒斯坦必然意味著一個建立在獨特種族、部落宗教和對獨特土地的神秘信仰之上的國家，而自由的美國主張政教分離、種族的自由融合，以及人們可以改變居住地和語言並仍然推進文明進程的事實。認為巴勒斯坦的猶太人將比美國的猶太人更有利於為文明做出貢獻，這與所有人類經驗相悖。巴勒斯坦提供的每一個機會，在美國都能以更大程度地實現。即使是耶路撒冷猶太大學，也無法提供任何學生不能在我們的美國大學中同樣好地、甚至更好地修讀的課程。然而，事實是，美國的自由理想正是猶太復國主義者最恐懼的。歸根結底，他們沒有信心在完全的寬容和充分的自由下，猶太教能夠在公開領域站穩腳跟；因此，在更坦率的猶太復國主義者中出現了一種訴求，即「美國主義是我們最大的危險」。</p>
+
+            <p>猶太復國主義者總是以理想主義者自居，並認為大多數拒絕接受其呼籲的猶太人是唯物主義者。「理想主義」一詞掩蓋了許多罪惡，其中之一就是不願面對現實中的困難問題，轉而逃避到虛幻的夢想中。（順帶一提，理想主義的猶太復國主義者非常樂意忽視巴勒斯坦非猶太人口的權利，這與那些自認為擁有優越文化的條頓理想主義者如出一轍。）在所有國家中，實際的猶太人問題是一個適應問題，即某個歷史群體的成員如何學會與其他居民和平相處並進行互利的交流。由於每年能安置在巴勒斯坦的猶太人數量遠遠少於美國、俄羅斯、波蘭或奧地利等國猶太人口的年度自然增長，因此，猶太人問題必須在每個國家分別解決。在巴勒斯坦建立一個小型的政治自治猶太社區，如何能幫助更龐大的美國猶太群體在偉大的共和國中恰當地發揮作用？假設巴勒斯坦的猶太人必然會處於更高的精神層次，並成為美國猶太人的靈感來源，這種想法就像認為一個獨立的賴比瑞亞會提升美國黑人的地位一樣荒謬。事實上，幾乎沒有什麼支持巴勒斯坦的論點在賴比瑞亞問題上找不到對應的說法。</p>
+
+            <p>美國猶太復國主義的一位偉大領袖——我非常敬重的一位人士——曾說：「啟蒙政策失敗了。像法國、德國和英國這樣的開明國家並沒有解決猶太人問題。我們必須嘗試在巴勒斯坦自行解決。」在我看來，這是一個既簡單又深刻的錯誤。啟蒙運動並不是任何國家都已經完美實現的東西，但誠然，各國變得越開明，猶太人的處境就越得到改善。啟蒙運動是一個痛苦而緩慢的過程，就像從土地中贏取日常麵包一樣痛苦；因此，我們脆弱的人性總是樂於聽信某種浪漫的暴富方案，以達到一個我們所有人都能從此幸福生活的人間天堂。這種方案的一個常見手段就是試圖復興一個所謂的輝煌過去。但是，即使巴勒斯坦的歷史是輝煌的——閱讀《列王紀》或約瑟夫斯（Josephus）的著作就會發現事實並非如此——巴勒斯坦的榮耀也無法與美國可能擁有的榮耀相比。如果歷史有什麼教訓，那就是從來沒有人通過試圖復興一個死去的過去而成就偉業。偉大的成就不是通過模仿過去來實現的，而是通過果斷地面對我們面前實際的、明確的問題來實現的；對於那些面對猶太人融入美國生活這一實際問題的人來說，猶太復國主義是一個干擾，而不是答案。</p>
+
+            <p>然而，生活有其獨特的諷刺意味，如果沒有帶來任何好處，那將是一股異常邪惡的風。儘管猶太復國主義強調部落忠誠，但它通過給予問題一個更公正的背景，釐清了猶太人的問題。舊的同化理想已經退化為盲目模仿外邦人方式的理想。然而，顯然，猶太人無法通過單純的模仿或接受來為美國文明做出任何貢獻。猶太復國主義提供了增加人們自尊的至高貢獻，並幫助人們意識到，他們必須準備好貢獻自己的過去經驗以及接受外來的東西。為了這一點，美國的民權和政治自由理想仍然提供了一個公平的領域。</p>
+
+            <p>自由主義是美國的傳統政策，是我們從十八世紀哲學中繼承下來的遺產，這種哲學通過兩次革命表現出來。但正因為它是一種傳統，它很容易陷入荒廢，並淪為空洞的口頭崇拜。近期事件的壓力大聲疾呼，需要對個人自由和啟蒙運動有新的信仰。自由啟蒙的理想是一個艱難的理想。通往它的進步是痛苦的，而且絕非必然。隨著羅馬帝國的衰落，文明遭受了可怕的挫折；由於這次戰爭以及小民族主義思想的加劇，歐洲和世界上很大一部分地區很可能被巴爾幹化，也就是說，像在黑暗時代那樣組織在部落基礎上，這絕非不可能。但是，無論部落主義是否得勝，它仍然是邪惡的，有思想的人應該拒絕它。</p>
+
+            <div class="author">莫里斯·科恩 (MORRIS R. COHEN)</div>
+
+            <div class="source-line">
+                <p><span class="text-dark">原文出處：The New Republic, March 8, 1919, Vol. XI, No. 140</span></p>
+            </div>
+
+        </div>
+
+        <div class="footer-note">
+           Copyright 版權所有©2026 CHSU 巴勒斯坦問題資訊站 · 猶太復國主義：部落主義還是自由主義？
+        </div>
+    </div>
+
+    <script src="site-menu.js"></script>
+    <script src="back-to-top.js"></script>
+</body>
+</html>

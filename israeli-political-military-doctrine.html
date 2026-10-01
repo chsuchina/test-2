@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>以色列政治軍事思想摘要 · 巴勒斯坦問題</title>
+
+    <link rel="stylesheet" href="site-menu.css">
+    <link rel="stylesheet" href="back-to-top.css">
+
+    <style>
+        :root {
+            --page-bg: #c0c0c0;
+            --card-bg: #d1d1d1;
+            --panel-bg: #ebebeb;
+            --border-soft: #dcdcdc;
+            --text-main: #2c3e50;
+            --text-soft: #5b6f82;
+            --brand: #1e3a5f;
+            --brand-hover: #2b4b73;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background: var(--page-bg);
+            color: var(--text-main);
+            line-height: 1.95;
+            padding: 0 16px 40px;
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            padding: 32px 28px 40px;
+            margin-top: 24px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+            color: var(--brand);
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .author-top {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--brand);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .sub {
+            text-align: center;
+            color: var(--text-soft);
+            font-size: 0.9rem;
+            margin-bottom: 28px;
+            border-bottom: 1px solid var(--border-soft);
+            padding-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .content p {
+            font-size: 0.98rem;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            text-align: justify;
+            line-height: 1.95;
+        }
+
+        .content p:last-child { margin-bottom: 0; }
+
+        /* 引言框（提要、譯文前言） */
+        .quote {
+            background: var(--panel-bg);
+            border-left: 5px solid var(--brand);
+            padding: 16px 22px;
+            border-radius: 12px;
+            font-size: 0.96rem;
+            color: #3a4a5a;
+            margin: 20px 0;
+            line-height: 1.9;
+        }
+
+        .quote p { margin-bottom: 10px; }
+        .quote p:last-child { margin-bottom: 0; }
+
+        /* 大標題（甲、乙、丙） */
+        .content h2 {
+            font-size: 1.2rem;
+            color: var(--brand);
+            font-weight: 700;
+            margin-top: 38px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-soft);
+            line-height: 1.5;
+        }
+
+        /* 條列式編號段落（一、二、三...） */
+        .item {
+            background: var(--panel-bg);
+            border-left: 4px solid var(--brand);
+            border-radius: 10px;
+            padding: 14px 20px;
+            margin-bottom: 14px;
+            font-size: 0.96rem;
+            line-height: 1.95;
+            color: #3a4a5a;
+        }
+
+        .item .num {
+            font-weight: 700;
+            color: var(--brand);
+            margin-right: 4px;
+        }
+
+        /* 子條列（1、2、3...） */
+        .sub-item {
+            margin-left: 22px;
+            padding-left: 14px;
+            border-left: 2px solid var(--border-soft);
+            margin-bottom: 8px;
+            font-size: 0.94rem;
+            color: #3a4a5a;
+            line-height: 1.9;
+        }
+
+        /* 強調 */
+        .content strong { font-weight: 700; color: var(--brand); }
+        .content em { font-style: italic; }
+        .content u { text-decoration: underline; text-underline-offset: 3px; }
+
+        /* 分隔線 */
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border-soft);
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .divider::before {
+            content: '...';
+            display: block;
+            color: var(--text-soft);
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            margin-top: -14px;
+            background: var(--card-bg);
+            width: 60px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 0.82rem;
+            color: #8a9aa8;
+            border-top: 1px solid var(--border-soft);
+            padding-top: 18px;
+        }
+
+        @media (max-width: 600px) {
+            .wrap { padding: 20px 16px 28px; border-radius: 18px; }
+            h1 { font-size: 1.25rem; letter-spacing: 0; }
+            .author-top { font-size: 0.9rem; }
+            .content p { font-size: 0.93rem; }
+            .content h2 { font-size: 1.08rem; }
+            .item { padding: 12px 16px; font-size: 0.92rem; }
+            .sub-item { margin-left: 14px; padding-left: 10px; font-size: 0.9rem; }
+            .quote { font-size: 0.92rem; padding: 14px 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>以色列政治軍事思想摘要</h1>
+        <div class="author-top">Summary of the Israeli Political-Military Doctrine</div>
+        <div class="sub">
+            作者：Michael I. Handel<br>
+            取材："Israel's Political-Military Doctrine." Published by the Center for International Affairs, Harvard University.
+        </div>
+
+        <div class="content">
+
+            <div class="quote">
+                <p><strong>提要：</strong>作者為以色列人，一九六七年畢業於耶路撒冷希伯萊大學，後赴美國進修。一九七三年六月出版《以色列的國防思想》一書，探討以色列自一九四七年建國至一九七三年以前，國防思想的發展。本譯文即該書之一章，為全書之主旨，將以色列一九七三年以前的政略、戰略、戰術，分項條列明示。</p>
+            </div>
+
+            <p style="text-align:center; color:var(--text-soft); letter-spacing:4px; margin:20px 0;">...</p>
+
+            <h2 style="text-align:center; border:none; margin-top:0;">譯文</h2>
+
+            <p>本大綱摘要，僅包括以色列國防思想之特點，一般原則，例如，集中、節約，均省略不表。</p>
+
+            <!-- ===== 甲、政略 ===== -->
+            <h2>甲、政略</h2>
+
+            <div class="item">
+                <span class="num">一、</span>以色列國防思想的基本假定：阿拉伯國家在騷擾以色列的平靜生活時，衷心目標在摧毀以色列，只待它們感到有能力實現。
+            </div>
+
+            <div class="item">
+                <span class="num">二、</span>和平固為渴望的，但是安全更為重要；任何和解若會危及以色列的安全即無法接受。
+            </div>
+
+            <div class="item">
+                <span class="num">三、</span>就軍事而言，以色列是孤立的，政治方面孤立的程度則較軍事為輕；它不是任何政治或軍事聯盟的成員，因此，基本上必須完全依賴自己的力量面對危機。
+            </div>
+
+            <div class="item">
+                <span class="num">四、</span>在面對迫近的戰爭時，以色列應該試圖獲得至少一個強權的支持；至不利也應有一個（或多個）強權的諒解及同情，藉此平衡其他強權為敵方而干預的潛在威脅。和平時期，為了確保採購無法自行製造的武器，以色列亟盼至少一個強權的友誼。
+            </div>
+
+            <div class="item">
+                <span class="num">五、</span>下列鄰國境內或鄰國本身的潛在發展，以色列視為開戰理由：
+                <div class="sub-item">1、阿拉伯軍隊威脅性集結於以色列任一國境（尤其當阿拉伯鄰國締結新的軍事同盟，對付以色列時）。</div>
+                <div class="sub-item">2、狄倫海峽（譯註：阿卡巴灣出紅海的通道）或任何直接到以色列的海、空途徑，遭到封鎖。</div>
+                <div class="sub-item">3、由阿拉伯人引起，使人無法忍受的游擊活動及任何其他形式強化的準戰爭軍事行動，無法以報復政策遏阻時。</div>
+                <div class="sub-item">4、當一個比約旦或黎巴嫩更強大的阿拉伯國家，企圖控制這兩國或改變以色列東部或北部邊境之均勢時。</div>
+                <div class="sub-item">5、由於阿拉伯國家獲得足以破壞均勢的武器供應，而以色列卻沒有獲得足以抗衡的供應，造成其安全嚴重損害的狀況。</div>
+                <div class="sub-item">6、任何阿拉伯鄰國對約旦河改道的片面企圖，在早期是開戰理由，現在則已無關緊要。</div>
+                <p style="margin-top:10px; margin-bottom:0;">任何上述開戰理由，並非一引起就導致自動的或反射式的反應；明確的說，根據一般的發展及此政略的其他因素，每一狀況都可能有臨時的決策。</p>
+            </div>
+
+            <div class="item">
+                <span class="num">六、</span>以色列已明白宣示，每一個阿拉伯國家，都應該為從其領土中所發動的侵略行為負責。
+            </div>
+
+            <div class="item">
+                <span class="num">七、</span>以色列將如以往一樣，盡一切可能達到軍事上自立更生；一般的武器，在成本效益考量範圍之內，由國內生產，特殊重要的武器系統，則不考慮經濟因素，仍由國內生產。
+            </div>
+
+            <div class="item">
+                <span class="num">八、</span>以色列已明白宣示，不希望與任何強權對抗，但是若遭遇強權的直接威脅或攻擊，也會還擊。
+            </div>
+
+            <div class="item">
+                <span class="num">九、</span>以色列不會首先引進核武至本地區，但是，一旦本地區其他國家獲得核武，它會保留核武這一選擇。對此問題，為改善其面對強權的交涉立場，以色列保持審慎而模糊的政策。
+            </div>
+
+            <div class="item">
+                <span class="num">十、</span>以色列是一猶太民族國家，希望繼續保持其民族特性。保護全世界各地的猶太人，以及在必要時為他們的利益發言，是其主要義務，也是其意識型態的一部份。它也希望改善與全世界猶太人社團的關係，這些社團對以色列的支持，是國外唯一持久可靠的支持泉源。
+            </div>
+
+            <!-- ===== 乙、戰略 ===== -->
+            <h2>乙、戰略</h2>
+
+            <div class="item">
+                <span class="num">一、</span>以色列國防軍（IDF）當國家安全陷於危難時，將發動先制攻擊。政治及軍事企圖是守勢，但戰略是攻勢。
+            </div>
+
+            <div class="item">
+                <span class="num">二、</span>以色列戰略鐵律之一，一旦戰爭爆發，盡速將戰事轉移至敵境內決戰。
+            </div>
+
+            <div class="item">
+                <span class="num">三、</span>以色列國防軍將盡一切可能保持主動，並掌握對其最有利之戰鬥條件。
+            </div>
+
+            <div class="item">
+                <span class="num">四、</span>由於國際環境中，強權、聯合國等之影響，一旦戰事爆發，可供軍事行動的時間，將非常短暫；因此，必須盡可能快速下達決策，完成勝利。以色列國防軍戰略原則強調速度。
+            </div>
+
+            <div class="item">
+                <span class="num">五、</span>以色列國防軍由於理解對國家安全的威脅，是持續的，因此它必須保持經常性的警戒狀態，尤其是情報部門及空軍。
+            </div>
+
+            <div class="item">
+                <span class="num">六、</span>以色列國防軍由於經濟與人口的限制，必須以後備制度為其主要武力基礎。在常備部隊保護下，必須有足夠時間動員後備軍人。後備制度，必須能在最短時間內動員。
+            </div>
+
+            <div class="item">
+                <span class="num">七、</span>以色列國防軍建軍、發展及設計其戰略時，必須按照下述假定：它也許會同時面對鄰近的阿拉伯國家，聯合的、經過協調的軍事企圖。
+            </div>
+
+            <div class="item">
+                <span class="num">八、</span>在多戰線作戰時，必須優先處理最強大的敵人。
+            </div>
+
+            <div class="item">
+                <span class="num">九、</span>戰略計畫與軍事思想奠基於間接路線原理：最少人預期的路線、細心調整手段以達到目的、彈性計畫、擾亂敵軍。以色列國防軍藉間接路線戰略，突顯其計畫作為不限於固定的原則或規律，而是思考架構。對敵軍特性研究，也相當重視。
+            </div>
+
+            <div class="item">
+                <span class="num">十、</span>以色列國防軍平時的中心目標，是在建立堅強可靠的嚇阻姿態，以防阿拉伯人錯估其實力。
+            </div>
+
+            <!-- ===== 丙、戰術 ===== -->
+            <h2>丙、戰術</h2>
+
+            <div class="item">
+                <span class="num">一、</span>戰略計畫作為准許戰場指揮官極大之自由，只要他們維持、並且達成指定之目標。戰術原則強調主動、彈性、創新，以及地區指揮官自由運用未預期之進展並改變原始之行動計畫。
+            </div>
+
+            <div class="item">
+                <span class="num">二、</span>極注意中、低階層指揮官的素質（這即說明戰術階層為何有那麼大的自由，調遣與決策）。
+            </div>
+
+            <div class="item">
+                <span class="num">三、</span>以色列國防軍強調質勝於量，企圖讓有高度訓練及士氣的人員，在操作最有效的武器系統時，發揮最大的功能。與此相關的原則是裝備保養的標準。
+            </div>
+
+            <div class="item">
+                <span class="num">四、</span>所有戰略及戰術計畫的指導原則，是希望盡一切可能減少損失及傷亡。
+            </div>
+
+        </div>
+
+        <div class="footer-note">
+           Copyright 版權所有©2026 CHSU 巴勒斯坦問題資訊站 · 以色列政治軍事思想摘要
+        </div>
+    </div>
+
+    <script src="site-menu.js"></script>
+    <script src="back-to-top.js"></script>
+</body>
+</html>

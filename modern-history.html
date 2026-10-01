@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>近代史 · 巴勒斯坦問題</title>
+
+    <link rel="stylesheet" href="site-menu.css">
+    <link rel="stylesheet" href="back-to-top.css">
+
+    <style>
+        :root {
+            --page-bg: #c0c0c0;
+            --card-bg: #d1d1d1;
+            --panel-bg: #ebebeb;
+            --border-soft: #dcdcdc;
+            --text-main: #2c3e50;
+            --text-soft: #5b6f82;
+            --brand: #1e3a5f;
+            --brand-hover: #2b4b73;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background: var(--page-bg);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding: 0 16px 40px;
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            padding: 28px 24px 36px;
+            margin-top: 24px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: var(--brand);
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .sub {
+            text-align: center;
+            color: var(--text-soft);
+            font-size: 0.9rem;
+            margin-bottom: 22px;
+            border-bottom: 1px solid var(--border-soft);
+            padding-bottom: 16px;
+        }
+
+        .toc {
+            background: var(--panel-bg);
+            border-left: 5px solid var(--brand);
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-bottom: 32px;
+        }
+
+        .toc h2 {
+            font-size: 1.05rem;
+            color: var(--brand);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .toc ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px 20px;
+        }
+
+        .toc li { margin: 0; }
+
+        .toc a {
+            display: block;
+            padding: 5px 8px;
+            border-radius: 8px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: background 0.15s, color 0.15s, padding-left 0.15s;
+        }
+
+        .toc a:hover {
+            background: var(--card-bg);
+            color: var(--brand);
+            padding-left: 14px;
+        }
+
+        .section {
+            margin-bottom: 34px;
+            scroll-margin-top: 90px;
+        }
+
+        .section h3 {
+            font-size: 1.15rem;
+            color: var(--brand);
+            font-weight: 700;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--border-soft);
+        }
+
+        .section p {
+            font-size: 0.98rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .section p:last-child { margin-bottom: 0; }
+
+        .lead { font-weight: 700; color: var(--brand); }
+
+        /* 內文連結樣式 */
+        .section p a,
+        .section .source a,
+        .quote a {
+            color: var(--brand);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.15s;
+        }
+
+        .section p a:hover,
+        .section .source a:hover,
+        .quote a:hover {
+            color: var(--brand-hover);
+            text-decoration-thickness: 2px;
+        }
+
+        .quote {
+            background: var(--panel-bg);
+            border-left: 5px solid var(--brand);
+            padding: 18px 22px;
+            border-radius: 12px;
+            font-size: 1.02rem;
+            color: #3a4a5a;
+            margin: 14px 0;
+            line-height: 2;
+            font-weight: 500;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 0.82rem;
+            color: #8a9aa8;
+            border-top: 1px solid var(--border-soft);
+            padding-top: 18px;
+        }
+
+        @media (max-width: 600px) {
+            .wrap { padding: 18px 14px 28px; border-radius: 18px; }
+            h1 { font-size: 1.4rem; }
+            .toc ul { grid-template-columns: 1fr; }
+            .section h3 { font-size: 1.05rem; }
+            .section p { font-size: 0.93rem; }
+            .section { scroll-margin-top: 130px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>近代史</h1>
+        <div class="sub">巴勒斯坦問題 · 近代史脈絡</div>
+
+        <nav class="toc">
+            <h2>📑 目錄</h2>
+            <ul>
+                <li><a href="#s1">一次大戰前歐洲與鄂圖曼帝國情勢</a></li>
+                <li><a href="#s2">1916年英、法秘密協定（賽克斯—皮科協定）</a></li>
+                <li><a href="#s3">阿拉伯起義</a></li>
+                <li><a href="#s4">阿拉伯的勞倫斯</a></li>
+                <li><a href="#s5">貝爾福宣言</a></li>
+                <li><a href="#s6">英國託管巴勒斯坦</a></li>
+                <li><a href="#s7">巴勒斯坦人反抗</a></li>
+                <li><a href="#s8">1929</a></li>
+                <li><a href="#s9">1930</a></li>
+                <li><a href="#s10">1931</a></li>
+                <li><a href="#s11">皮爾報告發布，建議分治</a></li>
+                <li><a href="#s12">二次大戰及大屠殺</a></li>
+                <li><a href="#s13">戰後猶太難民</a></li>
+                <li><a href="#s14">英國退出</a></li>
+                <li><a href="#s15">聯合國分治計畫</a></li>
+                <li><a href="#s16">1948</a></li>
+                <li><a href="#s17">1956</a></li>
+                <li><a href="#s18">1967</a></li>
+                <li><a href="#s19">1973</a></li>
+                <li><a href="#s20">1982</a></li>
+                <li><a href="#s21">1987年</a></li>
+                <li><a href="#s22">和平進程</a></li>
+                <li><a href="#s23">奧斯陸協議</a></li>
+                <li><a href="#s24">哈瑪斯</a></li>
+                <li><a href="#s25">加薩</a></li>
+                <li><a href="#s26">2023年10月7日 哈瑪斯奇襲</a></li>
+            </ul>
+        </nav>
+
+        <section class="section" id="s1">
+            <h3>一次大戰前歐洲與鄂圖曼帝國情勢</h3>
+            <p><span class="lead">英國對中東（及巴勒斯坦）的覬覦：</span>一次大戰前歐洲列強對中東之野心，英國即對同一地區（巴勒斯坦在其中），有三種不同的承諾——英、法帝國野心、拉攏阿拉伯人起義、解決猶太人問題。</p>
+        </section>
+
+        <section class="section" id="s2">
+            <h3>1916年英、法秘密協定（賽克斯—皮科協定）</h3>
+            <p><span class="lead">瓜分戰後鄂圖曼帝國的中東領土。</span>此即《<a href="https://en.wikipedia.org/wiki/Sykes%E2%80%93Picot_Agreement" target="_blank" rel="noopener">賽克斯—皮科協定</a>》，為英、法兩國於1916年秘密簽訂，劃分戰後中東勢力範圍，與英國對阿拉伯人的承諾（<a href="https://en.wikipedia.org/wiki/McMahon%E2%80%93Hussein_Correspondence" target="_blank" rel="noopener">麥克馬洪—海珊協定</a>）及後來的《<a href="https://en.wikipedia.org/wiki/Balfour_Declaration" target="_blank" rel="noopener">貝爾福宣言</a>》相互矛盾。</p>
+        </section>
+
+        <section class="section" id="s3">
+            <h3>阿拉伯起義</h3>
+            <p>（參見<a href="https://zh.wikipedia.org/zh-tw/%E9%98%BF%E6%8B%89%E4%BC%AF%E8%B5%B7%E4%B9%89" target="_blank" rel="noopener">阿拉伯起義</a>）第一次世界大戰鄂圖曼土耳其為同盟國一員，與協約國的英國在中東地區爭戰。中東地區阿拉伯人於1916年開始起義爭取獨立。英國在1915年即拉攏阿拉伯人對抗鄂圖曼。最重要者即是：</p>
+            <p><span class="lead">「麥克馬洪—海珊協定」：</span>麥克馬洪（此人是中印界1914年所謂「<a href="https://en.wikipedia.org/wiki/McMahon_Line" target="_blank" rel="noopener">麥克馬洪線</a>」的主導者）時為英國駐埃及高級專員，海珊為阿拉伯半島「<a href="https://en.wikipedia.org/wiki/Kingdom_of_Hejaz" target="_blank" rel="noopener">漢志</a>」國王（阿拉伯起義的領袖）。協定英國政府同意如果海珊發起反抗鄂圖曼帝國的阿拉伯起義，作為交換英國將在戰後承認阿拉伯獨立（範圍包括巴勒斯坦）。</p>
+        </section>
+
+        <section class="section" id="s4">
+            <h3>阿拉伯的勞倫斯</h3>
+            <p>（參見<a href="https://telsociety.co.uk/" target="_blank" rel="noopener">勞倫斯學會</a>）第一次世界大戰英國指派協助阿拉伯人起義對抗土耳其之情報軍官，對阿拉伯人起義影響極大。即<a href="https://en.wikipedia.org/wiki/T._E._Lawrence" target="_blank" rel="noopener">T. E. 勞倫斯（阿拉伯的勞倫斯）</a>。</p>
+        </section>
+
+        <section class="section" id="s5">
+            <h3>貝爾福宣言</h3>
+            <p><span class="lead">（參考連結<a href="https://britainpalestineproject.org/the-balfour-declaration/" target="_blank" rel="noopener">網站</a>，該站明確表達「為猶太人建立民族家園之目的已達成，但未能保障巴勒斯坦人的權利」）：</span>自英國政府1917年推出此一外交政策，影響至今，探討巴勒斯坦問題必須深入理解其成因與後果。</p>
+            <div class="quote">
+                宣言文：「國王陛下的政府贊成在巴勒斯坦為猶太人民建立一個民族家園，將最大努力促進這一目標的實現，但應清楚地理解，不得做任何可能損害巴勒斯坦現有的非猶太社區公民和宗教權利的事情，或損害猶太人在任何其他國家享有的權利和政治地位。」
+            </div>
+            <p>（參見<a href="https://en.wikipedia.org/wiki/Balfour_Declaration" target="_blank" rel="noopener">貝爾福宣言（Balfour Declaration）</a>）</p>
+        </section>
+
+        <section class="section" id="s6">
+            <h3>英國託管巴勒斯坦</h3>
+            <p><span class="lead">巴黎和會將巴勒斯坦交英國託管</span>（參考 <a href="https://en.wikipedia.org/wiki/Mandatory_Palestine" target="_blank" rel="noopener">Mandatory Palestine 英文 Wikipedia</a>），巴勒斯坦原宗主國鄂圖曼土耳其於第一次世界大戰戰敗，因此，國際聯盟決議該地「……達到了基本上以獨立國家存在，但亦要臨時接受由託管國所提供的行政建議和協助，直到可以完全地獨自生存。而託管政府的主要決策亦應該以當地群眾的期望為主要考慮角度。」——《<a href="https://en.wikipedia.org/wiki/League_of_Nations_Covenant" target="_blank" rel="noopener">國際聯盟盟約</a>》第22條</p>
+        </section>
+
+        <section class="section" id="s7">
+            <h3>巴勒斯坦人反抗</h3>
+            <p><span class="lead">在英國託管期間，</span>巴勒斯坦人逐漸意識到猶太移民的威脅，以及巴黎和會原本標榜民族自決權利未對他們實現，而新來的猶太移民是有政治組織（<a href="https://en.wikipedia.org/wiki/Jewish_Agency_for_Israel" target="_blank" rel="noopener">猶太總署</a>）、金融後盾（<a href="https://en.wikipedia.org/wiki/Jewish_National_Fund" target="_blank" rel="noopener">猶太民族基金</a>）、有意識形態（<a href="key-concepts.html#s6" target="_blank" rel="noopener">Zionism</a>），且排他意識強。巴勒斯坦人因而起反抗，英國統治當局不得不因應。</p>
+        </section>
+
+        <section class="section" id="s8">
+            <h3>1929</h3>
+            <p>當年八月巴勒斯坦阿拉伯人與猶太人發生嚴重暴力衝突（參考 <a href="https://en.wikipedia.org/wiki/1929_Palestine_riots" target="_blank" rel="noopener">1929 Palestine riots</a>）。十月巴勒斯坦阿拉伯人全面罷工。參考英國相關事後調查委員會報告與建議（<a href="https://en.wikipedia.org/wiki/Shaw_Commission" target="_blank" rel="noopener">Shaw Commission</a>）。</p>
+        </section>
+
+        <section class="section" id="s9">
+            <h3>1930</h3>
+            <p><span class="lead">1930白皮書</span>（參考 <a href="https://en.wikipedia.org/wiki/Passfield_white_paper" target="_blank" rel="noopener">Passfield White Paper</a>，1930年10月公布的英國外交政策白皮書），針對前一年動亂，依據前二調查委員會意見而來，基本限制當地人將來向猶太復國主義者出售土地，且阿拉伯人失業率應成為考慮允許猶太移民到巴勒斯坦數量的因素之一，也應有立法機構作為占多數的巴勒斯坦人之代表。</p>
+        </section>
+
+        <section class="section" id="s10">
+            <h3>1931</h3>
+            <p><span class="lead">黑色信件：</span>前述白皮書令猶太復國主義者震驚，在英國運用影響力，使親猶太復國主義的國會議員攻擊帕斯菲爾德（白皮書發布者），遊說首相<a href="https://en.wikipedia.org/wiki/Ramsay_MacDonald" target="_blank" rel="noopener">麥克唐納（Ramsay MacDonald）</a>於1931年2月在國會公布致猶太復國主義領袖<a href="https://en.wikipedia.org/wiki/Chaim_Weizmann" target="_blank" rel="noopener">魏茲曼</a>信函，此信使猶太復國主義者相信推翻了前述白皮書，而阿拉伯人則稱之為黑色信件（<a href="https://en.wikipedia.org/wiki/MacDonald_Letter" target="_blank" rel="noopener">MacDonald Letter</a>）。</p>
+        </section>
+
+        <section class="section" id="s11">
+            <h3>皮爾報告發布，建議分治</h3>
+            <p><span class="lead">皮爾（1936年11月抵達，Lord Peel 領導之調查委員會。參考）報告發布，建議分治。</span>（參見 <a href="https://en.wikipedia.org/wiki/Peel_Commission" target="_blank" rel="noopener">Peel Commission</a>）</p>
+            <p>在巴勒斯坦人持續抗爭下，1939年5月英國以另一白皮書宣布放棄分治計畫，未來5年中的巴勒斯坦猶太移民人數大幅限制到7.5萬人，爾後的數量須徵求巴勒斯坦人的同意，嚴格限制猶太人購買土地的權利。白皮書還規定在10年內建立一獨立的巴勒斯坦國，一旦恢復和平，就立即任命巴勒斯坦人主管某些部門。（參見 <a href="https://en.wikipedia.org/wiki/White_Paper_of_1939" target="_blank" rel="noopener">1939 White Paper</a>）</p>
+        </section>
+
+        <section class="section" id="s12">
+            <h3>二次大戰及大屠殺</h3>
+            <p><span class="lead">參（納粹大屠殺）及美國的 Holocaust 紀念館。</span>（參見 <a href="https://en.wikipedia.org/wiki/The_Holocaust" target="_blank" rel="noopener">納粹大屠殺（The Holocaust）</a>；<a href="https://www.ushmm.org/" target="_blank" rel="noopener">美國 Holocaust 紀念館</a>）</p>
+        </section>
+
+        <section class="section" id="s13">
+            <h3>戰後猶太難民</h3>
+            <p>（待補）第二次世界大戰後，歐洲約有 25 萬猶太難民無家可歸，國際社會對其安置問題爭論不休，成為日後聯合國分治計畫的重要背景。（參見 <a href="https://en.wikipedia.org/wiki/Sh'erit_ha-Pletah" target="_blank" rel="noopener">Sh'erit ha-Pletah</a>）</p>
+        </section>
+
+        <section class="section" id="s14">
+            <h3>英國退出</h3>
+            <p>（待補）英國因無法調解猶太與阿拉伯雙方的衝突，最終於1947年2月14日宣布將巴勒斯坦問題交由聯合國處理，並於1948年5月15日終止託管。相關背景可參見 <a href="https://en.wikipedia.org/wiki/End_of_the_British_Mandate_for_Palestine" target="_blank" rel="noopener">End of the British Mandate for Palestine</a>。</p>
+        </section>
+
+        <section class="section" id="s15">
+            <h3>聯合國分治計畫</h3>
+            <p>（參見 <a href="https://en.wikipedia.org/wiki/United_Nations_Partition_Plan_for_Palestine" target="_blank" rel="noopener">聯合國大會181號決議</a>）第二次大戰之後，英國政府無法繼續執行託管，決定於1947年2月14日將巴勒斯坦問題交由聯合國處理。同年5月，聯合國成立「巴勒斯坦問題特別委員會」（<a href="https://en.wikipedia.org/wiki/UNSCOP" target="_blank" rel="noopener">UNSCOP</a>），9月3日向聯合國大會提出建議報告，其中分治計畫有多數委員贊成，計畫將英國託管之巴勒斯坦分為猶太國、阿拉伯國、耶路撒冷特區三部份；1947年11月29日聯合國大會決議投票通過：贊成33票、反對13票、棄權10票、缺席1票。（中華民國是棄權）此即聯合國大會181號決議</a>。英國對此計畫也是棄權，於同年12月11日宣布1948年5月15日終止託管，8月1日完全撤出。</p>
+        </section>
+
+        <section class="section" id="s16">
+            <h3>1948</h3>
+            <p><span class="lead">巴勒斯坦大災難 Nakba：</span>1948年以色列建國，對巴勒斯坦人而言，這是「大災難」！近70萬巴勒斯坦人成為難民，以色列自此拒絕他們返鄉，立法「<a href="https://en.wikipedia.org/wiki/Law_of_Return" target="_blank" rel="noopener">回歸法</a>」，全世界猶太人只要回以色列定居即可獲得公民資格。（參見 <a href="https://en.wikipedia.org/wiki/1948_Palestinian_exodus" target="_blank" rel="noopener">1948 Palestinian exodus（Nakba）</a>）</p>
+        </section>
+
+        <section class="section" id="s17">
+            <h3>1956</h3>
+            <p><span class="lead">蘇伊士運河爭端。</span>（參見 <a href="https://en.wikipedia.org/wiki/Suez_Crisis" target="_blank" rel="noopener">Suez Crisis</a>，1956年10月29日–11月7日）</p>
+        </section>
+
+        <section class="section" id="s18">
+            <h3>1967</h3>
+            <p>參閱<a href="israeli-political-military-doctrine.html" target="_blank" rel="noopener">「以色列政治軍事思想摘要」</a>（Summary of the Israeli Political-Military Doctrine）。1967年發生<a href="https://en.wikipedia.org/wiki/Six-Day_War" target="_blank" rel="noopener">六日戰爭</a>，以色列佔領西岸、加薩、戈蘭高地、西奈半島與東耶路撒冷。</p>
+        </section>
+
+        <section class="section" id="s19">
+            <h3>1973</h3>
+            <p><span class="lead">十月戰爭。</span>（參見 <a href="https://en.wikipedia.org/wiki/Yom_Kippur_War" target="_blank" rel="noopener">贖罪日戰爭（Yom Kippur War）</a>，1973年10月6日–25日）</p>
+        </section>
+
+        <section class="section" id="s20">
+            <h3>1982</h3>
+            <p><span class="lead">黎巴嫩戰爭。</span>（參見 <a href="https://en.wikipedia.org/wiki/1982_Lebanon_War" target="_blank" rel="noopener">1982 Lebanon War</a>）</p>
+        </section>
+
+        <section class="section" id="s21">
+            <h3>1987年</h3>
+            <p><span class="lead">第一次巴勒斯坦大起義。</span>（參見 <a href="https://en.wikipedia.org/wiki/First_Intifada" target="_blank" rel="noopener">First Intifada</a>，1987–1993）</p>
+        </section>
+
+        <section class="section" id="s22">
+            <h3>和平進程</h3>
+            <p>（待補）1990年代以來的<a href="https://en.wikipedia.org/wiki/Israeli%E2%80%93Palestinian_peace_process" target="_blank" rel="noopener">以巴和平進程</a>，包括馬德里和會、奧斯陸協議、大衛營峰會等。</p>
+        </section>
+
+        <section class="section" id="s23">
+            <h3>奧斯陸協議</h3>
+            <p>（待補）1993年簽署的<a href="https://en.wikipedia.org/wiki/Oslo_Accords" target="_blank" rel="noopener">奧斯陸協議（Oslo Accords）</a>，以色列與巴勒斯坦解放組織首次相互承認。</p>
+        </section>
+
+        <section class="section" id="s24">
+            <h3>哈瑪斯</h3>
+            <p>（待補）<a href="https://en.wikipedia.org/wiki/Hamas" target="_blank" rel="noopener">哈瑪斯（Hamas）</a>，1987年成立的巴勒斯坦伊斯蘭抵抗運動。</p>
+        </section>
+
+        <section class="section" id="s25">
+            <h3>加薩</h3>
+            <p>（待補）<a href="https://en.wikipedia.org/wiki/Gaza_Strip" target="_blank" rel="noopener">加薩走廊（Gaza Strip）</a>，2007年後由哈瑪斯掌控，長期被封鎖。</p>
+        </section>
+
+        <section class="section" id="s26">
+            <h3>2023年10月7日 哈瑪斯奇襲</h3>
+            <p>（待補）2023年10月7日，哈瑪斯由加薩走廊發動代號「<a href="https://en.wikipedia.org/wiki/2023_Hamas-led_attack_on_Israel" target="_blank" rel="noopener">阿克薩洪水</a>」的軍事行動，引發新一輪以哈衝突。</p>
+        </section>
+
+        <div class="footer-note">
+            Copyright 版權所有©2026 CHSU 巴勒斯坦問題資訊站 · 近代史
+        </div>
+    </div>
+
+    <script src="site-menu.js"></script>
+    <script src="back-to-top.js"></script>
+
+    <script>
+        document.querySelectorAll('.toc a[href^="#"]').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                var targetId = this.getAttribute('href').substring(1);
+                var target = document.getElementById(targetId);
+                if (target) {
+                    e.preventDefault();
+                    var yOffset = 80;
+                    var y = target.getBoundingClientRect().top + window.pageYOffset - yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                    history.replaceState(null, '', '#' + targetId);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

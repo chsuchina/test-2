@@ -1,0 +1,36 @@
+使用方式
+
+複製此模板，另存為新檔名（例如 new-page.html）。
+
+修改以下四處：
+
+<title> 中的頁面標題
+
+<h1> 中的主標題
+
+.sub 中的副標題
+
+.footer-note 中的頁面名稱
+
+在 <div class="content"> 內，依需求填入 <p>、<h2>、.quote 等內容。
+
+完成後，若要在選單中加入連結，請修改 index.html 與 site-menu.js 對應的下拉選單。
+
+
+常用元素速查
+元素	寫法
+段落	<p>文字</p>
+
+小標題	<h2>標題</h2>
+
+引言框	<div class="quote">引言</div>
+
+粗體	<strong>文字</strong>
+
+斜體	<em>文字</em>
+
+外部連結	<a href="https://..." target="_blank" rel="noopener">文字</a>
+
+內部連結	<a href="另一頁.html" target="_blank" rel="noopener">文字</a>
+
+出處	<div class="source-line">出處說明</div>

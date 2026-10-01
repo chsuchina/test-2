@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>聖經對猶太復國主義的服務 · 巴勒斯坦問題</title>
+
+    <link rel="stylesheet" href="site-menu.css">
+    <link rel="stylesheet" href="back-to-top.css">
+
+    <style>
+        :root {
+            --page-bg: #c0c0c0;
+            --card-bg: #d1d1d1;
+            --panel-bg: #ebebeb;
+            --border-soft: #dcdcdc;
+            --text-main: #2c3e50;
+            --text-soft: #5b6f82;
+            --brand: #1e3a5f;
+            --brand-hover: #2b4b73;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background: var(--page-bg);
+            color: var(--text-main);
+            line-height: 1.9;
+            padding: 0 16px 40px;
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            padding: 32px 28px 40px;
+            margin-top: 24px;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            color: var(--brand);
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .sub {
+            text-align: center;
+            color: var(--text-soft);
+            font-size: 0.9rem;
+            margin-bottom: 26px;
+            border-bottom: 1px solid var(--border-soft);
+            padding-bottom: 16px;
+        }
+
+        /* 目錄 */
+        .toc {
+            background: var(--panel-bg);
+            border-left: 5px solid var(--brand);
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-bottom: 32px;
+        }
+
+        .toc h2 {
+            font-size: 1.05rem;
+            color: var(--brand);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li { margin-bottom: 4px; }
+
+        .toc a {
+            display: block;
+            padding: 5px 8px;
+            border-radius: 8px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: background 0.15s, color 0.15s, padding-left 0.15s;
+        }
+
+        .toc a:hover {
+            background: var(--card-bg);
+            color: var(--brand);
+            padding-left: 14px;
+        }
+
+        /* 段落與標題層級 */
+        .content h2 {
+            font-size: 1.25rem;
+            color: var(--brand);
+            font-weight: 700;
+            margin-top: 36px;
+            margin-bottom: 14px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--border-soft);
+            line-height: 1.5;
+        }
+
+        .content h3 {
+            font-size: 1.08rem;
+            color: var(--brand-hover);
+            font-weight: 700;
+            margin-top: 26px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 4px solid var(--border-soft);
+            line-height: 1.5;
+        }
+
+        .content p {
+            font-size: 0.98rem;
+            color: var(--text-main);
+            margin-bottom: 14px;
+            text-align: justify;
+            line-height: 1.95;
+        }
+
+        .content p:last-child { margin-bottom: 0; }
+
+        /* 引言框 */
+        .quote {
+            background: var(--panel-bg);
+            border-left: 5px solid var(--brand);
+            padding: 16px 22px;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            color: #3a4a5a;
+            margin: 18px 0;
+            line-height: 2;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        /* 強調與斜體 */
+        .content strong { font-weight: 700; color: var(--brand); }
+        .content em { font-style: italic; }
+
+        /* 參考文獻列表 */
+        .references {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-soft);
+        }
+
+        .references h2 {
+            font-size: 1.15rem;
+            color: var(--brand);
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .references p {
+            font-size: 0.9rem;
+            color: #3a4a5a;
+            margin-bottom: 8px;
+            text-indent: -1.6em;
+            padding-left: 1.6em;
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        .references p em { font-style: italic; }
+
+        /* 註腳 */
+        .notes {
+            background: var(--panel-bg);
+            border-radius: 12px;
+            padding: 14px 20px;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            color: #4a5b6b;
+        }
+
+        .notes p { margin-bottom: 6px; }
+        .notes p:last-child { margin-bottom: 0; }
+
+        /* 出處 */
+        .source-line {
+            margin-top: 28px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border-soft);
+            font-size: 0.88rem;
+            color: var(--text-soft);
+            line-height: 1.8;
+        }
+
+        .source-line em { font-style: italic; }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 0.82rem;
+            color: #8a9aa8;
+            border-top: 1px solid var(--border-soft);
+            padding-top: 18px;
+        }
+
+        @media (max-width: 600px) {
+            .wrap { padding: 20px 16px 28px; border-radius: 18px; }
+            h1 { font-size: 1.4rem; letter-spacing: 1px; }
+            .content h2 { font-size: 1.1rem; }
+            .content h3 { font-size: 1rem; }
+            .content p { font-size: 0.93rem; }
+            .quote { font-size: 0.97rem; padding: 14px 16px; }
+            .toc a { font-size: 0.88rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>聖經對猶太復國主義的服務</h1>
+        <div class="sub">巴勒斯坦問題 · 文獻選讀</div>
+
+        <!-- 目錄 -->
+        <nav class="toc">
+            <h2>📑 目錄</h2>
+            <ul>
+                <li><a href="#s1">引言</a></li>
+                <li><a href="#s2">世俗猶太復國主義者對聖經的運用</a></li>
+                <li><a href="#s3">宗教猶太復國主義者的補充</a></li>
+                <li><a href="#s4">正統猶太人的神學困境</a></li>
+                <li><a href="#s5">基督教聖經學術與巴勒斯坦的猶太復國主義化</a></li>
+                <li><a href="#s6">聖經作為世俗憲章</a></li>
+                <li><a href="#s7">重新發現聖經之地：1967 年佔領及其影響</a></li>
+                <li><a href="#s8">「普爾姆斯」（Pulmus）：辯論</a></li>
+                <li><a href="#s9">聖經詮釋權之爭</a></li>
+                <li><a href="#refs">參考文獻</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+
+            <!-- 引言 -->
+            <section id="s1">
+                <div class="quote">
+                    「我們不相信上帝，但他仍然應許我們巴勒斯坦。」<br>
+                    <span style="font-weight:400; font-style:normal; font-size:0.9rem;">——伊蘭‧帕佩 Ilan Pappe</span>
+                </div>
+
+                <p>有一個關於本‧錫安‧丁伯格（後來的迪努爾，早期猶太復國主義巴勒斯坦史學界的泰斗，後來成為以色列首批教育部長之一）的故事，有百分之 66.5 的真實性。1937年，在英國皇家皮爾委員會（奉英王政府之命，尋求巴勒斯坦衝突解決方案）抵達前兩週，他被本-古里昂（巴勒斯坦猶太社區領袖，後來成為以色列首任總理）找上。本-古里昂詢問這位受人尊敬的歷史學家，能否提供一些研究，證明猶太人從公元 70 年（羅馬流亡時期）到 1882 年（第一批猶太復國主義者抵達時期）的連續性。歷史學家回答說：「我可以，但這涉及許多時期和各種專業知識，因此可能需要十年左右才能成功完成。」本-古里昂反駁道：「你不明白，皮爾委員會兩週後就要來了。所以你必須在那之前得出結論，之後你有一整個十年來證明它！」</p>
+
+                <p>即使這個故事並非完全真實——它沒有可識別的來源——它也顯示了古代猶太人在巴勒斯坦的經歷與 20 世紀猶太復國主義爭取認可和合法性的鬥爭之間的互動。目前尚不清楚連續性論點的提出是否成功。無論如何，它在皮爾委員會和 1947 年聯合國巴勒斯坦特別委員會（UNSCOP）面前都被提出作為一個有力的論點。事後看來，英國以及後來的聯合國對猶太復國主義的支持，似乎與這種連續性的證據關係不大。然而，無論是為了內部消費還是外部支持，猶太復國主義者將聖經作為科學真理和殖民巴勒斯坦的道德正當理由的利用，在他們從西方基督教世界的大部分地區獲得支持的能力方面，確實起到了相當大的作用。</p>
+            </section>
+
+            <!-- 世俗猶太復國主義者對聖經的運用 -->
+            <section id="s2">
+                <h2>世俗猶太復國主義者對聖經的運用</h2>
+                <p>早期的世俗猶太復國主義者大量引用聖經，以表明殖民巴勒斯坦（或者在他們的論述中，救贖以色列地）是一種神聖的命令。但事實上，聖經對於重建一個猶太民族來說並不是一個非常有用的文本：民族之父亞伯拉罕並非來自巴勒斯坦，希伯來人在埃及成為一個民族，十誡也是在埃及（西奈）賜予他們的。這個文本被早期的世俗猶太復國主義者重新詮釋。他們將這個民族定義為在迦南被佔領、流亡到埃及，然後回來救贖家園的部落之一，就像現代猶太復國主義者所做的那樣。世俗猶太復國主義者將自己視為迦南的新佔領者。也就是說，他們是約書亞和士師的繼承者，然後他們也建立了一個猶太王國（Almog 1992: 81）。</p>
+            </section>
+
+            <!-- 宗教猶太復國主義者的補充 -->
+            <section id="s3">
+                <h2>宗教猶太復國主義者的補充</h2>
+                <p>在世俗且經常是社會主義的早期猶太復國主義定居者團體的邊緣，成長了一個小群體的宗教人士，他們被猶太復國主義的思想所吸引。他們在世俗解釋的基礎上增加了這樣一種觀點：流亡，不僅僅是流亡埃及，而是聖經時期與人民不道德和反上帝行為相關的各種流亡，是一種懲罰，而這種懲罰隨著猶太復國主義抵達巴勒斯坦而結束。後來，在巴勒斯坦當地，他們會補充說，為了不讓流亡再次發生，定居者需要有更多的宗教行為——這個問題至今仍在以色列的猶太社會中造成分裂（Levy 1969: 60-78）。</p>
+
+                <p>世俗猶太復國主義者和宗教猶太復國主義者都同意，聖經佔據著核心地位，不是作為一個宗教文本，而是作為一個重申對土地所有權的歷史文獻。此外，世俗猶太復國主義者將其解讀為一個將離開這片土地視為一種不正常和不健康的歷史狀態的文本（M.Y. Ben-Gurion 1960: 99-150）。</p>
+
+                <p>聖經被視為一本預見和預言人民回歸故土、建設國家和聚集流亡者的書——所有這些希伯來詞語都出現在聖經中，並被重新用作現代國家詞典。因此，它既是精神上的正當理由，也是一張實用的地圖，指向聖經時期發生事件的位置和地點，這些地點將成為猶太復國主義殖民地圖（D. Ben-Gurion 1976）。</p>
+
+                <p>這兩種觀點，即將聖經視為一本重要的獨立文本，並否定流亡是一種非猶太且不正常的現實，在猶太復國主義出現時，對於任何宗教虔誠的猶太人來說都是陌生的概念。這種融合至今仍使宗教虔誠的猶太人處於不舒服的境地。</p>
+            </section>
+
+            <!-- 正統猶太人的神學困境 -->
+            <section id="s4">
+                <h2>正統猶太人的神學困境</h2>
+                <p>他們面臨的第一個問題是，如果他們學習聖經，他們也從未將其作為一本獨立的書來學習。但問題比這更嚴重。正如 <em>Amnon Raz-Krakotzkin</em> 所強調的，猶太復國主義的經歷從一開始就給那些宗教虔誠的猶太人帶來了許多問題，他們發現自己無法在彌賽亞歸來之前，解釋猶太人「歸來」以色列。因此，在形而上學的層面上，流亡並沒有隨著猶太國家的建立而結束。事實上，流亡是猶太身份的一個主要組成部分，它應該具有一種治療功能，而猶太復國主義在聲稱回到「以色列地」時卻危及了這一點，因為只有上帝才能結束流亡。這種特殊的批評當然在正統猶太人（如哈瑞迪姆）中盛行，他們對於猶太復國主義者利用《妥拉》和應許之地概念的方式感到非常不舒服（Raz-Krakotzkin 2007）。</p>
+
+                <p>這些關於聖經地位、回歸概念以及其他更邊緣問題的神學和意識形態分歧，是正統猶太人和猶太復國主義猶太人觀點之間更深層次鴻溝的徵兆。主流猶太復國主義不僅是一個尋求殖民巴勒斯坦和主張猶太人自決權的運動；它也是一個非常重要的世俗化運動。因此，它在當時並非獨一無二，因為其他宗教團體出於類似或其他原因，也以民族術語重新定義了自己。但它與身份認同的宗教解釋之間的關係被證明是複雜的，就像安東尼‧史密斯（Anthony Smith）曾經稱之為「垂直民族主義」的許多情況一樣。也就是說，民族身份認同儘管實現了現代化並成功創建了民族國家，但卻與宗教信仰密切相關（Smith 1986）。當早期正統派提出抗議時，猶太復國主義在世界猶太人中仍是少數觀點，在許多方面，這種反對本來可以扼殺世俗猶太民族主義的早期萌芽，或者至少是對堅持實施猶太民族主義在巴勒斯坦的想法。因此，在 20 世紀早期，一些猶太復國主義運動的領軍人物，包括運動的創始人西奧多‧赫茨爾（Theodore Herzl，1946: 66-77），選擇在其他地方進行殖民。首選選項是烏干達。</p>
+            </section>
+
+            <!-- 基督教聖經學術與巴勒斯坦的猶太復國主義化 -->
+            <section id="s5">
+                <h2>基督教聖經學術與巴勒斯坦的猶太復國主義化</h2>
+                <p>最終選擇了巴勒斯坦。導致這種轉變的原因之一是英國的強烈支持。這種支持主要基於宗教而非戰略利益——儘管在大英帝國碾壓全球時，兩者很少能完全分離。這種英國在巴勒斯坦安置猶太人的宗教興趣基礎，可以在西方基督教關於聖經作為一本預言未來並作為政治而不僅僅是神聖總體規劃的文本的學術研究中找到（Prior 1998）。</p>
+
+                <p>多項研究表明，猶太復國主義願景和願望的中心轉向巴勒斯坦，除其他因素外，還受到新教徒將猶太人殖民「聖地」與神聖和末日基督教教義聯繫起來的強烈而深入的興趣的促進，這些教義認為猶太人的回歸將加速彌賽亞的再臨。</p>
+
+                <p>猶太復國主義向巴勒斯坦的轉向，是伴隨著歐洲學術界對殖民主義和帝國主義時代聖經以色列的關注而來的。正如凱斯‧惠特拉姆（Keith Whitelam，1998）所指出的，這種學術研究採取了兩種特別有助於世俗猶太復國主義的態度。在其對聖地歷史的學術涵蓋中，從聖經時代到當代，這種學術研究將該國視為一個空地，從而完全將其「去阿拉伯化」。阿拉伯人和穆斯林被排除在專業歷史寫作的範圍之外。其次，學術研究受到啟示錄和千禧年思想的驅動，其中彌賽亞的再臨將因猶太人的歸來加速。這種「去阿拉伯化」和猶太人歸來的宗教使命相結合，為用語言和武力將猶太復國主義敘事強加於這片土地鋪平了道路。一種歐洲中心主義和基督中心主義的敘事很好地服務於猶太復國主義的敘事。這在猶太復國主義的一個主要主張中得到了最好的體現：一個民族不僅返回家園，而且返回一個過去曾被猶太民族國家佔據的空間。</p>
+
+                <p>猶太復國主義化對過去的排他性性質取決於 19 世紀歐洲產生的聖經學術研究。它始於「以色列民族」的神學神話建構。這個詞在上個世紀被聖經學者呈現為一個歷史事實——事實上，是定義從中銅器時代起居住在巴勒斯坦的人們的唯一合適方式，儘管巴勒斯坦那些零星的村莊似乎很少有共同點。將猶太民族重新塑造為一個古老的以色列民族是這種學術努力的重要成果。它在塑造猶太復國主義的創始神話中發揮了重要作用：一個沒有土地的人民回到一片沒有人民的土地。將巴勒斯坦人排除在這片土地之外是一回事，聲稱這片土地曾經有其原始民族，流浪在外，則是另一回事。兩者是相互關聯的。一個真正的民族回到了家園，一群不明確的人民必須搬遷，然後遷離，為這種歷史正義的行為讓路（Prior 1998）。正如托馬斯‧湯普森（Thomas Thompson）所表明的，流浪民族的神話幾乎從未受到學術上的挑戰。他聲稱，在公元 70 年猶太人對羅馬人的大起義之後，大多數人都留了下來。不僅如此；在適當的時候，他們或多或少地在帝國整體「受洗」時被基督化，然後隨著阿拉伯征服者的到來，他們又部分被伊斯蘭化（Thompson 1998）。</p>
+
+                <p>這是巴勒斯坦的原住民；有時主要是猶太人，後來主要是基督徒，最後主要是穆斯林——一個在 2000 年期間經歷了轉變過程的人口，與該地區大多數人民相似，這個歷史篇章以這些社區被重新定義為民族運動而告終（Sand 2010）。</p>
+
+                <p>已故的邁克爾‧普賴爾（Michael Prior）非常仔細地揭露了這一事業，並得出結論，聖經「可以是剝奪的章程，而不僅僅是解放的章程」（Prior 1998a: 53）。當然，這對於所有聖經和為當代政治目的而給予的靈活解釋都是如此。這種學術研究的一個主要例子是，在這類基督教學術研究中，將大衛王國重新定義為一個猶太民族國家，這一重新定義後來被猶太復國主義運動欣然採納。猶太復國主義的神學架構在猶太教和基督教中都同樣荒謬。正如湯普森所說：從聖經的角度（即神學的角度）來看，任何世俗的（即民族的）企圖回收過去或將其國家化用於現在的嘗試都是錯誤的（Thompson 1998）。當考慮到如此遙遠的過去時，是否有一個真實的故事可以講述呢？他反問道。</p>
+
+                <p>宗教處理信仰而非科學真理，因此即使是懷疑論者也不會太在意其信念缺乏科學證據。但在巴勒斯坦問題上，一種神聖的，或者更確切地說，是一種不聖潔的聯盟，在這種基督教神學與世俗猶太復國主義（它也傾向於科學地證明其對巴勒斯坦的意識形態主張）之間形成。最常見的共通點是能夠將聖經時代直到羅馬時期居住在那裡的人「猶太復國主義化」或「國家化」，然後「去巴勒斯坦化」其他人——即質疑其他人，甚至原住民，與巴勒斯坦這片土地的聯繫或關聯，直到早期猶太復國主義者的到來。這種將過去人民國家化的行為當然並非猶太復國主義所獨有。正如本尼迪克特‧安德森（Benedict Anderson，2003: 41）所指出的，民族運動總是很容易將無法抗拒這種國家化行為的死者國家化。巴勒斯坦此舉造成的人類問題並非人們是否應被正當地視為猶太民族，而是猶太復國主義對聖經敘事的採納，先驗地將這片土地國家化，將其視為公元 70 年至 1882 年間一個沒有人民的空間，而原住民則被視為不存在或篡奪了不屬於他們的土地。事實上，巴勒斯坦人民早在 1882 年，遠在 1948 年被強制驅逐之前，就已經被排除在猶太復國主義的領土敘事之外了。換句話說，聖經敘事的強加造成了真正的受害者——巴勒斯坦人民，他們不符合猶太復國主義聖經敘事中以色列人民的定義。</p>
+            </section>
+
+            <!-- 聖經作為世俗憲章 -->
+            <section id="s6">
+                <h2>聖經作為世俗憲章</h2>
+                <p>到 1905 年，猶太復國主義已將重點放在巴勒斯坦，並排除了任何其他領土選擇。接替早期中歐預言家的人們，將社會主義甚至馬克思主義意識形態大量注入巴勒斯坦日益增長的世俗猶太復國主義現實中。</p>
+
+                <p>但正如澤夫‧斯特恩赫爾（Zeev Sternhell, 1999），以及在他之前的扎卡里‧洛克曼（Zachary Lockman, 1996）和格爾森‧沙菲爾（Gershon Shafir, 1989）等人所表明的，這始終是一種非常有限和有條件的社會主義和馬克思主義版本。西方左翼各種意識形態運動所特有的普遍價值觀和願望，很早就在巴勒斯坦被國家化或猶太復國主義化了。</p>
+
+                <p>在這種情況下，猶太復國主義化意味著援引宗教教義，並以一種方式重新定義它，以宣稱對這片土地的永恆道德權利，這種權利不僅超越了殖民主義和帝國主義垂死時期對這片土地的任何其他外部主張，而且也超越了當地居民的主張。一個最社會主義的世俗殖民主義計畫，以一種純粹的超驗承諾的名義要求排他性。</p>
+
+                <p>世俗地依賴上帝的話語作為殖民的理由，並非鞏固接管的唯一基礎。實際力量、外交和殘酷行為等，當然有時甚至更為重要。但猶太復國主義領導人希望將這些各自的強烈欲望鞏固為一個連貫的敘事，不僅解釋他們為何來到巴勒斯坦，也解釋他們為何否認巴勒斯坦人留在那裡的權利。</p>
+
+                <p>然而，這被證明是一種啟發式且危險的實踐。勞工運動在運用聖經時，成功地在現實政治和實用主義之間取得了平衡。殖民和剝奪是一種世俗策略，但它在對內部和必要時在國際上都以聖經為基礎進行辯護。當勞工黨失去權力時，猶太復國主義中更右翼的派別會將聖經文本視為不顧現實政治、以色列國際地位或義務，甚至無視人權考量的正當理由。這種將聖經文本凌駕於任何普世政治方法的做法，起初只在猶太復國主義運動的右翼邊緣被採納，但它很快成為一股主流力量，近年來甚至成為一股主宰力量。猶太復國主義內部的這些政治運動，就像勞工猶太復國主義者一樣，重新連結到對聖經的選擇性解讀。在這種新的、更受尊敬的聖經解讀中，它成為了一個不僅證明過去征服，而且證明當前對巴勒斯坦人政策（包括佔領和剝奪）合理性的文本。</p>
+
+                <p>右翼和邊緣宗教團體並非唯一受誘惑以這種方式運用聖經的團體。偶爾，更清醒的勞工猶太復國主義者也會這樣做，尤其是在與巴勒斯坦原住民就土地、水和其他自然資源發生暴力衝突時。他們的作家、領導人和詩人將這些衝突描述為聖經中一些最著名戰役的重演。因此，以色列最傑出的民族詩人納坦‧阿爾特納姆（Nathan Alternam）將巴勒斯坦人對定居者的各種襲擊比作掃羅軍隊在基利波山前被非利士人擊敗。他認為，與流亡不同，在故土，失敗之後總會是勝利；就像聖經中一樣（Guri 2008）。</p>
+
+                <p>但原則上，勞工和主流猶太復國主義建制派在聖經上的依賴，作為殖民的主要戰略和維持殖民地的精神啟示，是為了將聖經從其宗教內涵中剝離出來，甚至為了將其從拉比們手中奪走。正是強制巴勒斯坦猶太社區的領袖和以色列的第一任總理本-古里昂引領了這種世俗的方式。他宣稱：「聖經的永恆和偉大不取決於另一本書、解釋或塔木德文本，這些文本都是在它之後出現的」——他指的是正統派強調其他文本重要性的傾向。他們錯了，只有在巴勒斯坦他們才能意識到這一點：「只有隨著故土的復興和希伯來語的復興，我們才能充分理解聖經的真實和完整的光芒」（本-古里昂 1962: 12）。</p>
+
+                <p>因此，聖經中清晰的精神指涉，即猶太人民是上帝宗教話語的守護者，變成了一本如何維護殖民巴勒斯坦猶太人社區的手冊。毫不誇張地說，本-古里昂在 1948 年之後，將聖經變成了其猶太復國主義思想的基礎。早在 1930 年代早期，當他被選為猶太社區無可爭議的領袖時，他就曾有意識地、齊心協力地努力將聖經的研究從宗教界手中奪回。但對他來說更重要的是傳達這樣一個訊息：流亡中的猶太人生活是圍繞著聖經展開的。</p>
+
+                <p>這一點得到了猶太復國主義主要知識分子之一、詩人海姆‧納赫曼‧比亞利克（Haim Nahman Bialik）的重複。他在 1932 年於納哈拉爾（Nahalal）這個歷史悠久且高度世俗的定居點，向領導猶太復國主義社會主義政黨 MAPAI 的活動家和領導人發表演講時，解釋了正統猶太教關於流亡中的猶太人沒有學習聖經或不熟悉聖經的說法是多麼錯誤。他聲稱這是猶太教育的一個基本組成部分（Shapira 2012）。這種相當脆弱且毫無根據的說法與本-古里昂的另一個觀念聯繫在一起，即猶太民族並非誕生於流亡，而是誕生於這片土地上，而證明這一點的依據就在聖經中（Shapira 1997: 233）。本-古里昂堅持將聖經作為民族文本進行世俗教學，並將其置於教育體系的核心地位，貫穿學習的所有階段。他還將對聖經的世俗和民族知識提升為一種核心價值和以色列人本質的最高體現。為此，他於 1958 年發起了聖經青年測驗，這成為獨立日慶祝活動的一個有機組成部分（Shapira 2012）。</p>
+
+                <p>勞工猶太復國主義歷史學家，正如人們會認為勞工猶太復國主義運動的領導人所認為的那樣，將聖經視為將東歐猶太人與巴勒斯坦這片異域土地聯繫起來的紐帶。這片土地的風景是陌生的，居住在那裡的人民和他們所說的語言也是陌生的。正如一位此類歷史學家最近的一本書所說，儘管聽起來荒謬，但通過猶太復國主義（而不是例如馬克思主義或自由主義）實現的現代猶太人的世俗化，將聖經帶回了猶太人民，他們在試圖融入歐洲的過程中與聖經疏遠了。它成為第二次阿利亞（建立猶太國家的核心群體）與這片土地之間的重要紐帶。因此，每個以猶太復國主義名義工作的社會主義工人房間裡都可以找到聖經（Tabenkin 1972, vol II: 25）。</p>
+            </section>
+
+            <!-- 重新發現聖經之地 -->
+            <section id="s7">
+                <h2>重新發現聖經之地：1967 年佔領及其影響</h2>
+                <p>以色列佔領約旦河西岸並決定將其保留為以色列一部分的原因是另一篇文章的主題，我已在其他地方討論過。戰前和佔領第一年期間的政府文件現在已公開。它們揭示了佔領的戰略理由和聖經理由的混合（Pappe 2013）。以色列第十三屆政府中相當多的世俗部長將約旦河西岸視為古以色列的心臟地帶，並將佔領視為故土的救贖。在這方面，聖經再次成為一本必不可少且重要的文本。</p>
+
+                <p>但由於涉及到戰略，聖經地圖，至少在理論上，不應決定殖民和猶太化計畫。著名的伊加爾‧阿隆計畫所體現的原則，並為所有政治人物所接受，是只在巴勒斯坦人口不稠密的地方定居。然而，聖經地圖卻描繪了另一種選擇——被視為聖經古蹟的地點位於巴勒斯坦人口稠密地區的中心，而這正是定居者選擇殖民的地方。</p>
+
+                <p>那張特別的地圖激勵了在 1967 年戰爭後出現的定居者運動。它誕生於宗教民族主義的學習中心，這些中心在建國過程中發揮的作用微乎其微，而現在，在 1967 年之後，他們覺得自己可以在救贖古老家園的中心方面發揮主導作用。事實上，這個定居計畫的先聲是 1968 年春天強行進入哈利勒（希伯崙）的中心。這個運動，即「古什埃穆尼姆」（Gush Emunim），將只使用聖經地圖來決定下一個定居點的位置。在大多數情況下，他們的定居點事後都得到了政府的批准——要麼是因為政治家們害怕挑戰這個運動，要麼更可能是因為相當多的領導人物也認同這張殖民和猶太化地圖（Zertal and Eldar 2009）。</p>
+
+                <p>對於定居者來說，佔領約旦河西岸和加薩地帶的大部分地區，是以上帝和聖經之名重新佔領（其中一些文本，如約書亞對亞瑪力人的剿滅，甚至可以輕易地被解釋為種族滅絕的理由。但是，感謝上帝，猶太復國主義或後來的以色列中，尚未有任何意識形態運動屈服於這種觀點）。但他們確實與猶太人逾越節晚宴上的主要故事——猶太節慶的哈加達（Haggada）——聯繫起來，其中上帝派遣摩西前往一片由其他人居住的土地，這些人都被點名，他們的命運是為了選民「回歸」亞伯拉罕應許之地而被處置。對希伯崙的第一次殖民行動是在逾越節晚宴前夕進行的。</p>
+
+                <p>因此，聖經和後來的文本成為將猶太復國主義對巴勒斯坦的剝奪解釋為上帝行為的基石。聖經文本不僅用於建造新定居點，也用於擴展現有定居點——事實上，到 2015 年，地圖似乎已經完成，但為了應對巴勒斯坦人的抵抗而維持，並在國際譴責下擴張。不足為奇的是，美國的基督教猶太復國主義者，通過他們在國會山上的代表，也分享了這種聖經許可，以反對美國國務院不斷將定居點定為非法的說法。</p>
+
+                <p>聖經文本創造了巨大的能量、興奮和熱情。當這在約旦河西岸在一定程度上耗盡，並且當阿里爾‧夏隆出於戰術原因於 2005 年左右結束加薩地帶的猶太殖民時，它被轉向以色列內部，進入連接不穩定混合的阿拉伯和猶太城鎮和地點的縫隙。在阿卡、雅法、海法、盧德和拉姆勒等混合城鎮中，巴勒斯坦居民已經屈服於自上而下的空間政策，該政策扼殺了他們的生活環境和居住空間——主要是通過周圍建立排他性的隔離式猶太社區（Pappe 2011）。最近，這種外部的飛地政策伴隨著聖經學習中心的出現，這些猶太人最初來自定居點，並在這些混合城鎮的阿拉伯貧民區中心購買公寓和房屋。他們非常公開地宣稱他們來是為了救贖這些土地。聖經似乎並沒有停止被用作對抗巴勒斯坦原住民的工具。</p>
+            </section>
+
+            <!-- 普爾姆斯 -->
+            <section id="s8">
+                <h2>「普爾姆斯」（Pulmus）：辯論</h2>
+                <p>然而，世俗猶太人希望以聖經之名在以色列地實現上帝旨意的內在詭論，在 21 世紀的以色列並不容易解決。被佔領的約旦河西岸的定居者社區，就像宗教民族運動的許多部分一樣，經歷了一個正統化（Orthodoxation）的過程。我的意思是，世俗主義，而不僅僅是反阿拉伯主義，現在成為他們的敵人；而對世俗化的一部分厭惡，是對以色列世俗霸權文化精英（包括通過在以色列大學設立聖經研究系）挪用聖經方式的不滿。</p>
+
+                <p>於是，一場「普爾姆斯」（Pulmus，哈拉赫希伯來語「辯論」）在定居點運動及其在以色列境內的選民中展開。這場辯論的核心是一個新現象：哈達利姆（Hardalim）。馬弗達爾（Mafdal，希伯來語中民族宗教黨的縮寫）和哈瑞迪姆（Haredim）是極端正統的猶太人。哈達爾（Hardal）——在希伯來語中也指芥末，是馬弗達爾和哈瑞迪猶太人的混合體。這些極端正統的民族猶太人，如果這種混合體可能存在的話，強烈反對在以色列研究和教授聖經方式的世俗化。他們提供的例子是如何解釋大衛王對烏利亞（Uriah）的態度，烏利亞是美麗的拔示巴（Bat Sheva）的丈夫，國王在屋頂上看到她洗澡時，便覬覦她。他將她從烏利亞身邊奪走，並將她的丈夫送到戰場上送死（Henkin 2004）。來自定居點的新守門人聲稱，世俗猶太人可能會按字面意思理解它。他們承認，幾個世紀以來，只有極少數學者對這個不愉快的事件給出任何明顯不同的解釋。然而，對於正統猶太人來說，這種看似有罪的行為仍然無法解釋，因此不被評判或批評為主的神秘作為。</p>
+
+                <p>民族宗教猶太人的哈達利化也是以色列極端正統政黨在政治上崛起造成的結果——據稱這些政黨反猶太復國主義，因為他們厭惡世俗干預神聖計畫——但事實上他們是猶太復國主義者，因為他們的種族主義反阿拉伯主義以及他們願意大量定居在以色列北部和南部以及約旦河西岸（特別是大耶路撒冷地區）的猶太化計畫中（Pappe 2011）。那些與他們接近的定居者社區開始了這場普爾姆斯，並要求在民族宗教猶太機構的學習中心中，應放棄對聖經的世俗解釋，因為聖經的獨特性應重新考慮。因此，在極端正統猶太人拒絕猶太復國主義一個世紀後，部分原因是濫用聖經，他們現在要求壟斷對聖經的解釋權，以便將這本書恢復到其猶太復國主義之前的背景。</p>
+
+                <p>目前以色列有兩種意識形態潮流拒絕這種重新主張：一種是民族宗教定居者，他們仍然希望以早期猶太復國主義者用於巴勒斯坦殖民和猶太化相同的方式使用聖經；另一種是世俗自由派猶太人，他們沒有任何明確的學術邏輯，但僅基於實用主義和現實政治，要求 1948 年之前殖民巴勒斯坦的同樣欲望不應在 1967 年佔領區重燃，以便與巴勒斯坦人實現和平。他們還聲稱，這種對聖經的現代使用使其與年輕的世俗一代疏遠。正如沙皮拉（Shapira）在新書中所聲稱的，定居者破壞了與聖經真實土地的相遇，即 1967 年戰爭後的約旦河西岸（Shapira 2012）。她還聲稱，自由派猶太復國主義者可以區分對聖經土地的熱愛與居住在那裡的其他人對這片土地的特定部分擁有權利。</p>
+            </section>
+
+            <!-- 聖經詮釋權之爭 -->
+            <section id="s9">
+                <h2>聖經詮釋權之爭</h2>
+                <p>迄今為止，在學術界，官方的猶太復國主義歷史版本在西方被視為無可爭議的「合法」學術且可靠的衝突敘事，而巴勒斯坦的敘事則被懷疑僅是宣傳。這種情況在 1970 年代後期發生了變化。受到薩米爾‧阿明（Samir Amin, 2010）、瓦利德‧哈利迪（Walid Khalidi, 1987）、愛德華‧薩義德（Edward Said, 2000）和薩米‧祖拜達（Sami Zubaida, 2009）等學者作品啟發，對西方東方主義研究的嚴厲批評，平衡了對阿以衝突的研究。這一新趨勢與以色列修正主義歷史的出現相吻合。少數以色列學者開始承認巴勒斯坦敘事中至少一些主要章節的有效性，其中最顯著的是承認以色列對巴勒斯坦難民問題的責任（Pappe 2002）。</p>
+
+                <p>然而，與聖經相關的研究卻被排除在這次知識革命之外，在大多數情況下，主流學術界將證實巴勒斯坦猶太化合理性的聖經敘事視為一個經驗事實。只有極少數的反猶太復國主義學者，如加比‧皮特伯格（Gabi Piterberg），成功地解構了這個敘事，當然，以色列學術界之外也有一些關於這個主題的重要著作。</p>
+
+                <p>因此，聖經在猶太復國主義敘事中，在主流世俗猶太復國主義運動和後來的以色列國家內部，服務於兩種敘事。元敘事是：既然這是猶太聖經的土地，那裡一直有猶太人，直到他們被殘酷驅逐。其第二部分，或第二個敘事是：這片土地變得空無一人，直到 19 世紀後期才被救贖。</p>
+
+                <p>什洛莫‧桑德（Shlomo Sand）追隨亞瑟‧庫斯勒（Arthur Koestler）的腳步，挑戰了羅馬時期猶太人被驅逐的敘事，以及 19 世紀後期「回歸」的概念（Sand 2010; Koestler 1976）。然而，他的作品在以色列和親以色列的學術荒野中只是微弱的聲音。關於以色列定居者殖民主義文化性質的更深刻分析，可以在加比‧皮特伯格的《猶太復國主義的回歸》（The Returns of Zionism, 2010）一書中找到。儘管在現代巴勒斯坦和以色列的知識生產方面發生了重大革命，但桑德、皮特伯格、惠特拉姆和普賴爾以及湯普森仍然不是主流。</p>
+
+                <p>更為典型的是，猶太復國主義的元敘事以地圖形式呈現，這種呈現方式至今仍常見於與該敘事相關的許多場合：大學課程、流行的虛擬、電子和媒體演示以及外交材料。最常見的例子是馬丁‧吉爾伯特（Martin Gilbert，2010）的《阿拉伯-以色列衝突地圖集》，這位著名的歷史學家和溫斯頓‧邱吉爾的傳記作者所著的這本書至今仍廣受歡迎。該書現已出到第 13 版，但其中絲毫未提及上述新挑戰，也沒有任何關於史學變革的參考。這本地圖集再現了主流猶太復國主義對衝突的歷史觀點，沒有提及任何修正主義的以色列歷史觀點，更不用說提供至少一張巴勒斯坦視角的地圖的可能性。</p>
+
+                <p>這尤其值得注意，因為其序言中聲稱的意圖是盡力公平呈現「衝突各方的觀點」。以下幾個例子足以說明這本書的偏向。它們將再次證明，地圖這樣看似無害的產物，是如何揭示強烈的意識形態偏見的。第一張地圖是一個很好的起點。它展示了阿拉伯征服前的巴勒斯坦猶太人。我們可能會說這很公平，因為它展示了猶太復國主義對巴勒斯坦的浪漫訴求。但人們至少會期待有一張地圖能告訴我們阿拉伯人在阿拔斯王朝、馬穆魯克王朝、塞爾柱王朝或鄂圖曼帝國統治下的巴勒斯坦歷史。但這些都沒有。隨後的地圖是所有這些伊斯蘭時期在巴勒斯坦的猶太人，這些時期他們的人口比例不到 1%。第三張地圖是關於 1882 年的第一次猶太移民。「等待無地人民的空地」的神話在這前三張地圖中被重新創造。聖經地圖在這裡沒有直接展示，但它是故事的基礎（巴勒斯坦的地圖集將從猶太復國主義的到來作為衝突的起點來開始故事）。</p>
+
+                <p>以色列著名的「卡塔」（Carta）系列地圖集，從聖經時代到現代，更好地強調了這種聯繫。然而，歸根結底，到了 2015 年，期待任何針對猶太復國主義及後來以色列國對聖經的操弄進行的解構會對現實產生任何重大影響，現在可能已經沒有意義了。現實將因人們對侵犯人權和基本公民權的厭惡而改變。無論這種侵犯是以聖經之名還是以世俗文本之名進行，從受害者的角度來看，都無關緊要。</p>
+            </section>
+
+            <!-- Notes -->
+            <div class="notes">
+                <p><strong>Notes</strong></p>
+                <p>1. Bracha Habas (ed.), <em>The Book of the Second Aliya</em>, from 1947 is the largest published collection of Second Aliya diary entries, letters and articles.</p>
+                <p>2. "Christian Zionists Support West Bank Settlements". <em>New York Times</em>, July 6, 2010.</p>
+            </div>
+
+            <!-- 參考文獻 -->
+            <section class="references" id="refs">
+                <h2>References</h2>
+
+                <p>Almog, S. 1992. <em>Nationalism, Zionism, Anti-Semitism: Essays and Research</em>. Jerusalem: Merkaz Zalman Shazar. In Hebrew.</p>
+                <p>Amin, S. 2010. <em>Global History: A View from the South</em>. London: Bambazuka Press.</p>
+                <p>Anderson, B. 2003. <em>Imagined Communities: Reflections on the Origins and Spread of Nationalism</em>. London: Verso Books.</p>
+                <p>Ben-Gurion, D. 1976. <em>Studies in the Bible</em>. Tel-Aviv, Am Oved.</p>
+                <p>________. 1962. "Exile and the Bible: A Dialogue with Haim Hazzas". <em>Dialogues on State and Culture</em> 12. In Hebrew.</p>
+                <p>Ben-Gurion, M. Y. (Bardichevsky). 1960. <em>Writings and Articles</em>. Tel-Aviv, Dvir. In Hebrew.</p>
+                <p>Gilbert, M. 2012. <em>The Routledge Atlas of the Arab-Israeli Conflict</em>. 10th ed. Oxford: Routledge. First edition 1974.</p>
+                <p>Guri, H. 2008. "On Nathan Alterman: Poets of Our Times". <em>Zeman Yarok</em>, 31 July. In Hebrew.</p>
+                <p>Habas, B. (ed.). 1947. <em>The Book of the Second Aliya</em>. Tel-Aviv: Am Oved. In Hebrew.</p>
+                <p>Henkin, H. 2004. "Everyone Who Says for Certain the David Sinned and the Critical Approach". <em>Hazofeh</em>, 1 April. In Hebrew.</p>
+                <p>Herzl, T. 1946. <em>The Jewish State: An Attempt at a Modern Solution of the Jewish Question</em>. New York: American Zionist Emergency Council.</p>
+                <p>Khalidi, W. 1987. <em>From Heaven to Conquest</em>. Washington, DC: Institute for Palestine Studies.</p>
+                <p>Koestler, A. 1976. <em>The Thirteenth Tribe: The Khazar Empire and its Heritage</em>. New York, NY: Random House.</p>
+                <p>Levy, Y. 1969. <em>The Dispute over Erezt Israel in Ancient Times</em>. Jerusalem: Mossad Bialik. In Hebrew.</p>
+                <p>Lockman, Z. 1996. <em>Comrades and Enemies: Arab and Jewish Workers in Palestine, 1906–1948</em>. Berkeley, CA: University of California Press.</p>
+                <p>Pappe, I. 2002. "The Post-Zionist Discourse in Israel 1991–2001". <em>Holy Land Studies</em> 1/1: 3–20.</p>
+                <p>________. 2011. <em>The Forgotten Palestinians: A History of the Palestinian Minority in Israel</em>. London and New Haven, CT: Yale University Press.</p>
+                <p>________. 2013. "The False Paradigm of Peace". <em>Settler Colonial Studies</em>, volume 3, no. 4: 341–351.</p>
+                <p>Piterberg, G. 2010. <em>The Returns of Zionism</em>. London and New York: Verso Books.</p>
+                <p>Prior, M. (ed.). 1998. <em>Western Scholarship and the History of Palestine</em>. London: Melisende.</p>
+                <p>________. 1998a. "The Moral Problem of the Land Traditions of the Bible". In Prior (ed.), <em>Western Scholarship</em>: 41–81.</p>
+                <p>Raz-Krakotzkin, A. 2007. "Jewish Memory between Exile and Memory". <em>Jewish Quarterly Review</em>: 530–543.</p>
+                <p>Sagive, A. 1989. "The Forefathers of Zionism and Myth of the Nation's Birth". <em>Techelt</em>, 5/Autumn: 1–4. In Hebrew.</p>
+                <p>Said, E. 2000. <em>Orientalism</em>. London: Vintage Books.</p>
+                <p>Sand, S. 2010. <em>The Invention of the Jewish People</em>. London and New York: Verso Press.</p>
+                <p>Shafir, G. 1989. <em>Land, Labor and the Origins of the Israeli-Palestinian Conflict, 1882–1914</em>. Cambridge: Cambridge University Press.</p>
+                <p>Shapira, A. 1997. <em>New Jews, Old Jews</em>. Tel-Aviv: Am Oved. In Hebrew.</p>
+                <p>________. 2012. <em>The Bible and the Jewish Identity</em>. Tel-Aviv: Am Oved. In Hebrew.</p>
+                <p>Smith, A. 1986. <em>The Ethnic Origins of Nationalism</em>. London: Wiley.</p>
+                <p>Sternhell, Z. 1997. <em>The Founding Myths of Israel</em>. Princeton, NJ: Princeton University Press.</p>
+                <p>Tabenkin, Y. 1972. "The Ideological Sources of the Second Aliya". <em>Essays</em>. Tel-Aviv: Kibbutz Mehuad. In Hebrew.</p>
+                <p>Thompson, T. L. 1998. "Hidden History and the Problems of Ethnicity in Palestine". In M. Prior, <em>Western Scholarship</em>: 23–39.</p>
+                <p>Whitelam, K. W. 1997. <em>The Invention of Ancient Israel: The Silencing of Palestinian History</em>. London and New York: Routledge.</p>
+                <p>________. 1998. "Western Scholarship and the Silencing of Palestinian History". In Michael Prior, <em>Western Scholarship</em>: 9–21.</p>
+                <p>Zertal, I. and A. Eldar. 2009. <em>Lords of the Land: The War of Israel's Settlements in the Occupied Territories, 1967–2007</em>. New York: Nations Books.</p>
+                <p>Zubaida, S. 2009. <em>Islam, the People and the State: Political Ideas and Movements in the Middle East</em>. London and New York: I.B. Tauris.</p>
+            </section>
+
+            <!-- 出處 -->
+            <div class="source-line">
+                <span style="color: #000000; font-weight: 700;">本文出自 Ingrid Hjelm and Thomas L. Thompson eds. <em>History, Archaeology and the Bible Forty Years after "Historicity", Changing Perspectives 6</em>. New York: Routledge, 2016. pp. 205–217.</span>
+            </div>
+
+        </div>
+
+        <div class="footer-note">
+          Copyright 版權所有©2026 CHSU 巴勒斯坦問題資訊站 · 聖經對猶太復國主義的服務
+        </div>
+    </div>
+
+    <script src="site-menu.js"></script>
+    <script src="back-to-top.js"></script>
+
+    <script>
+        document.querySelectorAll('.toc a[href^="#"]').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                var targetId = this.getAttribute('href').substring(1);
+                var target = document.getElementById(targetId);
+                if (target) {
+                    e.preventDefault();
+                    var yOffset = 80;
+                    var y = target.getBoundingClientRect().top + window.pageYOffset - yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                    history.replaceState(null, '', '#' + targetId);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

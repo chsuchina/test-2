@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>關鍵概念 · 巴勒斯坦問題</title>
+
+    <link rel="stylesheet" href="site-menu.css">
+    <link rel="stylesheet" href="back-to-top.css">
+
+    <style>
+        :root {
+            --page-bg: #c0c0c0;
+            --card-bg: #d1d1d1;
+            --panel-bg: #ebebeb;
+            --border-soft: #dcdcdc;
+            --text-main: #2c3e50;
+            --text-soft: #5b6f82;
+            --brand: #1e3a5f;
+            --brand-hover: #2b4b73;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background: var(--page-bg);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding: 0 16px 40px;
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            padding: 28px 24px 36px;
+            margin-top: 24px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: var(--brand);
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .sub {
+            text-align: center;
+            color: var(--text-soft);
+            font-size: 0.9rem;
+            margin-bottom: 22px;
+            border-bottom: 1px solid var(--border-soft);
+            padding-bottom: 16px;
+        }
+
+        .toc {
+            background: var(--panel-bg);
+            border-left: 5px solid var(--brand);
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-bottom: 32px;
+        }
+
+        .toc h2 {
+            font-size: 1.05rem;
+            color: var(--brand);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .toc ul { list-style: none; padding-left: 0; }
+        .toc > ul > li { margin-bottom: 4px; }
+
+        .toc a {
+            display: block;
+            padding: 5px 8px;
+            border-radius: 8px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: background 0.15s, color 0.15s, padding-left 0.15s;
+        }
+
+        .toc a:hover {
+            background: var(--card-bg);
+            color: var(--brand);
+            padding-left: 14px;
+        }
+
+        .toc .toc-sub {
+            margin-left: 18px;
+            border-left: 2px solid var(--border-soft);
+            padding-left: 10px;
+            margin-top: 4px;
+            margin-bottom: 6px;
+        }
+
+        .toc .toc-sub a {
+            font-size: 0.87rem;
+            font-weight: 500;
+            color: var(--text-soft);
+            padding: 4px 8px;
+        }
+
+        .toc .toc-sub a:hover { color: var(--brand); padding-left: 12px; }
+
+        .section {
+            margin-bottom: 34px;
+            scroll-margin-top: 90px;
+        }
+
+        .section h3 {
+            font-size: 1.15rem;
+            color: var(--brand);
+            font-weight: 700;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--border-soft);
+        }
+
+        .section h4 {
+            font-size: 1.02rem;
+            color: var(--brand-hover);
+            font-weight: 700;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            padding-left: 10px;
+            border-left: 4px solid var(--border-soft);
+        }
+
+        .section p {
+            font-size: 0.98rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .section p:last-child { margin-bottom: 0; }
+
+        .section .source {
+            font-size: 0.98rem;
+            color: var(--text-main);
+            font-style: normal;
+            margin-top: 8px;
+        }
+
+        .lead { font-weight: 700; color: var(--brand); }
+
+        /* 內文連結樣式 */
+        .section p a,
+        .section .source a,
+        .quote a {
+            color: var(--brand);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.15s;
+        }
+
+        .section p a:hover,
+        .section .source a:hover,
+        .quote a:hover {
+            color: var(--brand-hover);
+            text-decoration-thickness: 2px;
+        }
+
+        /* ===== 引言：字體加大 ===== */
+        .quote {
+            background: var(--panel-bg);
+            border-left: 5px solid var(--brand);
+            padding: 18px 22px;
+            border-radius: 12px;
+            font-size: 1.08rem;
+            color: #3a4a5a;
+            margin: 14px 0;
+            line-height: 2;
+            font-weight: 500;
+        }
+
+        .quote .en {
+            display: block;
+            font-style: italic;
+            color: var(--text-soft);
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            line-height: 1.9;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 0.82rem;
+            color: #8a9aa8;
+            border-top: 1px solid var(--border-soft);
+            padding-top: 18px;
+        }
+
+        @media (max-width: 600px) {
+            .wrap { padding: 18px 14px 28px; border-radius: 18px; }
+            h1 { font-size: 1.4rem; }
+            .section h3 { font-size: 1.05rem; }
+            .section h4 { font-size: 0.95rem; }
+            .section p { font-size: 0.93rem; }
+            .section { scroll-margin-top: 130px; }
+            .toc .toc-sub { margin-left: 12px; padding-left: 8px; }
+            .quote { font-size: 1rem; padding: 14px 16px; line-height: 1.9; }
+            .quote .en { font-size: 0.97rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>關鍵概念</h1>
+        <div class="sub">巴勒斯坦問題 · 關鍵概念</div>
+
+        <nav class="toc">
+            <h2>📑 目錄</h2>
+            <ul>
+                <li><a href="#s1">地理重要性</a></li>
+                <li><a href="#s2">巴勒斯坦</a></li>
+                <li><a href="#s3">舊約——歷史？神話？</a></li>
+                <li>
+                    <a href="#s4">反猶主義</a>
+                    <ul class="toc-sub">
+                        <li><a href="#s4-1">早期基督教（1世紀–4世紀）</a></li>
+                        <li><a href="#s4-2">中世紀（5世紀–15世紀）——制度化的反猶主義</a></li>
+                        <li><a href="#s4-3">宗教改革與早期現代（16世紀至18世紀）——</a></li>
+                        <li><a href="#s4-4">啟蒙運動與現代（18世紀至19世紀）——</a></li>
+                        <li><a href="#s4-5">現代（19世紀–20世紀）</a></li>
+                        <li><a href="#s4-6">當代（20世紀末–21世紀）</a></li>
+                    </ul>
+                </li>
+                <li><a href="#s5">猶太人問題</a></li>
+                <li><a href="#s6">Zionism</a></li>
+                <li><a href="#s7">西奧多·赫茨爾 Theodor Herzl</a></li>
+            </ul>
+        </nav>
+
+        <!-- 地理重要性 -->
+        <section class="section" id="s1">
+            <h3>地理重要性</h3>
+            <p><span class="lead"></span>巴勒斯坦位於所謂「<a href="https://en.wikipedia.org/wiki/Middle_East" target="_blank" rel="noopener">中東</a>」（Middle East，這是歐洲帝國主義以自己為世界中心的稱法），地理上應稱「<a href="https://en.wikipedia.org/wiki/West_Asia" target="_blank" rel="noopener">西亞</a>」，西臨地中海、東南有波斯灣、南臨阿拉伯半島、北部是札格羅斯山脈，世界文明發源地之一<a href="https://en.wikipedia.org/wiki/Fertile_Crescent" target="_blank" rel="noopener">新月沃</a>原位在其中。自古為東西方交通要道，兵家必爭，埃及、亞述、巴比倫、波斯、羅馬等帝國均曾統治此地區；18世紀英、法爭霸均覬覦此地區，拿破崙甚至企圖號召猶太人參與他的陣營奪取聖地；英國則視此區域為通往印度的生命線，1869年<a href="https://en.wikipedia.org/wiki/Suez_Canal" target="_blank" rel="noopener">蘇伊士運河</a>開通，西歐至印度洋之間航程比繞越好望角縮短八千至一萬公里，此後歐洲與亞洲最便捷路線均經此區域。而十九世紀末石油開探發現此區域估計約佔世界三分之二的藏量，1945年之後大量生產，使此區域戰略價值更加重要。直至廿一世紀此地區的動盪仍然影響全世界。</p>
+            <p>此外世界三大宗教：猶太教、基督教、回教均在此區域產生，尤其聖城耶路撒冷三教都視為聖地。而回教對此地區的影響尤為深遠，歐洲十字軍東征雖曾短暫收復聖城，至1291年基督教完全失去聖城。1516、1517年鄂圖曼帝國掌握中東大部份地區，至第一次世界大戰時（1917年），仍控制此地區大部（<a href="https://cdn3.vox-cdn.com/assets/4224911/ottoman_empire_gif.gif" target="_blank" rel="noopener">見圖</a>）。</p>
+        </section>
+
+        <!-- 巴勒斯坦 -->
+        <section class="section" id="s2">
+            <h3>巴勒斯坦</h3>
+            <p><span class="lead"></span>（參閱 <a href="https://en.wikipedia.org/wiki/Timeline_of_the_name_Palestine" target="_blank" rel="noopener">Wikipedia</a>）巴勒斯坦位於所謂「中東」的西部，西臨地中海，西南經<a href="https://en.wikipedia.org/wiki/Sinai_Peninsula" target="_blank" rel="noopener">西奈（Sinai）半島</a>以蘇伊士運河與北非相隔，南端則由<a href="https://en.wikipedia.org/wiki/Gulf_of_Aqaba" target="_blank" rel="noopener">阿卡巴灣</a>通紅海，往東經敘利亞沙漠達兩河流域，東南則是阿拉伯半島；這本是地理名詞，在第一次世界大戰後，逐漸帶有民族、國家含意，以色列建國後，當地阿拉伯人開始以此為名向建國理想奮鬥。然而，猶太復國主義者和之後的以色列國意識形態中，不承認此一名稱與其含意。</p>
+        </section>
+
+        <!-- 舊約 -->
+        <section class="section" id="s3">
+            <h3>舊約——歷史？神話？</h3>
+            <p><span class="lead"></span>此問題源自於猶太復國主義者多屬世俗派，但利用宗教信仰號召猶太人加入「復國」行列，（參閱：<a href="bible-service-to-zionism.html" target="_blank" rel="noopener">聖經對猶太復國主義的服務</a>）舊約恰合於鼓動人心，也有利於猶太復國主義者對基督教世界（特別是英、美兩國）的宣傳，但聖經舊約中所述神話成份較重（在英、美以至於大英國協各國教育中，聖經仍是重要成份）。現代以色列之建立與此有極大關係，甚至將上帝「<a href="https://en.wikipedia.org/wiki/Promised_Land" target="_blank" rel="noopener">應許之地</a>」（Promised Land）作為領土主張之依據，其範圍最大者是埃及河到幼發拉底河之間（<a href="https://www.biblegateway.com/passage/?search=Genesis+15%3A18&version=CUV" target="_blank" rel="noopener">創世紀15：18</a>；還有不同範圍的承諾）。更自認為是上帝的「<a href="https://en.wikipedia.org/wiki/Jews_as_the_chosen_people" target="_blank" rel="noopener">選民</a>」（Chosen People）。參閱：<a href="why-palestine.html" target="_blank" rel="noopener">猶太復國主義者為何選擇巴勒斯坦為建國之地？</a></p>
+        </section>
+
+        <!-- 反猶主義 -->
+        <section class="section" id="s4">
+            <h3>反猶主義</h3>
+            <p><span class="lead"></span><a href="https://en.wikipedia.org/wiki/Antisemitism" target="_blank" rel="noopener">Anti-Semitism</a> 直譯為反閃族主義，閃族 <a href="https://en.wikipedia.org/wiki/Semites" target="_blank" rel="noopener">Semites</a> 一詞始見於 1781 年，參見英文 Antisemitism（若選譯語言為中文內容較簡略，先開啟英文頁面，再以瀏覽器翻譯則可保持英文之內容）；原本是學者研究語言、人種所創，但結合猶太人之歷史自古代至十八、十九世紀，種種歧視、迫害、殺戮甚至形成意識型態。猶太人在西方社會有如此遭遇，宗教是重要原因，因猶太教為一神教，古希臘、羅馬均為多神信仰，待基督教興起亦即西元開始，當時屬羅馬帝國治下，基督、猶太教均受壓迫，西元 70 年以色列國亡，西元 132 年猶太人反叛遭鎮壓，此處於「<a href="https://en.wikipedia.org/wiki/Jewish_diaspora" target="_blank" rel="noopener">流徙 Diaspora</a>」。</p>
+            <p>猶太人與阿拉伯人同屬閃族 Semites，而猶太人的待遇在基督教世界與回教世界相差極大。參考<a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E7%8A%B9%E5%A4%AA%E4%B8%BB%E4%B9%89" target="_blank" rel="noopener">中文 Wikipedia</a>。須注意，現代以色列建國後，反以色列不一定就是反猶，但以色列執政者都極力在歐美各國推動立法將反以色列者視為反猶。而歐美因對反猶有歷史情結，深恐再現納粹風潮，故法律嚴禁反猶；以色列則充分利用此一情結，自此為全球猶太人之代表，然事實並非如此。</p>
+            <p>反猶主義最主要因素是基督教，其發展及西方世界的反應概略如下：</p>
+
+            <h4 id="s4-1">早期基督教（1世紀–4世紀）</h4>
+            <p>基督教創立者耶穌及其門徒均為猶太人。隨著基督徒逐漸與猶太傳統區分開來，特別是在第二聖殿被毀（西元 70 年）後，緊張關係開始出現。一些新約文本（例如《<a href="https://www.biblegateway.com/passage/?search=Matthew+27%3A25&version=CUV" target="_blank" rel="noopener">馬太福音</a>》27:25，《<a href="https://www.biblegateway.com/passage/?search=John+8%3A44&version=CUV" target="_blank" rel="noopener">約翰福音</a>》8:44）後來被解讀為將耶穌之死集體歸咎於猶太人，為反猶太態度奠定了基礎。然而，這些文本最初是猶太內部的爭論，並非反猶太的意圖。</p>
+            <p>教會領袖如殉道者<a href="https://en.wikipedia.org/wiki/Justin_Martyr" target="_blank" rel="noopener">尤斯丁 Justin Martyr</a> 和<a href="https://en.wikipedia.org/wiki/John_Chrysostom" target="_blank" rel="noopener">金口約翰 John Chrysostom</a> 譴責猶太人，指責他們拒絕基督是「弒神者」。西元 313 年羅馬帝國君士坦丁大帝頒布《<a href="https://en.wikipedia.org/wiki/Edict_of_Milan" target="_blank" rel="noopener">米蘭敕令</a>》承諾在帝國轄境有信仰基督教的自由，基督教進一步推展，至西元 380 年羅馬皇帝狄奧多西一世（東部皇帝）與格拉提安（西部皇帝）共同頒佈了《<a href="https://en.wikipedia.org/wiki/Edict_of_Thessalonica" target="_blank" rel="noopener">帖撒羅尼迦敕令</a>》，正式定基督教為國教，此後歐洲（東、西羅馬帝國勢力所及之處）成為基督教世界（若遭教會最重處罰「<a href="https://en.wikipedia.org/wiki/Excommunication" target="_blank" rel="noopener">破門律</a>」——即驅逐出教會，甚至君王皆不得不屈服。），前述反猶觀念到處奉行。</p>
+
+            <h4 id="s4-2">中世紀（5世紀–15世紀）——制度化的反猶主義</h4>
+            <p>天主教會在歐洲的主導地位助長了系統性反猶主義。猶太人常被當作社會問題的替罪羊，被控以血腥誹謗（殺害基督徒兒童用於儀式）並被指責引發<a href="https://en.wikipedia.org/wiki/Black_Death" target="_blank" rel="noopener">黑死病</a>（1348年）等瘟疫。引發了集體迫害。</p>
+            <p><span class="lead">法律限制：</span>教會會議（例如：1215年<a href="https://en.wikipedia.org/wiki/Fourth_Council_of_the_Lateran" target="_blank" rel="noopener">第四次拉特蘭會議</a>）要求猶太人穿戴特殊服飾限制其職業。猶太人聚居區（<a href="https://en.wikipedia.org/wiki/Ghetto" target="_blank" rel="noopener">隔都 Ghetto</a>）出現，隔離了猶太社區。此外，因基督徒之間禁止放貸，猶太教也依據舊約有類似禁令，但皆將「外邦人」除外，而猶太人在基督教世界能從事之工作有限（商人、工匠行會皆禁止），有些君王卻鼓勵猶太人從事放貸（以利稅收），並給予庇護，延續至今猶太人在銀行業仍有巨大力量。</p>
+            <p><span class="lead">十字軍東征與驅逐：</span><a href="https://en.wikipedia.org/wiki/Crusades" target="_blank" rel="noopener">十字軍東征</a>（11世紀–13世紀）期間，猶太社區遭到掠奪、屠殺。英格蘭（1290年）、法國（1306年）和西班牙（1492年）驅逐了猶太人，教會往往支持或默許。</p>
+            <p><span class="lead">神學轉變：</span>教會神父（如奧古斯丁）發展出<a href="https://en.wikipedia.org/wiki/Supersessionism" target="_blank" rel="noopener">取代論</a>（為基督教取代了猶太教）佔據主導地位，將猶太人描繪為過時或被詛咒。猶太人被視為精神上低劣，但被允許存在以作為基督教真理的「見證」。</p>
+
+            <h4 id="s4-3">宗教改革與早期現代（16世紀至18世紀）——</h4>
+            <p><span class="lead">新教改革：</span><a href="https://en.wikipedia.org/wiki/Martin_Luther" target="_blank" rel="noopener">馬丁·路德</a>最初1523年希望猶太人皈依基督教，但後來撰寫了強烈反猶太的文本（例如1543年的《<a href="https://en.wikipedia.org/wiki/On_the_Jews_and_Their_Lies" target="_blank" rel="noopener">論猶太人及其謊言</a>》），主張驅逐和暴力。這影響了新教態度，特別是在德國。</p>
+            <p><span class="lead">天主教的反應：</span>天主教會維持限制性政策，<a href="https://en.wikipedia.org/wiki/Inquisition" target="_blank" rel="noopener">宗教裁判所</a>針對懷疑秘密信奉猶太教的<a href="https://en.wikipedia.org/wiki/Conversos" target="_blank" rel="noopener">改宗者（conversos）</a>。</p>
+            <p>文學上著名的莎士比亞劇《<a href="https://en.wikipedia.org/wiki/The_Merchant_of_Venice" target="_blank" rel="noopener">威尼斯商人</a>》（基督教的偏見：莎士比亞錯誤地突出了猶太人未真正向基督徒施加過的恐怖手段，而歷史事實是，猶太人一直受到基督徒的恐怖殘害。），也是反猶爭例證之一。</p>
+
+            <h4 id="s4-4">啟蒙運動與現代（18世紀至19世紀）——</h4>
+            <p><span class="lead">解放：</span><a href="https://en.wikipedia.org/wiki/Age_of_Enlightenment" target="_blank" rel="noopener">啟蒙運動</a>的理念促成西歐猶太人解放（例如法國，1791年），授予猶太人公民權。然而，世俗反猶主義興起，聚焦於種族和經濟刻板印象，而非宗教。<span class="lead">基督教反應：</span>一些基督教思想家支持解放，為這符合普遍人權，而其他人反對，擔心猶太人影響。民族主義的興起加劇了反猶主義，基督徒往往與之共謀。</p>
+
+            <h4 id="s4-5">現代（19世紀–20世紀）</h4>
+            <p>歐洲多地（如俄國「<a href="https://en.wikipedia.org/wiki/Pogrom" target="_blank" rel="noopener">大屠殺</a>」、法國<a href="https://en.wikipedia.org/wiki/Dreyfus_affair" target="_blank" rel="noopener">德雷福斯事件</a>）爆發暴力迫害，部分基督教領袖參與其中，但也有基督徒（如<a href="https://en.wikipedia.org/wiki/Pope_Leo_XIII" target="_blank" rel="noopener">教宗良十三世</a>）公開反對。</p>
+            <p><span class="lead">世俗反猶太主義：</span>19世紀，反猶主義從宗教轉向種族依據，出現了關於猶太人「劣等」的偽科學理論。基督徒常將舊的宗教偏見與新的種族偏見結合。</p>
+            <p><span class="lead">基督教對現代性的回應：</span>一些基督教派別開始重新評估立場。自由派新教運動和早期天主教改革者質疑取代論，但傳統的反猶觀點依然存在。</p>
+            <p><span class="lead">大屠殺（1933年–1945年）：</span><a href="https://en.wikipedia.org/wiki/Nazism" target="_blank" rel="noopener">納粹</a>對600萬猶太人的種族滅絕暴露了反猶主義的致命後果。雖然一些基督徒（例如<a href="https://en.wikipedia.org/wiki/Dietrich_Bonhoeffer" target="_blank" rel="noopener">迪特裡希·邦霍費爾 Dietrich Bonhoeffer</a>、<a href="https://en.wikipedia.org/wiki/Corrie_ten_Boom" target="_blank" rel="noopener">柯麗·特恩·鮑姆 Corrie ten Boom</a>）進行抵抗，但德國和其他地區的許多教會保持沉默或同謀。天主教會在<a href="https://en.wikipedia.org/wiki/Pope_Pius_XII" target="_blank" rel="noopener">教皇庇護十二世</a>領導下的角色仍具爭議，批評者指出其對納粹暴行的不作為。</p>
+            <p><span class="lead">大屠殺後的反思：</span>大屠殺迫使基督教進行神學和道德反思。<a href="https://en.wikipedia.org/wiki/Second_Vatican_Council" target="_blank" rel="noopener">第二次梵蒂岡大公會議</a>（1962–1965年）發布《<a href="https://en.wikipedia.org/wiki/Nostra_aetate" target="_blank" rel="noopener">我們的時代</a>》，駁斥了猶太人對耶穌之死負有集體罪責的指控，譴責反猶主義。新教派別也發表聲明，摒棄反猶教義。</p>
+            <p class="source">（<a href="https://en.wikipedia.org/wiki/Shoah_(film)" target="_blank" rel="noopener">Shoah 大屠殺紀錄片</a>）</p>
+
+            <h4 id="s4-6">當代（20世紀末–21世紀）</h4>
+            <p><span class="lead">神學改革：</span>主流基督教派別（天主教、新教、東正教）已基本摒棄取代論和反猶陳詞濫調。與猶太社區的跨宗教對話增加，強調共同的傳統。</p>
+            <p><span class="lead">福音派觀點：</span>一些福音派基督徒因末世信仰（例如<a href="https://en.wikipedia.org/wiki/Christian_Zionism" target="_blank" rel="noopener">基督教錫安主義</a>）強烈支持以色列，但這有時會簡化猶太、基督教關係或忽視巴勒斯坦的觀點。</p>
+            <p><span class="lead">持續的挑戰：</span>儘管取得了進展，一些基督教邊緣群體中仍存在反猶態度，常與陰謀或對聖經的誤解相關。</p>
+            <p><span class="lead">跨宗教努力：</span>國際基督徒與猶太人理事會等組織推動和解。教皇<a href="https://en.wikipedia.org/wiki/Pope_John_Paul_II" target="_blank" rel="noopener">若望保祿二世</a>、<a href="https://en.wikipedia.org/wiki/Pope_Benedict_XVI" target="_blank" rel="noopener">本篤十六世</a>和<a href="https://en.wikipedia.org/wiki/Pope_Francis" target="_blank" rel="noopener">方濟各</a>訪問了猶太會堂譴責反猶太主義，表明致力於修復關係。</p>
+            <p>為歷史上基督教的反猶主義道歉。</p>
+        </section>
+
+        <!-- 猶太人問題 -->
+        <section class="section" id="s5">
+            <h3>猶太人問題</h3>
+            <p><span class="lead"></span>今日以色列不能代表「猶太人」，最簡單的證據是：以色列國内有近四分之一非猶太裔人口，此外，其他國家的猶太人並非皆認同以色列為猶太人的代表，而且以色列文化不同於猶太文化。</p>
+            <p>「<a href="https://en.wikipedia.org/wiki/Jewish_question" target="_blank" rel="noopener">猶太人問題</a>」（參考）最早於十八世紀歐洲出現，是反猶主義下的論爭，猶太人民族覺醒因此肇始，歐洲列強也長期思考如何解決此問題。</p>
+        </section>
+
+        <!-- Zionism -->
+        <section class="section" id="s6">
+            <h3>Zionism</h3>
+            <p><span class="lead"></span>音譯是<a href="https://zh.wikipedia.org/wiki/%E9%8C%AB%E5%AE%89%E4%B8%BB%E7%BE%A9" target="_blank" rel="noopener">錫安主義</a>，意譯是<a href="https://en.wikipedia.org/wiki/Zionism" target="_blank" rel="noopener">猶太復國主義</a>；Zion 是耶路撒冷旁的一座山，爾後衍伸指耶路撒冷或整個<a href="https://en.wikipedia.org/wiki/Land_of_Israel" target="_blank" rel="noopener">以色列地（Land of Israel）</a>。原本為宗教上希望返鄉時的祈文，當歐洲開始啟蒙運動及其後民族主義興起，猶太人也受此影響開始思考自己民族如何立足於世界。</p>
+            <p>參閱早期對猶太復國主義的<a href="zionism-tribalism-or-liberalism.html" target="_blank" rel="noopener">針砭</a>，以及巴勒斯坦解放組織（PLO）對此題「<a href="zionist-colonialism-in-palestine.html" target="_blank" rel="noopener">猶太復國主義殖民主義</a>」的研究。</p>
+            <p>與猶太復國主義崛起極其相關的是<a href="https://en.wikipedia.org/wiki/Christian_Zionism" target="_blank" rel="noopener">基督教猶太復國主義（Christian Zionism）</a>，英、美為首其他有基督教（新教）傳統之國家均有信徒，而他們也如前述堅信猶太民族根據《聖經》有權利有他們在巴勒斯坦的古老家園。他們對1948年以色列建國貢獻卓著，直至今日仍然左右各國政府偏袒以色列！參閱《<a href="modern-history.html" target="_blank" rel="noopener">基督教猶太復國主義簡史——從宗教改革至廿一世紀</a>》導言。</p>
+        </section>
+
+        <!-- 西奧多·赫茨爾 -->
+        <section class="section" id="s7">
+            <h3>西奧多·赫茨爾 Theodor Herzl</h3>
+            <p><span class="lead"></span><a href="https://en.wikipedia.org/wiki/Theodor_Herzl" target="_blank" rel="noopener">猶太復國主義領導者</a>。1897年於瑞士<a href="https://en.wikipedia.org/wiki/Basel" target="_blank" rel="noopener">巴賽爾</a>組織第一次「<a href="https://en.wikipedia.org/wiki/First_Zionist_Congress" target="_blank" rel="noopener">猶太復國主義者大會</a>」，為會長，會後，在他日記中記下：</p>
+            <div class="quote">
+                <span class="en">“If I were to sum up the Basle Congress in one word — which I shall not do openly — it would be this: at Basle I founded the Jewish State. If I were to say this to-day, I would be met by universal laughter. In five years, perhaps, and certainly in fifty, every one will see it.”</span>
+                「在巴塞爾，我建立了猶太國家。如果我今天這麼說，我會面對全世界的笑聲。也許是五年後，但五十年後，每個人必然都會看到它。」1948年5月14日<a href="https://en.wikipedia.org/wiki/Israeli_Declaration_of_Independence" target="_blank" rel="noopener">以色列建國</a>。
+            </div>
+            <p>前述第一次大會後，他們有目標也有組織，可能蒐集情報、遊說各個強權協助、在世界各地成立分支募集基金、爭取各方支持。</p>
+        </section>
+
+        <div class="footer-note">
+            Copyright 版權所有©2026 CHSU 巴勒斯坦問題資訊站 · 關鍵概念
+        </div>
+    </div>
+
+    <script src="site-menu.js"></script>
+    <script src="back-to-top.js"></script>
+
+    <script>
+        document.querySelectorAll('.toc a[href^="#"]').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                var targetId = this.getAttribute('href').substring(1);
+                var target = document.getElementById(targetId);
+                if (target) {
+                    e.preventDefault();
+                    var yOffset = 80;
+                    var y = target.getBoundingClientRect().top + window.pageYOffset - yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                    history.replaceState(null, '', '#' + targetId);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

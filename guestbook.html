@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>留言板 · 巴勒斯坦問題</title>
+
+    <link rel="stylesheet" href="site-menu.css">
+    <link rel="stylesheet" href="back-to-top.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background: var(--page-bg);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding: 0 16px 40px;
+        }
+
+        .wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            padding: 28px 22px 36px;
+            margin-top: 24px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            color: var(--brand);
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .sub {
+            text-align: center;
+            color: var(--text-soft);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-soft);
+            padding-bottom: 14px;
+        }
+
+        .notice {
+            background: var(--panel-bg);
+            border-left: 5px solid var(--brand);
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            color: #3a4a5a;
+            margin-bottom: 22px;
+            line-height: 1.8;
+        }
+
+        .notice strong { color: var(--brand); }
+
+        .form-group { margin-bottom: 14px; }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--brand);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--border-soft);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            background: var(--card-bg);
+            transition: border-color 0.15s, background 0.15s;
+            color: var(--text-main);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--brand);
+            background: #ffffff;
+        }
+
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        .submit-btn {
+            background: var(--brand);
+            color: #fff;
+            border: none;
+            padding: 11px 28px;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s, opacity 0.2s;
+        }
+
+        .submit-btn:hover { background: var(--brand-hover); }
+        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        .form-status {
+            margin-top: 16px;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .form-status.success {
+            display: block;
+            background: #e6f4ea;
+            color: #1e5c2e;
+            border-left: 5px solid #2e7d32;
+        }
+
+        .form-status.error {
+            display: block;
+            background: #fdecea;
+            color: #8a1f17;
+            border-left: 5px solid #c62828;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 0.82rem;
+            color: #8a9aa8;
+            border-top: 1px solid var(--border-soft);
+            padding-top: 18px;
+        }
+
+        @media (max-width: 600px) {
+            .wrap { padding: 18px 14px 28px; border-radius: 18px; }
+            h1 { font-size: 1.35rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>📝 留言板</h1>
+        <div class="sub">巴勒斯坦問題 · 歡迎指教</div>
+
+        <div class="notice">
+            <strong>※ 站長有權刪、改留言內容。</strong><br>
+            請保持理性、尊重，勿張貼謾罵、歧視或違法內容。<br>
+            送出後，站長會收到您的留言，感謝您的心得與建議。
+        </div>
+
+        <form id="msgForm" action="https://formspree.io/f/xrpbraly" method="POST">
+            <div class="form-group">
+                <label for="name">您的稱呼</label>
+                <input type="text" id="name" name="name" maxlength="30" placeholder="可留白（顯示為「匿名」）">
+            </div>
+
+            <div class="form-group">
+                <label for="email">您的 Email（選填，方便站長回覆）</label>
+                <input type="email" id="email" name="_replyto" maxlength="60" placeholder="可留白">
+            </div>
+
+            <div class="form-group">
+                <label for="content">留言內容 <span style="color:#e57373;">*</span></label>
+                <textarea id="content" name="message" maxlength="1000" required placeholder="請輸入您的留言（最多 1000 字）"></textarea>
+            </div>
+
+            <!-- 隱藏欄位：主旨 -->
+            <input type="hidden" name="_subject" value="【巴勒斯坦問題】留言板新留言">
+
+            <!-- 防止機器人：蜜罐欄位 -->
+            <input type="text" name="_gotcha" style="display:none;" tabindex="-1" autocomplete="off">
+
+            <button type="submit" class="submit-btn" id="submitBtn">送出留言</button>
+
+            <div class="form-status" id="formStatus"></div>
+        </form>
+
+        <div class="footer-note">
+          Copyright 版權所有©2026 CHSU 巴勒斯坦問題資訊站 · 留言由 Formspree 傳送
+        </div>
+    </div>
+
+    <script>
+        // 用 fetch 非同步送出，避免跳轉到 Formspree 頁面
+        var form = document.getElementById('msgForm');
+        var statusBox = document.getElementById('formStatus');
+        var submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            statusBox.className = 'form-status';
+            statusBox.textContent = '';
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = '送出中…';
+
+            var formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(function (response) {
+                if (response.ok) {
+                    statusBox.className = 'form-status success';
+                    statusBox.textContent = '✅ 留言已送出，感謝您的指教！站長會盡快閱讀。';
+                    form.reset();
+                } else {
+                    return response.json().then(function (data) {
+                        var errMsg = '送出失敗，請稍後再試。';
+                        if (data && data.errors && data.errors.length) {
+                            errMsg = data.errors.map(function (e) { return e.message; }).join('、');
+                        }
+                        throw new Error(errMsg);
+                    });
+                }
+            })
+            .catch(function (err) {
+                statusBox.className = 'form-status error';
+                statusBox.textContent = '❌ ' + (err.message || '網路錯誤，請稍後再試。');
+            })
+            .finally(function () {
+                submitBtn.disabled = false;
+                submitBtn.textContent = '送出留言';
+            });
+        });
+    </script>
+
+    <script src="site-menu.js"></script>
+    <script src="back-to-top.js"></script>
+</body>
+</html>
